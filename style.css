@@ -408,3 +408,26 @@ Version: 1.0
     width: 12px;
   }
 
+
+  /* header-menu.php */
+  #header-outer:not([data-format=left-header]) #top>.container>.row nav {
+    justify-content: flex-start;
+}
+
+body #header-outer .container {
+
+  padding-left: 0px;
+}
+
+a.nectar-button.medium.regular.regular-button.stm-header-btn {
+  border-radius: 5px !important;
+  webkit-border-radius: 200px !important;
+  width: 100%;
+  padding: 11px 18px !important;
+}
+
+.material.woocommerce-page[data-form-style=default] input#coupon_code, input[type=date], input[type=email], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=url], select, textarea {
+  background-color: #fff;
+  border-radius: 4px;
+  border: 2px solid transparent;
+}
