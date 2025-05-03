@@ -29,7 +29,7 @@ if( $nectar_header_format === 'centered-menu-bottom-bar' &&
 ?>
 
 <header id="top">
-	<div class="container">
+	<div class="stm-container">
 		<div class="row">
 			<div class="col span_3">
 				<?php 
