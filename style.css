@@ -531,3 +531,74 @@ body[data-header-color="dark"] #header-outer {
 #header-space {
   height: 150px;
 }
+
+body[data-header-resize="0"] .container-wrap{
+  padding-top: 30px;
+}
+
+
+/* blok novosti */
+.stm-last-blogs .excerpt,.stm-last-blogs .meta-category {
+  display: none;
+}
+
+.stm-last-blogs
+.post-area.featured_img_left.span_12 .article-content-wrap .post-content-wrap {
+
+  padding-top: 0px;
+
+  padding-bottom: 0px;
+}
+.stm-last-blogs
+.post-featured-img-wrap {
+  max-width: 90px;
+   max-height: 90px;
+}
+.stm-last-blogs
+.post-area.featured_img_left .article-content-wrap .post-content-wrap {
+  width: 80%;
+
+}
+
+.stm-last-blogs .post-header {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 4em; /* Fallback for browsers that don't support -webkit-line-clamp */
+  margin-bottom: 0px;
+}
+
+.stm-last-blogs
+.post-area.featured_img_left .post-content-wrap .grav-wrap {
+  margin-top: 2px;
+}
+.stm-last-blogs
+.post-area.featured_img_left.span_12 article {
+  margin-bottom: 10px;
+}
+
+.stm-last-blogs
+.inner-wrap {
+  background: #F9FAF9;
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-bottom: 13px;
+  border-radius: 8px;
+}
+
+.stm-last-blogs
+.inner-wrap:hover {
+  background: rgba(98, 122, 102, 0.12);
+}
+
+
+
+
+@media only screen and (min-width: 1000px) {
+  .stm-last-blogs
+  .post-area.featured_img_left .article-content-wrap .post-content-wrap {
+      left: 20%;
+  }
+}
