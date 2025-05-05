@@ -8,6 +8,9 @@ Template: salient
 text-domain: salient-child
 Version: 1.0
 */
+body .container {
+  padding: 0px;
+}
 
 /* currency-list.html */
 .currency-list {
@@ -479,4 +482,52 @@ textarea {
 body #header-outer,
 body[data-header-color="dark"] #header-outer {
   background-color: #fff;
+}
+
+.stm-header-one {
+  background: rgba(98, 122, 102, 0.75);
+}
+
+.row.stm-header-two {
+  border-top: solid 1px #627A66;
+  border-bottom: solid 1px #627A66;
+  padding-bottom: 0px;
+}
+
+.material #header-space,
+#header-space {
+  background: #fff;
+}
+
+#header-outer[data-format=centered-menu-under-logo] .span_9 {
+  text-align: left;
+  line-height: 1px;
+}
+
+#header-outer[data-format=centered-menu-under-logo] #top .span_9 nav>ul>li:not(#social-in-menu):not(#search-btn):not(.slide-out-widget-area-toggle)>a {
+  padding-top: 0;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.row.stm-header-one {
+  background: rgba(98, 122, 102, 0.75);
+  padding-bottom: 0px;
+}
+
+.row.stm-header-one .container {
+
+    vertical-align: middle;
+    min-height: 99px;
+    display: flex;
+    align-items: center;
+ 
+}
+.material
+.row.stm-header-one .container
+ .wpb_row{
+  margin-bottom: 0px;
+}
+#header-space {
+  height: 150px;
 }
