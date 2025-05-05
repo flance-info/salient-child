@@ -593,7 +593,38 @@ body[data-header-resize="0"] .container-wrap{
   background: rgba(98, 122, 102, 0.12);
 }
 
+.stm-last-new .meta-category {
+  display: none;
+}
 
+.stm-last-new
+.post-area.featured_img_left article .article-content-wrap .post-featured-img-wrap {
+
+  max-height: 200px;
+}
+.stm-last-new
+.post-area.featured_img_left.span_12 .article-content-wrap .post-content-wrap {
+  padding: 20px;
+}
+
+.stm-last-new
+.blog-recent[data-style=list_featured_first_row] {
+  margin-bottom: 0px;
+}
+.stm-last-new .blog-recent
+img.nectar-lazy.skip-lazy.loaded {
+  max-height: 471px;
+}
+.stm-last-new .blog-recent
+a.featured {
+  max-height: 471px;
+  display: block;
+  margin-bottom: 40px;
+}
+.stm-last-new 
+.blog-recent[data-style=list_featured_first_row] .col:hover a>.img-thumbnail{
+  box-shadow: unset;
+}
 
 
 @media only screen and (min-width: 1000px) {
