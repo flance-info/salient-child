@@ -1,92 +1,94 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Параметры акции</title>
+  <title>Numbered List</title>
   <style>
     body {
-      font-family: 'Open Sans', Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-      background-color: #f5f5f5;
-    }
-    .params-container {
+      font-family: Arial, sans-serif;
       max-width: 600px;
       margin: 0 auto;
-      border-radius: 15px;
-      border: 1px solid #e9e9e9;
-      background-color: #fff;
-      overflow: hidden;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+      padding: 20px;
     }
-    .params-header {
-      padding: 25px 30px;
-      color: #6b8e71;
-      font-size: 24px;
-      font-weight: 500;
+    
+    .nai-list-container {
+
+      padding: 15px;
+
     }
-    .params-content {
-      background-color: #f9f9f9;
-    }
-    .params-row {
+    
+    .nai-list-item {
       display: flex;
-      border-top: 1px solid #eaeaea;
-      background-color: #fff;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #e0e0e0;
     }
-    .params-label {
-      flex: 1;
-      padding: 18px 30px;
-      font-size: 16px;
-      color: #333;
+    
+    .nai-list-item:last-child {
+      margin-bottom: 0;
     }
-    .params-value {
-      flex: 1;
-      padding: 18px 30px;
-      font-size: 16px;
-      color: #6b8e71;
+    
+    .nai-number {
+      color: rgba(98, 122, 102);
+      font-size: 24px;
+      font-weight: bold;
+      width: 40px;
+      padding-right: 10px;
       text-align: right;
-      font-weight: 500;
     }
-    .params-value.highlight {
-      color: #6b8e71;
+    
+    .nai-content {
+      flex: 1;
+
+      padding-left: 15px;
     }
-    .params-value.neutral {
-      color: #6b8e71;
+    
+    .nai-title {
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+    
+    .nai-description {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.4;
+      margin: 0;
     }
   </style>
 </head>
 <body>
-  <div class="params-container">
-    <div class="params-header">
-      Параметры акции
+  <div class="nai-list-container">
+    <div class="nai-list-item">
+      <div class="nai-number">01</div>
+      <div class="nai-content">
+        <div class="nai-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas id mollis velit.</div>
+        <p class="nai-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas id mollis velit.</p>
+      </div>
     </div>
-    <div class="params-content">
-      <div class="params-row">
-        <div class="params-label">Котировальный лист</div>
-        <div class="params-value">B</div>
+    
+    <div class="nai-list-item">
+      <div class="nai-number">02</div>
+      <div class="nai-content">
+        <div class="nai-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas id mollis velit.</div>
+        <p class="nai-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas id mollis velit.</p>
       </div>
-      <div class="params-row">
-        <div class="params-label">Начало обращения</div>
-        <div class="params-value highlight">25.12.2014</div>
+    </div>
+    
+    <div class="nai-list-item">
+      <div class="nai-number">03</div>
+      <div class="nai-content">
+        <div class="nai-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas id mollis velit.</div>
+        <p class="nai-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas id mollis velit.</p>
       </div>
-      <div class="params-row">
-        <div class="params-label">Тикер</div>
-        <div class="params-value">URTS</div>
-      </div>
-      <div class="params-row">
-        <div class="params-label">ISIN</div>
-        <div class="params-value">UZ7043200003</div>
-      </div>
-      <div class="params-row">
-        <div class="params-label">Количество</div>
-        <div class="params-value highlight">374.79 млн шт</div>
-      </div>
-      <div class="params-row">
-        <div class="params-label">Номинал</div>
-        <div class="params-value highlight">630 UZS</div>
+    </div>
+    
+    <div class="nai-list-item">
+      <div class="nai-number">04</div>
+      <div class="nai-content">
+        <div class="nai-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas id mollis velit.</div>
+        <p class="nai-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas id mollis velit.</p>
       </div>
     </div>
   </div>
 </body>
-</html> 
+</html>
