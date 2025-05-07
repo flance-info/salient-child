@@ -677,8 +677,28 @@ body[data-header-resize="0"] .container-wrap {
   margin-top: -10px;
 }
 
+body
+.nectar-sticky-tabs .tab-nav-heading:before {
+  display: none;
+}
+
+body
+.nectar-sticky-tabs .active-tab .tab-nav-heading {
+  background: #627a6621;
+  color: #627A66;
+  height: 79px;
+  vertical-align: middle;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  border-left: 2px solid #627A66;
+  padding-left: 15px;
+}
+
 @media only screen and (min-width: 1000px) {
   .stm-last-blogs .post-area.featured_img_left .article-content-wrap .post-content-wrap {
     left: 20%;
   }
 }
+
+
