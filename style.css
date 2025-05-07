@@ -517,45 +517,45 @@ body[data-header-color="dark"] #header-outer {
 
 .row.stm-header-one .container {
 
-    vertical-align: middle;
-    min-height: 99px;
-    display: flex;
-    align-items: center;
- 
+  vertical-align: middle;
+  min-height: 99px;
+  display: flex;
+  align-items: center;
+
 }
-.material
-.row.stm-header-one .container
- .wpb_row{
+
+.material .row.stm-header-one .container .wpb_row {
   margin-bottom: 0px;
 }
+
 #header-space {
   height: 150px;
 }
 
-body[data-header-resize="0"] .container-wrap{
+body[data-header-resize="0"] .container-wrap {
   padding-top: 30px;
 }
 
 
 /* blok novosti */
-.stm-last-blogs .excerpt,.stm-last-blogs .meta-category {
+.stm-last-blogs .excerpt,
+.stm-last-blogs .meta-category {
   display: none;
 }
 
-.stm-last-blogs
-.post-area.featured_img_left.span_12 .article-content-wrap .post-content-wrap {
+.stm-last-blogs .post-area.featured_img_left.span_12 .article-content-wrap .post-content-wrap {
 
   padding-top: 0px;
 
   padding-bottom: 0px;
 }
-.stm-last-blogs
-.post-featured-img-wrap {
+
+.stm-last-blogs .post-featured-img-wrap {
   max-width: 90px;
-   max-height: 90px;
+  max-height: 90px;
 }
-.stm-last-blogs
-.post-area.featured_img_left .article-content-wrap .post-content-wrap {
+
+.stm-last-blogs .post-area.featured_img_left .article-content-wrap .post-content-wrap {
   width: 80%;
 
 }
@@ -566,21 +566,20 @@ body[data-header-resize="0"] .container-wrap{
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-height: 4em; /* Fallback for browsers that don't support -webkit-line-clamp */
+  max-height: 4em;
+  /* Fallback for browsers that don't support -webkit-line-clamp */
   margin-bottom: 0px;
 }
 
-.stm-last-blogs
-.post-area.featured_img_left .post-content-wrap .grav-wrap {
+.stm-last-blogs .post-area.featured_img_left .post-content-wrap .grav-wrap {
   margin-top: 2px;
 }
-.stm-last-blogs
-.post-area.featured_img_left.span_12 article {
+
+.stm-last-blogs .post-area.featured_img_left.span_12 article {
   margin-bottom: 10px;
 }
 
-.stm-last-blogs
-.inner-wrap {
+.stm-last-blogs .inner-wrap {
   background: #F9FAF9;
   padding-top: 20px;
   padding-left: 10px;
@@ -588,8 +587,7 @@ body[data-header-resize="0"] .container-wrap{
   border-radius: 8px;
 }
 
-.stm-last-blogs
-.inner-wrap:hover {
+.stm-last-blogs .inner-wrap:hover {
   background: rgba(98, 122, 102, 0.12);
 }
 
@@ -597,38 +595,36 @@ body[data-header-resize="0"] .container-wrap{
   display: none;
 }
 
-.stm-last-new
-.post-area.featured_img_left article .article-content-wrap .post-featured-img-wrap {
+.stm-last-new .post-area.featured_img_left article .article-content-wrap .post-featured-img-wrap {
 
   max-height: 200px;
 }
-.stm-last-new
-.post-area.featured_img_left.span_12 .article-content-wrap .post-content-wrap {
+
+.stm-last-new .post-area.featured_img_left.span_12 .article-content-wrap .post-content-wrap {
   padding: 20px;
 }
 
-.stm-last-new
-.blog-recent[data-style=list_featured_first_row] {
+.stm-last-new .blog-recent[data-style=list_featured_first_row] {
   margin-bottom: 0px;
 }
-.stm-last-new .blog-recent
-img.nectar-lazy.skip-lazy.loaded {
+
+.stm-last-new .blog-recent img.nectar-lazy.skip-lazy.loaded {
   max-height: 471px;
 }
-.stm-last-new .blog-recent
-a.featured {
+
+.stm-last-new .blog-recent a.featured {
   max-height: 471px;
   display: block;
   margin-bottom: 40px;
 }
-.stm-last-new 
-.blog-recent[data-style=list_featured_first_row] .col:hover a>.img-thumbnail{
+
+.stm-last-new .blog-recent[data-style=list_featured_first_row] .col:hover a>.img-thumbnail {
   box-shadow: unset;
 }
 
 /* lists ob assosiation */
 
-    
+
 .nai-list-container {
 
   padding: 15px;
@@ -672,9 +668,17 @@ a.featured {
   margin: 0;
 }
 
+/* Style for the bio content */
+.nai-read-more-link {
+  cursor: pointer;
+  font-size: 16px;
+  color: #808080;
+  margin-bottom: 10px;
+  margin-top: -10px;
+}
+
 @media only screen and (min-width: 1000px) {
-  .stm-last-blogs
-  .post-area.featured_img_left .article-content-wrap .post-content-wrap {
-      left: 20%;
+  .stm-last-blogs .post-area.featured_img_left .article-content-wrap .post-content-wrap {
+    left: 20%;
   }
 }
