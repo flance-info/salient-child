@@ -74,7 +74,7 @@ if (!class_exists('NAI_Events_Widget')) {
             );
 
             if ($atts['orderby'] === 'event_date') {
-                $args['meta_key'] = '_event_date';
+                $args['meta_key'] = '_nai_event_date';
                 $args['orderby'] = 'meta_value';
                 $args['meta_type'] = 'DATE';
             } else {
@@ -82,62 +82,23 @@ if (!class_exists('NAI_Events_Widget')) {
             }
 
             $events = new WP_Query($args);
-            $output = '';
-
-            if ($events->have_posts()) {
-                $output .= '<div class="nai-events-grid">';
-                
-                while ($events->have_posts()) {
-                    $events->the_post();
-                    $event_date = get_post_meta(get_the_ID(), '_event_date', true);
-                    $event_time = get_post_meta(get_the_ID(), '_event_time', true);
-                    $event_end_time = get_post_meta(get_the_ID(), '_event_end_time', true);
-                    $event_location = get_post_meta(get_the_ID(), '_event_location', true);
-                    $event_address = get_post_meta(get_the_ID(), '_event_address', true);
-                    $event_city = get_post_meta(get_the_ID(), '_event_city', true);
-                    $event_country = get_post_meta(get_the_ID(), '_event_country', true);
-                    $event_contact = get_post_meta(get_the_ID(), '_event_contact', true);
-
-                    $output .= '<div class="nai-event-item">';
-                    $output .= '<div class="event-date">' . esc_html($event_date) . '</div>';
-                    $output .= '<h3 class="event-title"><a href="' . esc_url(get_permalink()) . '">' . get_the_title() . '</a></h3>';
-                    
-                    if ($event_time) {
-                        $output .= '<div class="event-time">';
-                        $output .= esc_html($event_time);
-                        if ($event_end_time) {
-                            $output .= ' - ' . esc_html($event_end_time);
-                        }
-                        $output .= '</div>';
-                    }
-
-                    if ($event_location || $event_address || $event_city || $event_country) {
-                        $output .= '<div class="event-location">';
-                        if ($event_location) {
-                            $output .= '<span class="location-name">' . esc_html($event_location) . '</span>';
-                        }
-                        if ($event_address || $event_city || $event_country) {
-                            $output .= '<span class="address">';
-                            if ($event_address) $output .= esc_html($event_address);
-                            if ($event_city) $output .= ', ' . esc_html($event_city);
-                            if ($event_country) $output .= ', ' . esc_html($event_country);
-                            $output .= '</span>';
-                        }
-                        $output .= '</div>';
-                    }
-
-                    if ($event_contact) {
-                        $output .= '<div class="event-contact">' . esc_html($event_contact) . '</div>';
-                    }
-
-                    $output .= '</div>'; // .nai-event-item
-                }
-
-                $output .= '</div>'; // .nai-events-grid
-                wp_reset_postdata();
+            
+            // Get the template path
+            $template_path = locate_template('vc_elements/events-widget-view.php');
+            
+            // If template not found in theme, use the default one
+            if (!$template_path) {
+                $template_path = get_stylesheet_directory() . '/includes/vc-elements/views/events-widget-view.php';
             }
-
-            return $output;
+            
+            // Include the template file
+            if (file_exists($template_path)) {
+                ob_start();
+                include $template_path;
+                return ob_get_clean();
+            }
+            
+            return '';
         }
     }
 

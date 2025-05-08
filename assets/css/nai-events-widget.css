@@ -72,6 +72,26 @@
     margin-top: 15px;
 }
 
+.contact-name {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.contact-phone,
+.contact-email {
+    margin-bottom: 3px;
+}
+
+.contact-email a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-email a:hover {
+    color: #007bff;
+}
+
 @media (max-width: 768px) {
     .nai-events-grid {
         grid-template-columns: 1fr;
