@@ -1,29 +1,19 @@
 <?php
 /**
- * Template Name: Events Widget View
- * Template Part: Events Widget
- *
+ * Events Widget View Template
  * @package NAI_Theme
  */
 
-if (!defined('ABSPATH')) {
-    exit;
-}
+if (!defined('ABSPATH')) exit;
 
-/**
- * Template for displaying events in a grid layout
- *
- * @var WP_Query $events The events query object
- */
-
-// Example: get current year and tab (you can enhance this with real logic)
 $current_year = date('Y');
 $current_tab = isset($_GET['tab']) ? $_GET['tab'] : 'upcoming';
-
 ?>
 <div class="nai-events-widget">
     <div class="nai-events-header">
-        <h2>Мероприятия <span class="nai-events-year"><?php echo esc_html($current_year); ?></span>
+        <h2>
+            Мероприятия
+            <span class="nai-events-year"><?php echo esc_html($current_year); ?></span>
             <span class="nai-events-year-dropdown">&#9660;</span>
         </h2>
         <div class="nai-events-tabs">
@@ -47,7 +37,7 @@ $current_tab = isset($_GET['tab']) ? $_GET['tab'] : 'upcoming';
                 <div class="nai-event-date"><?php echo esc_html(date_i18n('d F Y', strtotime($event_date))); ?></div>
                 <div class="nai-event-time">
                     <?php echo esc_html($event_start_time); ?>
-                    <?php if ($event_end_time) echo '–' . esc_html($event_end_time); ?>
+                    <?php if ($event_end_time) echo ' – ' . esc_html($event_end_time); ?>
                 </div>
             </div>
             <div class="nai-event-main">
@@ -74,4 +64,4 @@ $current_tab = isset($_GET['tab']) ? $_GET['tab'] : 'upcoming';
         <a href="#">5</a>
     </div>
 </div>
-<?php wp_reset_postdata(); ?> 
+<?php wp_reset_postdata(); ?>
