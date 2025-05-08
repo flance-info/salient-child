@@ -112,12 +112,13 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    border-bottom: 1px solid #e0e0e0;
+    /* border-bottom: 1px solid #e0e0e0; */
     margin-bottom: 24px;
     padding: 24px 0 0 0;
+    font-size: 48px;
 }
 .nai-events-header h2 {
-    font-size: 2.3rem;
+    font-size: 48px;
     font-weight: 400;
     margin: 0;
     color: #222;
@@ -127,7 +128,8 @@
     color: #7a8b7a;
     font-weight: 400;
     margin-left: 8px;
-    font-size: 1.2rem;
+    font-size: 38px;
+    font-family: 'Open Sans';
 }
 .nai-events-year-dropdown {
     font-size: 1rem;
