@@ -7,7 +7,28 @@
 if (!defined('ABSPATH')) exit;
 
 $current_year = date('Y');
-$current_tab = isset($_GET['tab']) ? $_GET['tab'] : 'upcoming';
+$current_tab = isset($_GET['tab']) && $_GET['tab'] === 'past' ? 'past' : 'upcoming';
+
+// Set up date filtering
+$today = date('Y-m-d');
+$meta_query = [
+    'key' => '_nai_event_date',
+    'compare' => $current_tab === 'past' ? '<' : '>=',
+    'value' => $today,
+    'type' => 'DATE'
+];
+
+// Build WP_Query args
+$args = [
+    'post_type' => 'nai_event',
+    'posts_per_page' => 10,
+    'meta_key' => '_nai_event_date',
+    'orderby' => 'meta_value',
+    'order' => $current_tab === 'past' ? 'DESC' : 'ASC',
+    'meta_query' => [$meta_query]
+];
+
+$events = new WP_Query($args);
 ?>
 <div class="nai-events-widget">
     <div class="nai-events-header">
@@ -18,8 +39,8 @@ $current_tab = isset($_GET['tab']) ? $_GET['tab'] : 'upcoming';
         </h2>
     </div>
     <div class="nai-events-tabs">
-        <a href="#" class="nai-events-tab<?php if ($current_tab === 'upcoming') echo ' active'; ?>">Ожидаемые</a>
-        <a href="#" class="nai-events-tab<?php if ($current_tab === 'past') echo ' active'; ?>">Прошедшие</a>
+        <a href="?tab=upcoming" class="nai-events-tab<?php if ($current_tab === 'upcoming') echo ' active'; ?>">Ожидаемые</a>
+        <a href="?tab=past" class="nai-events-tab<?php if ($current_tab === 'past') echo ' active'; ?>">Прошедшие</a>
     </div>
     <div class="nai-events-list">
         <?php
