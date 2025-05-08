@@ -33,16 +33,19 @@ $current_tab = isset($_GET['tab']) ? $_GET['tab'] : 'upcoming';
                 $is_active = ($i === 1); // Example: highlight the 2nd event as active
         ?>
         <div class="nai-event-row<?php if ($is_active) echo ' active'; ?>">
-            <div class="nai-event-date-time">
+            <div class="nai-event-info">
                 <div class="nai-event-date"><?php echo esc_html(date_i18n('d F Y', strtotime($event_date))); ?></div>
                 <div class="nai-event-time">
                     <?php echo esc_html($event_start_time); ?>
-                    <?php if ($event_end_time) echo ' – ' . esc_html($event_end_time); ?>
+                    <?php if ($event_end_time) echo '–' . esc_html($event_end_time); ?>
                 </div>
             </div>
-            <div class="nai-event-main">
+            <div class="nai-event-content">
                 <?php if ($event_city): ?>
-                    <span class="nai-event-city"><?php echo esc_html($event_city); ?></span>
+                    <span class="nai-event-city">
+                        <svg class="nai-event-city-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="7" r="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 14C8 14 2.5 9.5 2.5 6.5C2.5 3.73858 5.23858 1.5 8 1.5C10.7614 1.5 13.5 3.73858 13.5 6.5C13.5 9.5 8 14 8 14Z" stroke="currentColor" stroke-width="1.5"/></svg>
+                        <?php echo esc_html($event_city); ?>
+                    </span>
                 <?php endif; ?>
                 <div class="nai-event-title">
                     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>

@@ -164,14 +164,14 @@
 }
 .nai-event-row {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     background: #f8faf8;
     border-radius: 16px;
-    margin-bottom: 18px;
-    padding: 22px 32px;
+    margin-bottom: 20px;
+    padding: 20px 32px 20px 32px;
     transition: background 0.2s;
     position: relative;
-    min-height: 70px;
+    min-height: 80px;
     border: none;
     box-shadow: none;
 }
@@ -179,58 +179,72 @@
     background: #7a8b7a;
     color: #fff;
 }
-.nai-event-row.active .nai-event-title a,
-.nai-event-row.active .nai-event-date,
-.nai-event-row.active .nai-event-time,
-.nai-event-row.active .nai-event-city {
-    color: #fff;
-}
-.nai-event-date-time {
+.nai-event-info {
     min-width: 120px;
     margin-right: 32px;
     text-align: left;
+    flex-shrink: 0;
 }
 .nai-event-date {
-    font-size: 1.08rem;
+    font-size: 1.05rem;
     font-weight: 400;
     color: #7a8b7a;
     margin-bottom: 2px;
 }
+.nai-event-row.active .nai-event-date,
+.nai-event-row.active .nai-event-time {
+    color: #fff;
+}
 .nai-event-time {
-    font-size: 0.98rem;
+    font-size: 0.95rem;
     color: #b0b0b0;
     margin-top: 0;
 }
-.nai-event-main {
-    flex: 1;
+.nai-event-content {
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 16px;
+    flex: 1;
 }
 .nai-event-city {
     background: #e6ede6;
     color: #7a8b7a;
     border-radius: 16px;
-    padding: 2px 14px;
+    padding: 2px 14px 2px 8px;
     font-size: 0.97rem;
     margin-right: 10px;
     font-weight: 400;
-    letter-spacing: 0.01em;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.nai-event-city-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 4px;
+    color: #7a8b7a;
 }
 .nai-event-row.active .nai-event-city {
     background: rgba(255,255,255,0.18);
     color: #fff;
 }
+.nai-event-row.active .nai-event-city-icon {
+    color: #fff;
+}
 .nai-event-title {
-    font-size: 1.08rem;
-    font-weight: 400;
+    font-size: 1.13rem;
+    font-weight: 600;
+    color: #222;
 }
 .nai-event-title a {
-    color: #222;
+    color: inherit;
     text-decoration: none;
     transition: color 0.2s;
 }
-.nai-event-row.active .nai-event-title a { color: #fff; }
+.nai-event-row.active .nai-event-title,
+.nai-event-row.active .nai-event-title a {
+    color: #fff;
+}
 .nai-event-title a:hover { text-decoration: underline; }
 .nai-event-arrow {
     font-size: 1.2rem;
@@ -238,6 +252,7 @@
     margin-left: auto;
     font-weight: 400;
     opacity: 0.7;
+    align-self: center;
 }
 .nai-event-row.active .nai-event-arrow {
     color: #fff;
