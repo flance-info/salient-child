@@ -101,4 +101,150 @@
     .nai-event-item {
         padding: 20px;
     }
+}
+
+.nai-events-widget {
+    background: #fff;
+    padding: 0 0 40px 0;
+    font-family: inherit;
+}
+.nai-events-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 24px;
+    padding: 24px 0 0 0;
+}
+.nai-events-header h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0;
+    color: #222;
+}
+.nai-events-year {
+    color: #7a8b7a;
+    font-weight: 400;
+    margin-left: 8px;
+}
+.nai-events-year-dropdown {
+    font-size: 1rem;
+    color: #7a8b7a;
+    margin-left: 4px;
+    cursor: pointer;
+}
+.nai-events-tabs {
+    display: flex;
+    gap: 16px;
+}
+.nai-events-tab {
+    color: #7a8b7a;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 4px 12px;
+    border-radius: 6px 6px 0 0;
+    transition: background 0.2s, color 0.2s;
+}
+.nai-events-tab.active, .nai-events-tab:hover {
+    background: #e6ede6;
+    color: #222;
+}
+.nai-events-list {
+    margin-top: 24px;
+}
+.nai-event-row {
+    display: flex;
+    align-items: center;
+    background: #f7f9f7;
+    border-radius: 10px;
+    margin-bottom: 18px;
+    padding: 18px 24px;
+    transition: background 0.2s;
+    position: relative;
+}
+.nai-event-row.active {
+    background: #7a8b7a;
+    color: #fff;
+}
+.nai-event-row.active .nai-event-title a,
+.nai-event-row.active .nai-event-date,
+.nai-event-row.active .nai-event-time,
+.nai-event-row.active .nai-event-city {
+    color: #fff;
+}
+.nai-event-date-time {
+    min-width: 120px;
+    margin-right: 32px;
+    text-align: left;
+}
+.nai-event-date {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #7a8b7a;
+}
+.nai-event-time {
+    font-size: 0.98rem;
+    color: #b0b0b0;
+}
+.nai-event-main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+.nai-event-city {
+    background: #e6ede6;
+    color: #7a8b7a;
+    border-radius: 16px;
+    padding: 2px 14px;
+    font-size: 0.95rem;
+    margin-right: 10px;
+    font-weight: 500;
+}
+.nai-event-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+.nai-event-title a {
+    color: #222;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.nai-event-row.active .nai-event-title a { color: #fff; }
+.nai-event-title a:hover { text-decoration: underline; }
+.nai-event-arrow {
+    font-size: 1.5rem;
+    color: #7a8b7a;
+    margin-left: 18px;
+    font-weight: bold;
+}
+.nai-events-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 32px;
+}
+.nai-events-pagination a,
+.nai-events-pagination span {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 6px;
+    color: #7a8b7a;
+    background: #f7f9f7;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background 0.2s, color 0.2s;
+}
+.nai-events-pagination a.active,
+.nai-events-pagination a:hover {
+    background: #7a8b7a;
+    color: #fff;
+}
+@media (max-width: 600px) {
+    .nai-events-header { flex-direction: column; align-items: flex-start; }
+    .nai-event-row { flex-direction: column; align-items: flex-start; padding: 14px 10px; }
+    .nai-event-date-time { margin-bottom: 8px; margin-right: 0; }
+    .nai-event-main { flex-direction: column; align-items: flex-start; gap: 6px; }
+    .nai-events-pagination { margin-top: 18px; }
 } 
