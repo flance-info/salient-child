@@ -1,0 +1,58 @@
+
+.nai-opinion-row {
+    display: flex;
+    align-items: flex-start;
+    border-bottom: 1px solid #eee;
+    padding: 24px 0;
+    gap: 32px;
+}
+.nai-opinion-author {
+    width: 20%;
+    text-align: center;
+    flex-shrink: 0;
+    min-width: 200px;
+}
+.nai-opinion-author-photo img,
+.nai-opinion-author-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 10px auto;
+    display: block;
+}
+.nai-opinion-author-name {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 2px;
+    color: #627A66;
+}
+.nai-opinion-author-position {
+    font-size: 14px;
+    color: #888;
+}
+.nai-opinion-content {
+    flex: 1;
+}
+.nai-opinion-date {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 6px;
+}
+.nai-opinion-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #222;
+}
+.nai-opinion-title a {
+    color: inherit;
+    text-decoration: none;
+}
+.nai-opinion-title a:hover {
+    text-decoration: underline;
+}
+.nai-opinion-excerpt {
+    font-size: 16px;
+    color: #444;
+}
