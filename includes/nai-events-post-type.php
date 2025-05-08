@@ -19,20 +19,20 @@ class nai_Events_Post_Type {
 
     public function register_post_type() {
         $labels = array(
-            'name'               => __( 'Events', 'salient-child' ),
-            'singular_name'      => __( 'Event', 'salient-child' ),
-            'menu_name'          => __( 'Events', 'salient-child' ),
-            'name_admin_bar'     => __( 'Event', 'salient-child' ),
-            'add_new'            => __( 'Add New', 'salient-child' ),
-            'add_new_item'       => __( 'Add New Event', 'salient-child' ),
-            'new_item'           => __( 'New Event', 'salient-child' ),
-            'edit_item'          => __( 'Edit Event', 'salient-child' ),
-            'view_item'          => __( 'View Event', 'salient-child' ),
-            'all_items'          => __( 'All Events', 'salient-child' ),
-            'search_items'       => __( 'Search Events', 'salient-child' ),
-            'parent_item_colon'  => __( 'Parent Events:', 'salient-child' ),
-            'not_found'          => __( 'No events found.', 'salient-child' ),
-            'not_found_in_trash' => __( 'No events found in Trash.', 'salient-child' )
+            'name'               => __( 'Мероприятия', 'salient-child' ),
+            'singular_name'      => __( 'Мероприятие', 'salient-child' ),
+            'menu_name'          => __( 'Мероприятия', 'salient-child' ),
+            'name_admin_bar'     => __( 'Мероприятие', 'salient-child' ),
+            'add_new'            => __( 'Добавить', 'salient-child' ),
+            'add_new_item'       => __( 'Добавить мероприятие', 'salient-child' ),
+            'new_item'           => __( 'Новое мероприятие', 'salient-child' ),
+            'edit_item'          => __( 'Редактировать мероприятие', 'salient-child' ),
+            'view_item'          => __( 'Просмотреть мероприятие', 'salient-child' ),
+            'all_items'          => __( 'Все мероприятия', 'salient-child' ),
+            'search_items'       => __( 'Поиск мероприятий', 'salient-child' ),
+            'parent_item_colon'  => __( 'Родительские мероприятия:', 'salient-child' ),
+            'not_found'          => __( 'Мероприятия не найдены.', 'salient-child' ),
+            'not_found_in_trash' => __( 'В корзине мероприятий не найдено.', 'salient-child' )
         );
 
         $args = array(
@@ -57,7 +57,7 @@ class nai_Events_Post_Type {
     public function add_meta_boxes() {
         add_meta_box(
             'nai_event_details',
-            __( 'Event Details', 'salient-child' ),
+            __( 'Детали мероприятия', 'salient-child' ),
             array( $this, 'render_event_details_meta_box' ),
             'nai_event',
             'normal',
@@ -76,43 +76,48 @@ class nai_Events_Post_Type {
         $contact_name = get_post_meta( $post->ID, '_nai_event_contact_name', true );
         $contact_phone = get_post_meta( $post->ID, '_nai_event_contact_phone', true );
         $contact_email = get_post_meta( $post->ID, '_nai_event_contact_email', true );
+        $country = get_post_meta( $post->ID, '_nai_event_country', true );
         ?>
         <p>
-            <label for="nai_event_date"><strong><?php _e( 'Event Date', 'salient-child' ); ?>:</strong></label><br>
+            <label for="nai_event_date"><strong><?php esc_html_e( 'Дата проведения', 'salient-child' ); ?>:</strong></label><br>
             <input type="date" id="nai_event_date" name="nai_event_date" value="<?php echo esc_attr( $date ); ?>" />
         </p>
         <p>
-            <label for="nai_event_start_time"><strong><?php _e( 'Start Time', 'salient-child' ); ?>:</strong></label><br>
+            <label for="nai_event_start_time"><strong><?php esc_html_e( 'Время начала', 'salient-child' ); ?>:</strong></label><br>
             <input type="time" id="nai_event_start_time" name="nai_event_start_time" value="<?php echo esc_attr( $start_time ); ?>" />
         </p>
         <p>
-            <label for="nai_event_end_time"><strong><?php _e( 'End Time', 'salient-child' ); ?>:</strong></label><br>
+            <label for="nai_event_end_time"><strong><?php esc_html_e( 'Время окончания', 'salient-child' ); ?>:</strong></label><br>
             <input type="time" id="nai_event_end_time" name="nai_event_end_time" value="<?php echo esc_attr( $end_time ); ?>" />
         </p>
         <p>
-            <label for="nai_event_location"><strong><?php _e( 'Location', 'salient-child' ); ?>:</strong></label><br>
+            <label for="nai_event_country"><strong><?php esc_html_e( 'Страна', 'salient-child' ); ?>:</strong></label><br>
+            <input type="text" id="nai_event_country" name="nai_event_country" value="<?php echo esc_attr( $country ); ?>" />
+        </p>
+        <p>
+            <label for="nai_event_location"><strong><?php esc_html_e( 'Место проведения', 'salient-child' ); ?>:</strong></label><br>
             <input type="text" id="nai_event_location" name="nai_event_location" value="<?php echo esc_attr( $location ); ?>" />
         </p>
         <p>
-            <label for="nai_event_address"><strong><?php _e( 'Address', 'salient-child' ); ?>:</strong></label><br>
+            <label for="nai_event_address"><strong><?php esc_html_e( 'Адрес', 'salient-child' ); ?>:</strong></label><br>
             <input type="text" id="nai_event_address" name="nai_event_address" value="<?php echo esc_attr( $address ); ?>" />
         </p>
         <p>
-            <label for="nai_event_city"><strong><?php _e( 'City', 'salient-child' ); ?>:</strong></label><br>
+            <label for="nai_event_city"><strong><?php esc_html_e( 'Город', 'salient-child' ); ?>:</strong></label><br>
             <input type="text" id="nai_event_city" name="nai_event_city" value="<?php echo esc_attr( $city ); ?>" />
         </p>
         <hr>
-        <h4><?php _e( 'Contact Information', 'salient-child' ); ?></h4>
+        <h4><?php esc_html_e( 'Контактная информация', 'salient-child' ); ?></h4>
         <p>
-            <label for="nai_event_contact_name"><strong><?php _e( 'Contact Name', 'salient-child' ); ?>:</strong></label><br>
+            <label for="nai_event_contact_name"><strong><?php esc_html_e( 'Контактное лицо', 'salient-child' ); ?>:</strong></label><br>
             <input type="text" id="nai_event_contact_name" name="nai_event_contact_name" value="<?php echo esc_attr( $contact_name ); ?>" />
         </p>
         <p>
-            <label for="nai_event_contact_phone"><strong><?php _e( 'Contact Phone', 'salient-child' ); ?>:</strong></label><br>
+            <label for="nai_event_contact_phone"><strong><?php esc_html_e( 'Телефон', 'salient-child' ); ?>:</strong></label><br>
             <input type="text" id="nai_event_contact_phone" name="nai_event_contact_phone" value="<?php echo esc_attr( $contact_phone ); ?>" />
         </p>
         <p>
-            <label for="nai_event_contact_email"><strong><?php _e( 'Contact Email', 'salient-child' ); ?>:</strong></label><br>
+            <label for="nai_event_contact_email"><strong><?php esc_html_e( 'Email', 'salient-child' ); ?>:</strong></label><br>
             <input type="email" id="nai_event_contact_email" name="nai_event_contact_email" value="<?php echo esc_attr( $contact_email ); ?>" />
         </p>
         <?php
@@ -136,6 +141,7 @@ class nai_Events_Post_Type {
             'nai_event_date',
             'nai_event_start_time',
             'nai_event_end_time',
+            'nai_event_country',
             'nai_event_location',
             'nai_event_address',
             'nai_event_city',
