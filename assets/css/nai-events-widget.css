@@ -138,26 +138,37 @@
 .nai-events-tabs {
     display: flex;
     gap: 0;
-    margin-left: 24px;
+    margin: 0 0 0 0;
+    padding-left: 2px;
+    margin-bottom: 24px;
 }
 .nai-events-tab {
     color: #7a8b7a;
     text-decoration: none;
-    font-size: 1.15rem;
-    padding: 6px 18px 6px 18px;
-    border-radius: 8px 8px 0 0;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 28px 10px 28px;
+    border-radius: 12px 12px 0 0;
     background: transparent;
     border: none;
     margin-right: 2px;
     transition: background 0.2s, color 0.2s;
     position: relative;
-    top: 1px;
+    top: 0;
+    outline: none;
+    box-shadow: none;
+    border-bottom: 2px solid transparent;
 }
 .nai-events-tab.active {
     background: #e6ede6;
-    color: #222;
+    color: #000;
     font-weight: 500;
     z-index: 2;
+    border-bottom: 2px solid #7a8b7a;
+}
+.nai-events-tab:not(.active) {
+    color: #7a8b7a;
+    border-bottom: 2px solid transparent;
 }
 .nai-events-list {
     margin-top: 24px;

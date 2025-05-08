@@ -16,10 +16,10 @@ $current_tab = isset($_GET['tab']) ? $_GET['tab'] : 'upcoming';
             <span class="nai-events-year"><?php echo esc_html($current_year); ?></span>
             <span class="nai-events-year-dropdown">&#9660;</span>
         </h2>
-        <div class="nai-events-tabs">
-            <a href="#" class="nai-events-tab<?php if ($current_tab === 'upcoming') echo ' active'; ?>">Ожидаемые</a>
-            <a href="#" class="nai-events-tab<?php if ($current_tab === 'past') echo ' active'; ?>">Прошедшие</a>
-        </div>
+    </div>
+    <div class="nai-events-tabs">
+        <a href="#" class="nai-events-tab<?php if ($current_tab === 'upcoming') echo ' active'; ?>">Ожидаемые</a>
+        <a href="#" class="nai-events-tab<?php if ($current_tab === 'past') echo ' active'; ?>">Прошедшие</a>
     </div>
     <div class="nai-events-list">
         <?php
