@@ -19,20 +19,20 @@ class nai_Events_Post_Type {
 
     public function register_post_type() {
         $labels = array(
-            'name'               => __( 'Events', 'nai' ),
-            'singular_name'      => __( 'Event', 'nai' ),
-            'menu_name'          => __( 'Events', 'nai' ),
-            'name_admin_bar'     => __( 'Event', 'nai' ),
-            'add_new'            => __( 'Add New', 'nai' ),
-            'add_new_item'       => __( 'Add New Event', 'nai' ),
-            'new_item'           => __( 'New Event', 'nai' ),
-            'edit_item'          => __( 'Edit Event', 'nai' ),
-            'view_item'          => __( 'View Event', 'nai' ),
-            'all_items'          => __( 'All Events', 'nai' ),
-            'search_items'       => __( 'Search Events', 'nai' ),
-            'parent_item_colon'  => __( 'Parent Events:', 'nai' ),
-            'not_found'          => __( 'No events found.', 'nai' ),
-            'not_found_in_trash' => __( 'No events found in Trash.', 'nai' )
+            'name'               => __( 'Events', 'salient-child' ),
+            'singular_name'      => __( 'Event', 'salient-child' ),
+            'menu_name'          => __( 'Events', 'salient-child' ),
+            'name_admin_bar'     => __( 'Event', 'salient-child' ),
+            'add_new'            => __( 'Add New', 'salient-child' ),
+            'add_new_item'       => __( 'Add New Event', 'salient-child' ),
+            'new_item'           => __( 'New Event', 'salient-child' ),
+            'edit_item'          => __( 'Edit Event', 'salient-child' ),
+            'view_item'          => __( 'View Event', 'salient-child' ),
+            'all_items'          => __( 'All Events', 'salient-child' ),
+            'search_items'       => __( 'Search Events', 'salient-child' ),
+            'parent_item_colon'  => __( 'Parent Events:', 'salient-child' ),
+            'not_found'          => __( 'No events found.', 'salient-child' ),
+            'not_found_in_trash' => __( 'No events found in Trash.', 'salient-child' )
         );
 
         $args = array(
@@ -57,7 +57,7 @@ class nai_Events_Post_Type {
     public function add_meta_boxes() {
         add_meta_box(
             'nai_event_details',
-            __( 'Event Details', 'nai' ),
+            __( 'Event Details', 'salient-child' ),
             array( $this, 'render_event_details_meta_box' ),
             'nai_event',
             'normal',
@@ -78,41 +78,41 @@ class nai_Events_Post_Type {
         $contact_email = get_post_meta( $post->ID, '_nai_event_contact_email', true );
         ?>
         <p>
-            <label for="nai_event_date"><strong><?php _e( 'Event Date', 'nai' ); ?>:</strong></label><br>
+            <label for="nai_event_date"><strong><?php _e( 'Event Date', 'salient-child' ); ?>:</strong></label><br>
             <input type="date" id="nai_event_date" name="nai_event_date" value="<?php echo esc_attr( $date ); ?>" />
         </p>
         <p>
-            <label for="nai_event_start_time"><strong><?php _e( 'Start Time', 'nai' ); ?>:</strong></label><br>
+            <label for="nai_event_start_time"><strong><?php _e( 'Start Time', 'salient-child' ); ?>:</strong></label><br>
             <input type="time" id="nai_event_start_time" name="nai_event_start_time" value="<?php echo esc_attr( $start_time ); ?>" />
         </p>
         <p>
-            <label for="nai_event_end_time"><strong><?php _e( 'End Time', 'nai' ); ?>:</strong></label><br>
+            <label for="nai_event_end_time"><strong><?php _e( 'End Time', 'salient-child' ); ?>:</strong></label><br>
             <input type="time" id="nai_event_end_time" name="nai_event_end_time" value="<?php echo esc_attr( $end_time ); ?>" />
         </p>
         <p>
-            <label for="nai_event_location"><strong><?php _e( 'Location', 'nai' ); ?>:</strong></label><br>
+            <label for="nai_event_location"><strong><?php _e( 'Location', 'salient-child' ); ?>:</strong></label><br>
             <input type="text" id="nai_event_location" name="nai_event_location" value="<?php echo esc_attr( $location ); ?>" />
         </p>
         <p>
-            <label for="nai_event_address"><strong><?php _e( 'Address', 'nai' ); ?>:</strong></label><br>
+            <label for="nai_event_address"><strong><?php _e( 'Address', 'salient-child' ); ?>:</strong></label><br>
             <input type="text" id="nai_event_address" name="nai_event_address" value="<?php echo esc_attr( $address ); ?>" />
         </p>
         <p>
-            <label for="nai_event_city"><strong><?php _e( 'City', 'nai' ); ?>:</strong></label><br>
+            <label for="nai_event_city"><strong><?php _e( 'City', 'salient-child' ); ?>:</strong></label><br>
             <input type="text" id="nai_event_city" name="nai_event_city" value="<?php echo esc_attr( $city ); ?>" />
         </p>
         <hr>
-        <h4><?php _e( 'Contact Information', 'nai' ); ?></h4>
+        <h4><?php _e( 'Contact Information', 'salient-child' ); ?></h4>
         <p>
-            <label for="nai_event_contact_name"><strong><?php _e( 'Contact Name', 'nai' ); ?>:</strong></label><br>
+            <label for="nai_event_contact_name"><strong><?php _e( 'Contact Name', 'salient-child' ); ?>:</strong></label><br>
             <input type="text" id="nai_event_contact_name" name="nai_event_contact_name" value="<?php echo esc_attr( $contact_name ); ?>" />
         </p>
         <p>
-            <label for="nai_event_contact_phone"><strong><?php _e( 'Contact Phone', 'nai' ); ?>:</strong></label><br>
+            <label for="nai_event_contact_phone"><strong><?php _e( 'Contact Phone', 'salient-child' ); ?>:</strong></label><br>
             <input type="text" id="nai_event_contact_phone" name="nai_event_contact_phone" value="<?php echo esc_attr( $contact_phone ); ?>" />
         </p>
         <p>
-            <label for="nai_event_contact_email"><strong><?php _e( 'Contact Email', 'nai' ); ?>:</strong></label><br>
+            <label for="nai_event_contact_email"><strong><?php _e( 'Contact Email', 'salient-child' ); ?>:</strong></label><br>
             <input type="email" id="nai_event_contact_email" name="nai_event_contact_email" value="<?php echo esc_attr( $contact_email ); ?>" />
         </p>
         <?php
