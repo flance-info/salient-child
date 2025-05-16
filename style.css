@@ -670,6 +670,7 @@ body[data-header-resize="0"] .container-wrap {
   margin-bottom: 6px;
   font-size: 24px;
 }
+
 .nai-description {
   color: #666;
   font-size: 14px;
@@ -732,10 +733,38 @@ body .nai-goal-tab .iwithtext {
 .stm-bio-img {
   width: 100px;
 }
-body[data-ext-responsive=true].single-post #page-header-bg[data-post-hs=default_minimal] h1, body[data-ext-responsive=true].single-post .container-wrap.no-sidebar .comment-list>li, body[data-ext-responsive=true].single-post .container-wrap.no-sidebar .post-area, body[data-ext-responsive=true].single-post .heading-title[data-header-style=default_minimal] .entry-title, body[data-ext-responsive=true].single-post.material #page-header-bg.fullscreen-header h1, body[data-ext-responsive=true].single-post.material .comment-wrap #respond, body[data-ext-responsive=true].single-post.material .container-wrap.no-sidebar .comment-wrap h3#comments {
- max-width: 100%;
- 
+
+body[data-ext-responsive=true].single-post #page-header-bg[data-post-hs=default_minimal] h1,
+body[data-ext-responsive=true].single-post .container-wrap.no-sidebar .comment-list>li,
+body[data-ext-responsive=true].single-post .container-wrap.no-sidebar .post-area,
+body[data-ext-responsive=true].single-post .heading-title[data-header-style=default_minimal] .entry-title,
+body[data-ext-responsive=true].single-post.material #page-header-bg.fullscreen-header h1,
+body[data-ext-responsive=true].single-post.material .comment-wrap #respond,
+body[data-ext-responsive=true].single-post.material .container-wrap.no-sidebar .comment-wrap h3#comments {
+  max-width: 100%;
+
 }
+
+.contacts-on-map {
+  position: absolute;
+  top: 150px;
+  left: 40px;
+  background: white;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  max-width: 500px;
+  border-radius: 20px;
+  height: 400px;
+}
+
+body
+.container-wrap
+{
+    min-height: 300px !important;
+    padding-bottom: 0px;
+}
+
 @media only screen and (min-width: 1000px) {
   .stm-last-blogs .post-area.featured_img_left .article-content-wrap .post-content-wrap {
     left: 20%;
