@@ -18,7 +18,7 @@ if (!class_exists('NAI_Media_File_Link_Widget')) {
         public function integrate_with_vc() {
             vc_map([
                 'name' => esc_html__('Media File Link Includer', 'salient-child'),
-                'description' => esc_html__('Upload or select a PDF/PPTX file and display a download link.', 'salient-child'),
+                'description' => esc_html__('Upload or select a file and display a download link with custom design.', 'salient-child'),
                 'base' => 'nai_media_file_link',
                 'category' => esc_html__('NAI Elements', 'salient-child'),
                 'icon' => 'vc_icon-vc-media-grid',
@@ -30,10 +30,69 @@ if (!class_exists('NAI_Media_File_Link_Widget')) {
                         'description' => esc_html__('Upload or select a PDF or PPTX file from the media library.', 'salient-child'),
                     ],
                     [
+                        'type' => 'attach_image',
+                        'heading' => esc_html__('Icon/Image', 'salient-child'),
+                        'param_name' => 'icon_image_id',
+                        'description' => esc_html__('Upload or select an image to use as the icon.', 'salient-child'),
+                    ],
+                    [
                         'type' => 'textfield',
                         'heading' => esc_html__('Title', 'salient-child'),
                         'param_name' => 'title',
                         'description' => esc_html__('Enter the file title to display.', 'salient-child'),
+                    ],
+                    [
+                        'type' => 'dropdown',
+                        'heading' => esc_html__('Title Tag', 'salient-child'),
+                        'param_name' => 'title_tag',
+                        'value' => [
+                            'h1' => 'h1',
+                            'h2' => 'h2',
+                            'h3' => 'h3',
+                            'h4' => 'h4',
+                            'h5' => 'h5',
+                            'h6' => 'h6',
+                            'p' => 'p',
+                            'span' => 'span',
+                        ],
+                        'std' => 'h3',
+                        'description' => esc_html__('Select the HTML tag for the title.', 'salient-child'),
+                    ],
+                    [
+                        'type' => 'colorpicker',
+                        'heading' => esc_html__('Background Color', 'salient-child'),
+                        'param_name' => 'bg_color',
+                        'description' => esc_html__('Set the background color.', 'salient-child'),
+                    ],
+                    [
+                        'type' => 'textfield',
+                        'heading' => esc_html__('Border Radius (px)', 'salient-child'),
+                        'param_name' => 'radius',
+                        'description' => esc_html__('Set the border radius in px.', 'salient-child'),
+                    ],
+                    [
+                        'type' => 'textfield',
+                        'heading' => esc_html__('Font Family', 'salient-child'),
+                        'param_name' => 'font_family',
+                        'description' => esc_html__('Set the font family.', 'salient-child'),
+                    ],
+                    [
+                        'type' => 'textfield',
+                        'heading' => esc_html__('Font Size (px)', 'salient-child'),
+                        'param_name' => 'font_size',
+                        'description' => esc_html__('Set the font size in px.', 'salient-child'),
+                    ],
+                    [
+                        'type' => 'textfield',
+                        'heading' => esc_html__('Padding (CSS)', 'salient-child'),
+                        'param_name' => 'padding',
+                        'description' => esc_html__('Set the padding (e.g. 20px 30px).', 'salient-child'),
+                    ],
+                    [
+                        'type' => 'textfield',
+                        'heading' => esc_html__('Margin (CSS)', 'salient-child'),
+                        'param_name' => 'margin',
+                        'description' => esc_html__('Set the margin (e.g. 10px 0 10px 0).', 'salient-child'),
                     ],
                 ],
             ]);
@@ -58,7 +117,15 @@ if (!class_exists('NAI_Media_File_Link_Widget')) {
         public function render_media_file_link($atts) {
             $atts = shortcode_atts([
                 'file_id' => '',
+                'icon_image_id' => '',
                 'title' => '',
+                'title_tag' => 'h3',
+                'bg_color' => '',
+                'radius' => '',
+                'font_family' => '',
+                'font_size' => '',
+                'padding' => '',
+                'margin' => '',
             ], $atts);
 
             if (empty($atts['file_id'])) return '';
@@ -71,6 +138,7 @@ if (!class_exists('NAI_Media_File_Link_Widget')) {
             if ($file_path && file_exists($file_path)) {
                 $file_size = size_format(filesize($file_path));
             }
+            $icon_img = $atts['icon_image_id'] ? wp_get_attachment_image($atts['icon_image_id'], 'thumbnail', false, ['class' => 'nai-media-file-link-img']) : '';
             ob_start();
             $template_path = locate_template('vc_elements/media-file-link-widget-view.php');
             if (!$template_path) {

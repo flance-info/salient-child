@@ -1,13 +1,22 @@
-<div class="nai-media-file-link-block">
+<?php
+$style = '';
+if (!empty($atts['bg_color'])) $style .= 'background:' . esc_attr($atts['bg_color']) . ';';
+if (!empty($atts['radius'])) $style .= 'border-radius:' . esc_attr($atts['radius']) . 'px;';
+if (!empty($atts['font_family'])) $style .= 'font-family:' . esc_attr($atts['font_family']) . ';';
+if (!empty($atts['font_size'])) $style .= 'font-size:' . esc_attr($atts['font_size']) . 'px;';
+if (!empty($atts['padding'])) $style .= 'padding:' . esc_attr($atts['padding']) . ';';
+if (!empty($atts['margin'])) $style .= 'margin:' . esc_attr($atts['margin']) . ';';
+$title_tag = in_array($atts['title_tag'], ['h1','h2','h3','h4','h5','h6','p','span']) ? $atts['title_tag'] : 'h3';
+?>
+<div class="nai-media-file-link-block" style="<?php echo esc_attr($style); ?>">
     <a href="<?php echo esc_url($file_url); ?>" class="nai-media-file-link" download>
         <span class="nai-media-file-link-icon" aria-hidden="true">
-            <svg width="55" height="65" viewBox="0 0 55 65" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M27.5 10V41.25M27.5 41.25L16.0417 29.7917M27.5 41.25L38.9583 29.7917" stroke="#627A66" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                <rect x="9.16663" y="51.0417" width="36.6667" height="8.125" rx="4.0625" fill="#627A66"/>
-            </svg>
+            <?php if (!empty($icon_img)) {
+                echo $icon_img;
+            } ?>
         </span>
         <span class="nai-media-file-link-content">
-            <span class="nai-media-file-link-title"><?php echo esc_html($file_title); ?></span>
+            <<?php echo $title_tag; ?> class="nai-media-file-link-title"><?php echo esc_html($file_title); ?></<?php echo $title_tag; ?>>
             <span class="nai-media-file-link-meta"><?php echo esc_html($file_ext); ?><?php if ($file_size) echo ' (' . esc_html($file_size) . ')'; ?></span>
         </span>
     </a>
