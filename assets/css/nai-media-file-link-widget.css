@@ -1,0 +1,41 @@
+.nai-media-file-link-block {
+    background: #f8f9f8;
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    box-shadow: none;
+    transition: background 0.2s;
+}
+.nai-media-file-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    width: 100%;
+}
+.nai-media-file-link-icon {
+    margin-right: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+}
+.nai-media-file-link-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #222;
+    display: block;
+    margin-bottom: 2px;
+}
+.nai-media-file-link-meta {
+    font-size: 16px;
+    color: #888;
+    display: block;
+}
+.nai-media-file-link-block:hover {
+    background: #e6ede6;
+}
+.nai-media-file-link:hover .nai-media-file-link-title {
+    text-decoration: underline;
+} 
