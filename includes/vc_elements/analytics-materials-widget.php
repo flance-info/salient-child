@@ -71,13 +71,14 @@ class Analytics_Materials_Widget {
                     $file_id = get_post_meta(get_the_ID(), '_analytics_material_file', true);
                     $file_url = $file_id ? wp_get_attachment_url($file_id) : '';
                     $cats = get_the_terms(get_the_ID(), 'analytics_category');
+                    $custom_date = get_post_meta(get_the_ID(), '_analytics_material_date', true);
                     ?>
                     <div class="analytics-material-card">
                         <?php if ($cats): ?>
                             <div class="analytics-material-category"><?php echo esc_html($cats[0]->name); ?></div>
                         <?php endif; ?>
                         <div class="analytics-material-title"><?php the_title(); ?></div>
-                        <div class="analytics-material-date"><?php echo get_the_date('Y'); ?></div>
+                        <div class="analytics-material-date"><?php echo esc_html($custom_date ? $custom_date : get_the_date('Y')); ?></div>
                         <?php if ($file_url): ?>
                             <a href="<?php echo esc_url($file_url); ?>" class="analytics-material-download" download>Скачать</a>
                         <?php endif; ?>

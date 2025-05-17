@@ -31,7 +31,7 @@ add_action('init', function() {
     ]);
 });
 
-// Add file upload meta box
+// Add file upload and date meta boxes
 add_action('add_meta_boxes', function() {
     add_meta_box('analytics_material_file', 'Файл материала', function($post) {
         $file_id = get_post_meta($post->ID, '_analytics_material_file', true);
@@ -56,9 +56,18 @@ add_action('add_meta_boxes', function() {
         </script>
         <?php
     }, 'analytics_material', 'side');
+    add_meta_box('analytics_material_date', 'Дата материала', function($post) {
+        $date = get_post_meta($post->ID, '_analytics_material_date', true);
+        ?>
+        <input type="text" name="analytics_material_date" value="<?php echo esc_attr($date); ?>" style="width:100%;" placeholder="Например: I квартал 2025 года" />
+        <?php
+    }, 'analytics_material', 'side');
 });
 add_action('save_post', function($post_id){
     if (isset($_POST['analytics_material_file'])) {
         update_post_meta($post_id, '_analytics_material_file', intval($_POST['analytics_material_file']));
+    }
+    if (isset($_POST['analytics_material_date'])) {
+        update_post_meta($post_id, '_analytics_material_date', sanitize_text_field($_POST['analytics_material_date']));
     }
 }); 
