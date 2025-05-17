@@ -11,6 +11,24 @@ function salient_child_enqueue_styles() {
 		wp_enqueue_style('nai-opinions-widget-style', get_stylesheet_directory_uri() . '/assets/css/nai-opinions-widget.css', '', $nectar_theme_version);
         wp_enqueue_style('nai-media-file-link-widget-style', get_stylesheet_directory_uri() . '/assets/css/nai-media-file-link-widget.css', '', $nectar_theme_version);
         wp_enqueue_style('analytics-materials-widget-style', get_stylesheet_directory_uri() . '/assets/css/analytics-materials-widget.css', '', $nectar_theme_version);
+        wp_enqueue_script(
+            'magnific-popup',
+            'https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js',
+            array('jquery'),
+            null,
+            true
+        );
+        wp_enqueue_style(
+            'magnific-popup-style',
+            'https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.css'
+        );
+        wp_enqueue_script(
+            'modal-madness-custom',
+            get_stylesheet_directory_uri() . '/assets/js/modal-madness-custom.js',
+            array('jquery', 'magnific-popup'),
+            time(),
+            true
+        );
     if ( is_rtl() ) {
    		wp_enqueue_style(  'salient-rtl',  get_template_directory_uri(). '/rtl.css', array(), '1', 'screen' );
 		}
