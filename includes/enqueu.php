@@ -10,6 +10,7 @@ function salient_child_enqueue_styles() {
 		wp_enqueue_style( 'nai-events-widget-style', get_stylesheet_directory_uri() . '/assets/css/nai-events-widget.css', '', $nectar_theme_version );
 		wp_enqueue_style('nai-opinions-widget-style', get_stylesheet_directory_uri() . '/assets/css/nai-opinions-widget.css', '', $nectar_theme_version);
         wp_enqueue_style('nai-media-file-link-widget-style', get_stylesheet_directory_uri() . '/assets/css/nai-media-file-link-widget.css', '', $nectar_theme_version);
+        wp_enqueue_style('analytics-materials-widget-style', get_stylesheet_directory_uri() . '/assets/css/analytics-materials-widget.css', '', $nectar_theme_version);
     if ( is_rtl() ) {
    		wp_enqueue_style(  'salient-rtl',  get_template_directory_uri(). '/rtl.css', array(), '1', 'screen' );
 		}
