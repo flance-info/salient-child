@@ -140,18 +140,22 @@ class Analytics_Materials_Widget {
                     $file_url = $file_id ? wp_get_attachment_url($file_id) : '';
                     $cats = get_the_terms(get_the_ID(), 'analytics_category');
                     $custom_date = get_post_meta(get_the_ID(), '_analytics_material_date', true);
-                    ?>
-                    <div class="analytics-material-card" style="<?php echo esc_attr($card_style); ?>">
-                        <?php if ($cats): ?>
-                            <div class="analytics-material-category"><?php echo esc_html($cats[0]->name); ?></div>
-                        <?php endif; ?>
-                        <div class="analytics-material-title"><?php the_title(); ?></div>
-                        <div class="analytics-material-date"><?php echo esc_html($custom_date ? $custom_date : get_the_date('Y')); ?></div>
-                        <?php if ($file_url): ?>
-                            <a href="<?php echo esc_url($file_url); ?>" class="analytics-material-download" download>Скачать</a>
-                        <?php endif; ?>
-                    </div>
-                <?php endwhile; ?>
+                    if ($file_url) {
+                        echo '<a href="' . esc_url($file_url) . '" class="analytics-material-card" style="' . esc_attr($card_style) . '" download>';
+                    } else {
+                        echo '<div class="analytics-material-card" style="' . esc_attr($card_style) . '">';
+                    }
+                    if ($cats) {
+                        echo '<div class="analytics-material-category">' . esc_html($cats[0]->name) . '</div>';
+                    }
+                    echo '<div class="analytics-material-title">' . get_the_title() . '</div>';
+                    echo '<div class="analytics-material-date">' . esc_html($custom_date ? $custom_date : get_the_date('Y')) . '</div>';
+                    if ($file_url) {
+                        echo '</a>';
+                    } else {
+                        echo '</div>';
+                    }
+                endwhile; ?>
             </div>
             <div class="analytics-materials-pagination">
                 <?php
