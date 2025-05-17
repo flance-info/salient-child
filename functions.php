@@ -25,10 +25,13 @@ require_once get_stylesheet_directory() . '/includes/vc_elements/analytics-mater
 add_action('wp_footer', function () {
     ?>
     <div id="mm_inline_2" class="mfp-hide">
-        <?php echo do_shortcode('[contact-form-7 id="9653fc8" title="Контактная форма 1"]'); ?>
+        <?php echo do_shortcode('[contact-form-7 id="427e19b" title="Контакт rus"]'); ?>
     </div>
     <?php
 });
+
+add_filter('wpcf7_autop_or_not', '__return_false');
+
 
 
 
