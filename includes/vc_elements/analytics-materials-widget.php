@@ -140,6 +140,7 @@ class Analytics_Materials_Widget {
                     $file_url = $file_id ? wp_get_attachment_url($file_id) : '';
                     $cats = get_the_terms(get_the_ID(), 'analytics_category');
                     $custom_date = get_post_meta(get_the_ID(), '_analytics_material_date', true);
+                    
                     if ($file_url) {
                         echo '<a href="' . esc_url($file_url) . '" class="analytics-material-card" style="' . esc_attr($card_style) . '" download>';
                     } else {
