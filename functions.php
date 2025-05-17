@@ -17,6 +17,8 @@ require_once get_stylesheet_directory() . '/includes/vc_elements/nai-events-widg
 require_once get_stylesheet_directory() . '/includes/nai-opinions-post-type.php';
 require_once get_stylesheet_directory() . '/includes/vc_elements/nai-opinions-widget.php';
 require_once get_stylesheet_directory() . '/includes/vc_elements/nai-media-file-link-widget.php';
+require_once get_stylesheet_directory() . '/includes/analytics-materials-post-type.php';
+require_once get_stylesheet_directory() . '/includes/vc_elements/analytics-materials-widget.php';
 
 // Add additional includes below as needed.
 // require_once get_stylesheet_directory() . '/includes/your-custom-file.php';

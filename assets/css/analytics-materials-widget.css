@@ -1,0 +1,15 @@
+.analytics-materials-grid { max-width: 1200px; margin: 0 auto; }
+.analytics-materials-filter { margin-bottom: 24px; }
+.analytics-materials-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.analytics-material-card { background: #f8faf8; border-radius: 16px; padding: 24px; min-height: 120px; }
+.analytics-material-category { background: #e6ede6; color: #7a8b7a; border-radius: 12px; padding: 4px 16px; display: inline-block; margin-bottom: 8px; }
+.analytics-material-title { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+.analytics-material-date { font-size: 16px; color: #888; margin-bottom: 8px; }
+.analytics-material-download { color: #627A66; font-weight: 600; text-decoration: underline; }
+.analytics-materials-pagination { text-align: center; margin-top: 32px; }
+@media (max-width: 900px) {
+  .analytics-materials-list { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .analytics-materials-list { grid-template-columns: 1fr; }
+}
