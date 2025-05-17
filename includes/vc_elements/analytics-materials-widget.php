@@ -149,7 +149,7 @@ class Analytics_Materials_Widget {
                     if ($cats) {
                         echo '<div class="analytics-material-category">' . esc_html($cats[0]->name) . '</div>';
                     }
-                    echo '<div class="analytics-material-title">' . get_the_title() . '</div>';
+                    echo '<h2 class="analytics-material-title">' . get_the_title() . '</h2>';
                     echo '<div class="analytics-material-date">' . esc_html($custom_date ? $custom_date : get_the_date('Y')) . '</div>';
                     if ($file_url) {
                         echo '</a>';
