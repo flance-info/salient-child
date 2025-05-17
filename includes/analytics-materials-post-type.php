@@ -37,20 +37,21 @@ add_action('add_meta_boxes', function() {
         $file_id = get_post_meta($post->ID, '_analytics_material_file', true);
         $file_url = $file_id ? wp_get_attachment_url($file_id) : '';
         ?>
-        <input type="text" name="analytics_material_file" id="analytics_material_file" value="<?php echo esc_attr($file_id); ?>">
-        <button type="button" class="button" id="analytics_material_file_upload">Загрузить/выбрать файл</button>
-        <span id="analytics_material_file_name"><?php echo $file_url ? basename($file_url) : ''; ?></span>
+        <div class="analytics-material-file-meta">
+            <input type="hidden" name="analytics_material_file" class="analytics_material_file" value="<?php echo esc_attr($file_id); ?>">
+            <button type="button" class="button analytics_material_file_upload">Загрузить/выбрать файл</button>
+            <span class="analytics_material_file_name"><?php echo $file_url ? basename($file_url) : ''; ?></span>
+        </div>
         <script>
         jQuery(function($){
-            $('#analytics_material_file_upload').on('click', function(e){
+            $('.analytics_material_file_upload').on('click', function(e){
                 e.preventDefault();
+                var $meta = $(this).closest('.analytics-material-file-meta');
                 var frame = wp.media({title: 'Выбрать файл', button: {text: 'Использовать'}, multiple: false});
                 frame.on('select', function(){
                     var attachment = frame.state().get('selection').first().toJSON();
-                    console.log(attachment.id);
-              
-                    $('#analytics_material_file').val(attachment.id);
-                    $('#analytics_material_file_name').text(attachment.filename);
+                    $meta.find('.analytics_material_file').val(attachment.id);
+                    $meta.find('.analytics_material_file_name').text(attachment.filename);
                 });
                 frame.open();
             });
