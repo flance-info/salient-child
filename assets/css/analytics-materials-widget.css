@@ -80,6 +80,59 @@
 .analytics-materials-pagination {
     text-align: center;
     margin-top: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background: #f8faf8;
+    border-radius: 12px;
+    padding: 10px 0;
+}
+
+.analytics-materials-pagination .page-numbers {
+    display: inline-block;
+    min-width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    border-radius: 8px;
+    color: #7a8b7a;
+    background: transparent;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    margin: 0 2px;
+}
+
+.analytics-materials-pagination .page-numbers.current {
+    background: #e6ede6;
+    color: #627A66;
+    font-weight: 700;
+}
+
+.analytics-materials-pagination .page-numbers:hover:not(.current) {
+    background: #e6ede6;
+    color: #627A66;
+}
+
+.analytics-materials-pagination .page-numbers.prev,
+.analytics-materials-pagination .page-numbers.next {
+    font-size: 22px;
+    background: transparent;
+    color: #7a8b7a;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.analytics-materials-pagination .page-numbers.dots {
+    background: none;
+    color: #bbb;
+    cursor: default;
 }
 
 @media (max-width: 900px) {

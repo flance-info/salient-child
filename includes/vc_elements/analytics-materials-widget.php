@@ -163,6 +163,8 @@ class Analytics_Materials_Widget {
                 echo paginate_links([
                     'total' => $q->max_num_pages,
                     'current' => $paged,
+                    'prev_text' => '&lt;',
+                    'next_text' => '&gt;',
                 ]);
                 ?>
             </div>
