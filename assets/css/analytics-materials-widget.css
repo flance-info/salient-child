@@ -4,7 +4,7 @@
 }
 
 .analytics-materials-filter {
-    margin-bottom: 24px;
+    margin-bottom: 40px;
 }
 
 .analytics-materials-list {
@@ -149,4 +149,19 @@
 
 .analytics-material-card:hover .analytics-material-title {
     color: #fff;
+}
+
+.analytics-materials-filter select {
+    width: 100%;
+    max-width: 300px;
+}
+
+.analytics-materials-filter .select2-container {
+    width: 100%;
+    max-width: 300px;
+}
+.analytics-materials-filter .select2-selection--single {
+    height: 40px;
+    line-height: 40px;
+    border-radius: 8px;
 }
