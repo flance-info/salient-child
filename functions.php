@@ -25,7 +25,8 @@ require_once get_stylesheet_directory() . '/includes/vc_elements/analytics-mater
 add_action('wp_footer', function () {
     ?>
     <div id="mm_inline_2" class="mfp-hide">
-        <?php echo do_shortcode('[contact-form-7 id="427e19b" title="Контакт rus"]'); ?>
+        <?php echo do_shortcode('[contact-form-7 id="bc0e06a" title="Контакт рус"]'); ?>
+
     </div>
     <?php
 });
