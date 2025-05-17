@@ -26,6 +26,59 @@ class Analytics_Materials_Widget {
                     'param_name' => 'per_page',
                     'value' => 9,
                 ],
+                [
+                    'type' => 'dropdown',
+                    'heading' => 'Columns',
+                    'param_name' => 'columns',
+                    'value' => [1=>1, 2=>2, 3=>3, 4=>4],
+                    'std' => 3,
+                    'description' => 'Number of columns in the grid',
+                ],
+                [
+                    'type' => 'textfield',
+                    'heading' => 'Card Padding (CSS)',
+                    'param_name' => 'card_padding',
+                    'description' => 'Padding for each card, e.g. 24px 20px',
+                ],
+                [
+                    'type' => 'textfield',
+                    'heading' => 'Card Margin (CSS)',
+                    'param_name' => 'card_margin',
+                    'description' => 'Margin for each card, e.g. 0 0 24px 0',
+                ],
+                [
+                    'type' => 'colorpicker',
+                    'heading' => 'Card Background Color',
+                    'param_name' => 'card_bg',
+                    'description' => 'Background color for each card',
+                ],
+                [
+                    'type' => 'dropdown',
+                    'heading' => 'Font Family',
+                    'param_name' => 'font_family',
+                    'value' => [
+                        'Theme Default' => '',
+                        'Arial' => 'Arial, sans-serif',
+                        'Georgia' => 'Georgia, serif',
+                        'Tahoma' => 'Tahoma, Geneva, sans-serif',
+                        'Verdana' => 'Verdana, Geneva, sans-serif',
+                        'Roboto' => 'Roboto, Arial, sans-serif',
+                        'Open Sans' => 'Open Sans, Arial, sans-serif',
+                    ],
+                    'description' => 'Font family for card content',
+                ],
+                [
+                    'type' => 'textfield',
+                    'heading' => 'Font Size (px)',
+                    'param_name' => 'font_size',
+                    'description' => 'Font size for card content',
+                ],
+                [
+                    'type' => 'colorpicker',
+                    'heading' => 'Font Color',
+                    'param_name' => 'font_color',
+                    'description' => 'Font color for card content',
+                ],
             ],
         ]);
     }
@@ -41,6 +94,13 @@ class Analytics_Materials_Widget {
         $atts = shortcode_atts([
             'category' => '',
             'per_page' => 9,
+            'columns' => 3,
+            'card_padding' => '',
+            'card_margin' => '',
+            'card_bg' => '',
+            'font_family' => '',
+            'font_size' => '',
+            'font_color' => '',
         ], $atts);
         $paged = get_query_var('paged') ? get_query_var('paged') : 1;
         $args = [
@@ -56,6 +116,14 @@ class Analytics_Materials_Widget {
             ]];
         }
         $q = new WP_Query($args);
+        $columns = intval($atts['columns']);
+        $card_style = '';
+        if ($atts['card_padding']) $card_style .= 'padding:' . esc_attr($atts['card_padding']) . ';';
+        if ($atts['card_margin']) $card_style .= 'margin:' . esc_attr($atts['card_margin']) . ';';
+        if ($atts['card_bg']) $card_style .= 'background:' . esc_attr($atts['card_bg']) . ';';
+        if ($atts['font_family']) $card_style .= 'font-family:' . esc_attr($atts['font_family']) . ';';
+        if ($atts['font_size']) $card_style .= 'font-size:' . esc_attr($atts['font_size']) . 'px;';
+        if ($atts['font_color']) $card_style .= 'color:' . esc_attr($atts['font_color']) . ';';
         ob_start();
         ?>
         <div class="analytics-materials-grid">
@@ -66,14 +134,14 @@ class Analytics_Materials_Widget {
                     <?php endforeach; ?>
                 </select>
             </form>
-            <div class="analytics-materials-list">
+            <div class="analytics-materials-list" style="display:grid;grid-template-columns:repeat(<?php echo $columns; ?>,1fr);gap:32px;">
                 <?php while ($q->have_posts()): $q->the_post();
                     $file_id = get_post_meta(get_the_ID(), '_analytics_material_file', true);
                     $file_url = $file_id ? wp_get_attachment_url($file_id) : '';
                     $cats = get_the_terms(get_the_ID(), 'analytics_category');
                     $custom_date = get_post_meta(get_the_ID(), '_analytics_material_date', true);
                     ?>
-                    <div class="analytics-material-card">
+                    <div class="analytics-material-card" style="<?php echo esc_attr($card_style); ?>">
                         <?php if ($cats): ?>
                             <div class="analytics-material-category"><?php echo esc_html($cats[0]->name); ?></div>
                         <?php endif; ?>
