@@ -764,7 +764,21 @@ body
     min-height: 300px !important;
     padding-bottom: 0px;
 }
-
+body 
+.toggle>.toggle-title a i
+ {
+    position: absolute;
+    left: 13px;
+    background-color: transparent;
+    color: #888;
+    top: 24px;
+    width: 18px;
+    height: 16px;
+    line-height: 18px;
+    font-size: 20px;
+    transition: all .2s linear;
+    -webkit-transition: all .2s linear;
+}
 @media only screen and (min-width: 1000px) {
   .stm-last-blogs .post-area.featured_img_left .article-content-wrap .post-content-wrap {
     left: 20%;
