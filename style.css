@@ -970,3 +970,23 @@ body[data-button-style^="rounded"] input[type=submit] {
     margin-top: 8px;
     text-align: left;
 }
+
+
+.search-bar-wrapper
+input[type=text]
+ {
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid green;
+}
+
+body.search.search-results #ajax-content-wrap{
+  flex-grow: unset;
+
+}
+
+
+body.search.search-results #page-header-bg
+ {
+    background-color: #fff;
+}
