@@ -36,7 +36,7 @@ $using_excerpt = ( $search_results_layout === 'list-no-sidebar' || $search_resul
 	<?php } ?>
 
 	<div class="container">
-		<div class="row">
+    <div class="row">
 			<div class="col span_12">
 				<div class="inner-wrap search-header">
 					<h1><?php _e( 'Результаты поиска', 'salient' ); ?></h1>
