@@ -758,43 +758,44 @@ body[data-ext-responsive=true].single-post.material .container-wrap.no-sidebar .
   height: 400px;
 }
 
-body
-.container-wrap
-{
-    min-height: 300px !important;
-    padding-bottom: 0px;
+body .container-wrap {
+  min-height: 300px !important;
+  padding-bottom: 0px;
 }
-body 
-.toggle>.toggle-title a i
- {
-    position: absolute;
-    left: 13px;
-    background-color: transparent;
-    color: #888;
-    top: 24px;
-    width: 18px;
-    height: 16px;
-    line-height: 18px;
-    font-size: 20px;
-    transition: all .2s linear;
-    -webkit-transition: all .2s linear;
+
+body .toggle>.toggle-title a i {
+  position: absolute;
+  left: 13px;
+  background-color: transparent;
+  color: #888;
+  top: 24px;
+  width: 18px;
+  height: 16px;
+  line-height: 18px;
+  font-size: 20px;
+  transition: all .2s linear;
+  -webkit-transition: all .2s linear;
 }
 
 /* Make Magnific Popup modal content background white and add padding/radius */
-.mfp-content, .mfp-inline-holder .mfp-content {
+.mfp-content,
+.mfp-inline-holder .mfp-content {
   background: none !important;
   box-shadow: none !important;
 }
-.mfp-content > #mm_inline_2 {
+
+.mfp-content>#mm_inline_2 {
   background: #fff !important;
   border-radius: 12px;
   padding: 32px 24px;
   max-width: 700px;
   margin: 0 auto;
 }
+
 #mm_inline_2 .wpcf7-form {
   color: #222;
 }
+
 @media only screen and (min-width: 1000px) {
   .stm-last-blogs .post-area.featured_img_left .article-content-wrap .post-content-wrap {
     left: 20%;
@@ -804,18 +805,22 @@ body
 .wpcf7 form .form-row {
   margin-bottom: 18px;
 }
+
 .wpcf7 form .form-row-2col {
   display: flex;
   gap: 16px;
 }
-.wpcf7 form .form-row-2col > * {
+
+.wpcf7 form .form-row-2col>* {
   flex: 1 1 0;
 }
+
 .wpcf7 form .form-row-captcha {
   display: flex;
   gap: 16px;
   align-items: center;
 }
+
 .wpcf7 form input[type="text"],
 .wpcf7 form input[type="email"],
 .wpcf7 form input[type="tel"],
@@ -829,16 +834,19 @@ body
   color: #222;
   margin-bottom: 0;
 }
+
 .wpcf7 form textarea {
   min-height: 80px;
   resize: vertical;
 }
+
 .wpcf7 form .form-row-checkbox {
   display: flex;
   align-items: center;
   font-size: 16px;
   margin-bottom: 18px;
 }
+
 .wpcf7 form input[type="checkbox"] {
   margin-right: 8px;
 }
@@ -846,13 +854,16 @@ body
 .wpcf7 form .btn-dark:hover {
   background: #444;
 }
+
 .wpcf7 form h2 {
   font-size: 32px;
   font-weight: 700;
   margin-bottom: 24px;
 }
 
-.open-modal-btn,  body[data-button-style^="rounded"] button, body[data-button-style^="rounded"] input[type=submit] {
+.open-modal-btn,
+body[data-button-style^="rounded"] button,
+body[data-button-style^="rounded"] input[type=submit] {
   background: #7a8b7a;
   color: #fff;
   border: none;
@@ -869,13 +880,15 @@ body
   min-width: 120px;
   text-align: center;
 }
+
 .open-modal-btn:hover,
 .open-modal-btn:focus {
   background: #627a66;
   color: #fff;
 }
 
-.wpcf7 form .btn-dark, body[data-button-style^="rounded"] input[type=submit] {
+.wpcf7 form .btn-dark,
+body[data-button-style^="rounded"] input[type=submit] {
   background: #231f20;
   color: #fff;
 
@@ -885,4 +898,78 @@ body
   border: none;
   cursor: pointer;
   transition: background 0.2s;
+}
+
+@media (max-width: 1000px) {
+  .stm-header-btn {
+    margin-top: 20px;
+  }
+}
+
+/* Make search bar compact and left-aligned */
+.search-bar-wrapper form {
+    max-width: 500px;
+    margin: 0;
+}
+
+.search-bar-wrapper input[type="search"] {
+    width: 100%;
+    min-width: 0;
+}
+
+.search-bar-wrapper input[type="submit"], 
+.search-bar-wrapper button[type="submit"] {
+    margin-left: 8px;
+}
+
+/* --- Search Page Header Styling --- */
+.search-header {
+    margin-top: 32px;
+    margin-left: 24px;
+}
+
+.search-header h1 {
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    text-align: left;
+    color: #1a1314;
+    font-family: inherit;
+}
+
+.search-bar-wrapper {
+    margin-bottom: 8px;
+    max-width: 700px;
+}
+
+.search-bar-wrapper form {
+    width: 100%;
+}
+
+.search-bar-wrapper input[type="search"] {
+    width: 100%;
+    min-width: 0;
+    font-size: 16px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    background: #fff;
+    color: #222;
+}
+
+.search-bar-wrapper input[type="search"]::placeholder {
+    color: #888;
+    font-size: 15px;
+}
+
+.search-bar-wrapper input[type="submit"], 
+.search-bar-wrapper button[type="submit"] {
+    display: none; /* Hide the button if you want only the icon */
+}
+
+.search-result-count {
+    font-size: 13px;
+    color: #888;
+    margin-top: 8px;
+    text-align: left;
 }
