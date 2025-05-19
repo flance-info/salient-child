@@ -41,14 +41,15 @@ $using_excerpt = ( $search_results_layout === 'list-no-sidebar' || $search_resul
 				<div class="inner-wrap search-header">
 					<h1><?php _e( 'Результаты поиска', 'salient' ); ?></h1>
 					<div class="search-bar-wrapper">
-                    <form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-    <input type="search" class="search-field"
-        placeholder="<?php echo esc_attr_x( 'Поиск', 'placeholder', 'salient' ); ?>"
-        value="<?php echo get_search_query(); ?>" name="s" />
-    <button type="submit" class="search-submit" aria-label="Search">
-        <svg width="18" height="18" fill="none" stroke="#888" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-    </button>
-</form>
+						<div id="search-2" class="widget widget_search">
+							<form role="search" method="get" class="search-form" action="https://nai.test/">
+								<input type="text" class="search-field" placeholder="Search..." value="" name="s" title="Search for:">
+								<button type="submit" class="search-widget-btn">
+									<span class="normal icon-salient-search" aria-hidden="true"></span>
+									<span class="text">Search</span>
+								</button>
+							</form>
+						</div>
 					</div>
 					<?php if ( isset($wp_query) && $wp_query->found_posts !== null ) : ?>
 						<div class="search-result-count">

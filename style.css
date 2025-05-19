@@ -962,10 +962,7 @@ body[data-button-style^="rounded"] input[type=submit] {
     font-size: 15px;
 }
 
-.search-bar-wrapper input[type="submit"], 
-.search-bar-wrapper button[type="submit"] {
-    display: none; /* Hide the button if you want only the icon */
-}
+
 
 .search-result-count {
     font-size: 13px;
