@@ -999,6 +999,11 @@ body.search.search-results #page-header-bg {
     max-width: 1440px;
     margin-top: 40px;
 }
+
+.custom-width-150px
+ {
+    max-width: 150px;
+}
 body.search.search-results #page-header-bg
  {
     width: 100%;
