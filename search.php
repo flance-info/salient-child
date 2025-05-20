@@ -25,7 +25,7 @@ $using_excerpt = ( $search_results_layout === 'list-no-sidebar' || $search_resul
 
 ?>
 
-<div id="page-header-bg" data-midnight="light" data-text-effect="none" data-bg-pos="center" data-alignment="center" data-alignment-v="middle" data-height="250">
+<div id="page-header-bg"  data-height="250">
 
 	<?php if ( $search_results_header_bg_image ) { ?>
 		<div class="page-header-bg-image-wrap" id="nectar-page-header-p-wrap">
@@ -233,5 +233,7 @@ $using_excerpt = ( $search_results_layout === 'list-no-sidebar' || $search_resul
 	</div><!--/container-->
 	<?php nectar_hook_before_container_wrap_close(); ?>
 </div><!--/container-wrap-->
+
+</div>
 
 <?php get_footer(); ?>
