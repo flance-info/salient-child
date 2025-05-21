@@ -6,17 +6,52 @@
 
 if (!defined('ABSPATH')) exit;
 
-$current_year = date('Y');
+// Get all unique years from event dates
+global $wpdb;
+$years = $wpdb->get_col("
+    SELECT DISTINCT YEAR(meta_value) 
+    FROM {$wpdb->postmeta} 
+    WHERE meta_key = '_nai_event_date' 
+    ORDER BY meta_value DESC
+");
+
+$current_year = isset($_GET['year']) ? intval($_GET['year']) : date('Y');
 $current_tab = isset($_GET['tab']) && $_GET['tab'] === 'past' ? 'past' : 'upcoming';
 
 // Set up date filtering
-$today = date('Y-m-d');
+$start_date = $current_year . '-01-01';
+$end_date = $current_year . '-12-31';
 $meta_query = [
-    'key' => '_nai_event_date',
-    'compare' => $current_tab === 'past' ? '<' : '>=',
-    'value' => $today,
-    'type' => 'DATE'
+    'relation' => 'AND',
+    [
+        'key' => '_nai_event_date',
+        'compare' => '>=',
+        'value' => $start_date,
+        'type' => 'DATE'
+    ],
+    [
+        'key' => '_nai_event_date',
+        'compare' => '<=',
+        'value' => $end_date,
+        'type' => 'DATE'
+    ]
 ];
+
+if ($current_tab === 'past') {
+    $meta_query[] = [
+        'key' => '_nai_event_date',
+        'compare' => '<',
+        'value' => date('Y-m-d'),
+        'type' => 'DATE'
+    ];
+} else {
+    $meta_query[] = [
+        'key' => '_nai_event_date',
+        'compare' => '>=',
+        'value' => date('Y-m-d'),
+        'type' => 'DATE'
+    ];
+}
 
 // Build WP_Query args
 $args = [
@@ -28,14 +63,26 @@ $args = [
     'meta_query' => [$meta_query]
 ];
 
+print_r($args);
+
 $events = new WP_Query($args);
 ?>
 <div class="nai-events-widget">
     <div class="nai-events-header">
         <h2>
             <?php echo esc_html__( 'Мероприятия', 'salient-child' ); ?>
-            <span class="nai-events-year"><?php echo esc_html($current_year); ?></span>
-            <span class="nai-events-year-dropdown">&#9660;</span>
+            <div class="nai-events-year-select">
+                <span class="nai-events-year"><?php echo esc_html($current_year); ?></span>
+                <span class="nai-events-year-dropdown">&#9660;</span>
+                <div class="nai-events-year-options">
+                    <?php foreach ($years as $year) : ?>
+                        <a href="?year=<?php echo esc_attr($year); ?><?php echo $current_tab === 'past' ? '&tab=past' : ''; ?>" 
+                           <?php echo $current_year == $year ? 'class="active"' : ''; ?>>
+                            <?php echo esc_html($year); ?>
+                        </a>
+                    <?php endforeach; ?>
+                </div>
+            </div>
         </h2>
     </div>
     <div class="nai-events-tabs">

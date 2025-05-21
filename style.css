@@ -1100,3 +1100,56 @@ body .stm-white a {
 .nai-read-more-content {
   margin-bottom: 30px;
 }
+
+/* Events Widget Year Selection */
+.nai-events-year-select {
+    position: relative;
+    display: inline-block;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.nai-events-year {
+    font-size: 16px;
+    color: #627A66;
+}
+
+.nai-events-year-dropdown {
+    margin-left: 5px;
+    font-size: 12px;
+    color: #627A66;
+}
+
+.nai-events-year-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 1000;
+    min-width: 80px;
+}
+
+.nai-events-year-select:hover .nai-events-year-options {
+    display: block;
+}
+
+.nai-events-year-options a {
+    display: block;
+    padding: 8px 12px;
+    color: #333;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.nai-events-year-options a:hover {
+    background: #f5f5f5;
+}
+
+.nai-events-year-options a.active {
+    background: #627A66;
+    color: white;
+}
