@@ -92,107 +92,90 @@ $using_excerpt = ( $search_results_layout === 'list-no-sidebar' || $search_resul
 
 							if ( get_post_type( $post->ID ) === 'post' ) {
 								?>
-								<article class="result" data-post-thumb="<?php echo esc_attr( $using_post_thumb ); ?>">
-									<div class="inner-wrap">
-										<?php
-										$post_perma = get_permalink();
-										$post_format_text = esc_html__( 'Blog Post', 'salient' );
-										$post_target = '_self';
-
-										if( get_post_format() === 'link' ) {
-
-											$post_link_url  = get_post_meta( $post->ID, '_nectar_link', true );
-											$post_link_text = get_the_content();
-
-											if ( empty($post_link_text) && !empty($post_link_url) ) {
-													$post_perma = $post_link_url;
-													$post_target = '_blank';
-											}
-
-										}
-
-										if ( has_post_thumbnail( $post->ID ) ) {
-											echo '<a href="' . esc_url( $post_perma ) . '">' . get_the_post_thumbnail( $post->ID, 'full', array( 'title' => '' ) ) . '</a>';
-										}
-
-										?>
-										<h2 class="title"><a href="<?php echo esc_url($post_perma); ?>" target="<?php echo esc_html($post_target); ?>"><?php the_title(); ?></a> <span><?php echo esc_html($post_format_text); ?></span></h2>
-										<?php
-										if ( true === $using_excerpt ) {
-											the_excerpt(); }
-										?>
+								<article class="nai-search-card">
+									<div class="nai-search-card-inner">
+										<div class="nai-search-card-date">
+											<?php echo get_the_date('d.m.Y'); ?>
+										</div>
+										<div class="nai-search-card-title">
+											<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+										</div>
+										<div class="nai-search-card-desc">
+											<?php the_excerpt(); ?>
+										</div>
 									</div>
-								</article><!--/search-result-->
+									<div class="nai-search-card-divider"></div>
+								</article>
 
 								<?php
 							} elseif ( get_post_type( $post->ID ) === 'page' ) {
 								?>
-								<article class="result" data-post-thumb="<?php echo esc_attr( $using_post_thumb ); ?>">
-									<div class="inner-wrap">
-										<?php
-										if ( has_post_thumbnail( $post->ID ) ) {
-											echo '<a href="' . esc_url( get_permalink() ) . '">' . get_the_post_thumbnail( $post->ID, 'full', array( 'title' => '' ) ) . '</a>';
-										}
-										?>
-										<h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <span><?php echo esc_html__( 'Page', 'salient' ); ?></span></h2>
-										<?php
-										if ( true === $using_excerpt ) {
-											the_excerpt(); }
-										?>
+								<article class="nai-search-card">
+									<div class="nai-search-card-inner">
+										<div class="nai-search-card-date">
+											<?php echo get_the_date('d.m.Y'); ?>
+										</div>
+										<div class="nai-search-card-title">
+											<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+										</div>
+										<div class="nai-search-card-desc">
+											<?php the_excerpt(); ?>
+										</div>
 									</div>
-								</article><!--/search-result-->
+									<div class="nai-search-card-divider"></div>
+								</article>
 
 								<?php
 							} elseif ( get_post_type( $post->ID ) === 'portfolio' ) {
 								?>
-								<article class="result" data-post-thumb="<?php echo esc_attr( $using_post_thumb ); ?>">
-									<div class="inner-wrap">
-										<?php
-
-										$nectar_custom_project_link   = get_post_meta( $post->ID, '_nectar_external_project_url', true );
-										$nectar_portfolio_project_url = ( ! empty( $nectar_custom_project_link ) ) ? $nectar_custom_project_link : esc_url( get_permalink() );
-
-										if ( has_post_thumbnail( $post->ID ) ) {
-											echo '<a href="' . esc_url( $nectar_portfolio_project_url ) . '">' . get_the_post_thumbnail( $post->ID, 'full', array( 'title' => '' ) ) . '</a>';
-										}
-										?>
-										<h2 class="title"><a href="<?php echo esc_url( $nectar_portfolio_project_url ); ?>"><?php the_title(); ?></a> <span><?php echo esc_html__( 'Portfolio Item', 'salient' ); ?></span></h2>
+								<article class="nai-search-card">
+									<div class="nai-search-card-inner">
+										<div class="nai-search-card-date">
+											<?php echo get_the_date('d.m.Y'); ?>
+										</div>
+										<div class="nai-search-card-title">
+											<a href="<?php echo esc_url( $nectar_portfolio_project_url ); ?>"><?php the_title(); ?></a>
+										</div>
+										<div class="nai-search-card-desc">
+											<?php echo esc_html__( 'Portfolio Item', 'salient' ); ?>
+										</div>
 									</div>
-								</article><!--/search-result-->
+									<div class="nai-search-card-divider"></div>
+								</article>
 
 								<?php
 							} elseif ( get_post_type( $post->ID ) === 'product' ) {
 								?>
-								<article class="result" data-post-thumb="<?php echo esc_attr( $using_post_thumb ); ?>">
-									<div class="inner-wrap">
-										<?php
-										if ( has_post_thumbnail( $post->ID ) ) {
-											echo '<a href="' . esc_url( get_permalink() ) . '">' . get_the_post_thumbnail( $post->ID, 'full', array( 'title' => '' ) ) . '</a>';
-										}
-										?>
-										<h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <span><?php echo esc_html__( 'Product', 'salient' ); ?></span></h2>
-										<?php
-										if ( true === $using_excerpt ) {
-											the_excerpt(); }
-										?>
+								<article class="nai-search-card">
+									<div class="nai-search-card-inner">
+										<div class="nai-search-card-date">
+											<?php echo get_the_date('d.m.Y'); ?>
+										</div>
+										<div class="nai-search-card-title">
+											<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+										</div>
+										<div class="nai-search-card-desc">
+											<?php the_excerpt(); ?>
+										</div>
 									</div>
-								</article><!--/search-result-->
+									<div class="nai-search-card-divider"></div>
+								</article>
 
 							<?php } else { ?>
-								<article class="result" data-post-thumb="<?php echo esc_attr( $using_post_thumb ); ?>">
-									<div class="inner-wrap">
-										<?php
-										if ( has_post_thumbnail( $post->ID ) ) {
-											echo '<a href="' . esc_url( get_permalink() ) . '">' . get_the_post_thumbnail( $post->ID, 'full', array( 'title' => '' ) ) . '</a>';
-										}
-										?>
-										<h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-										<?php
-										if ( true === $using_excerpt ) {
-											the_excerpt(); }
-										?>
+								<article class="nai-search-card">
+									<div class="nai-search-card-inner">
+										<div class="nai-search-card-date">
+											<?php echo get_the_date('d.m.Y'); ?>
+										</div>
+										<div class="nai-search-card-title">
+											<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+										</div>
+										<div class="nai-search-card-desc">
+											<?php the_excerpt(); ?>
+										</div>
 									</div>
-								</article><!--/search-result-->
+									<div class="nai-search-card-divider"></div>
+								</article>
 
 							<?php }
 
