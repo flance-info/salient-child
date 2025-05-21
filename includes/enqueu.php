@@ -32,4 +32,12 @@ function salient_child_enqueue_styles() {
     if ( is_rtl() ) {
    		wp_enqueue_style(  'salient-rtl',  get_template_directory_uri(). '/rtl.css', array(), '1', 'screen' );
 		}
+
+// Enqueue scripts
+wp_enqueue_script('nai-events-widget', get_stylesheet_directory_uri() . '/js/events-widget.js', array('jquery'), '1.0', true);
+wp_localize_script('nai-events-widget', 'nai_events', array(
+    'ajax_url' => admin_url('admin-ajax.php'),
+    'nonce' => wp_create_nonce('nai_events_nonce')
+));
+
 }

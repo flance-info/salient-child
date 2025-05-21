@@ -19,6 +19,7 @@ require_once get_stylesheet_directory() . '/includes/vc_elements/nai-opinions-wi
 require_once get_stylesheet_directory() . '/includes/vc_elements/nai-media-file-link-widget.php';
 require_once get_stylesheet_directory() . '/includes/analytics-materials-post-type.php';
 require_once get_stylesheet_directory() . '/includes/vc_elements/analytics-materials-widget.php';
+require_once get_stylesheet_directory() . '/includes/ajax-handlers.php';
 
 
 

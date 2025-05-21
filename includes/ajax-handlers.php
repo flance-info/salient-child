@@ -1,55 +1,37 @@
 <?php
-/**
- * Events Widget View Template
- * @package NAI_Theme
- */
-
 if (!defined('ABSPATH')) exit;
 
-// Get all unique years from event dates
-global $wpdb;
-$years = $wpdb->get_col("
-    SELECT DISTINCT YEAR(meta_value) 
-    FROM {$wpdb->postmeta} 
-    WHERE meta_key = '_nai_event_date' 
-    ORDER BY meta_value DESC
-");
+class NAI_Ajax_Handlers {
+    public function __construct() {
+        add_action('wp_ajax_load_events', array($this, 'load_events'));
+        add_action('wp_ajax_nopriv_load_events', array($this, 'load_events'));
+    }
 
-$current_year = isset($_GET['year']) ? intval($_GET['year']) : date('Y');
-if (!in_array($current_year, $years)) {
-    $current_year = date('Y');
-}
+    public function load_events() {
+        check_ajax_referer('nai_events_nonce', 'nonce');
 
-$current_tab = isset($_GET['tab']) && $_GET['tab'] === 'past' ? 'past' : 'upcoming';
-?>
-<div class="nai-events-widget">
-    <div class="nai-events-header">
-        <h2>
-            <?php echo esc_html__( 'Мероприятия', 'salient-child' ); ?>
-            <div class="nai-events-year-select">
-                <span class="nai-events-year"><?php echo esc_html($current_year); ?></span>
-                <span class="nai-events-year-dropdown">&#9660;</span>
-                <div class="nai-events-year-options">
-                    <?php foreach ($years as $year) : ?>
-                        <a href="#" data-year="<?php echo esc_attr($year); ?>" 
-                           <?php echo $current_year == $year ? 'class="active"' : ''; ?>>
-                            <?php echo esc_html($year); ?>
-                        </a>
-                    <?php endforeach; ?>
-                </div>
-            </div>
-        </h2>
-    </div>
-    <div class="nai-events-tabs">
-        <a href="#" class="nai-events-tab<?php echo $current_tab === 'upcoming' ? ' active' : ''; ?>" 
-           data-tab="upcoming">Ожидаемые</a>
-        <a href="#" class="nai-events-tab<?php echo $current_tab === 'past' ? ' active' : ''; ?>" 
-           data-tab="past">Прошедшие</a>
-    </div>
-    <div class="nai-events-list">
-        <?php
-        $start_date = $current_year . '-01-01';
-        $end_date = $current_year . '-12-31';
+        $year = isset($_POST['year']) ? intval($_POST['year']) : date('Y');
+        $tab = isset($_POST['tab']) ? sanitize_text_field($_POST['tab']) : 'upcoming';
+
+        // Get events HTML
+        ob_start();
+        $this->render_events($year, $tab);
+        $html = ob_get_clean();
+
+        // Get pagination HTML
+        ob_start();
+        $this->render_pagination($year, $tab);
+        $pagination = ob_get_clean();
+
+        wp_send_json_success(array(
+            'html' => $html,
+            'pagination' => $pagination
+        ));
+    }
+
+    private function render_events($year, $tab) {
+        $start_date = $year . '-01-01';
+        $end_date = $year . '-12-31';
         
         $meta_query = array(
             'relation' => 'AND',
@@ -67,7 +49,7 @@ $current_tab = isset($_GET['tab']) && $_GET['tab'] === 'past' ? 'past' : 'upcomi
             )
         );
 
-        if ($current_tab === 'past') {
+        if ($tab === 'past') {
             $meta_query[] = array(
                 'key' => '_nai_event_date',
                 'compare' => '<',
@@ -88,7 +70,7 @@ $current_tab = isset($_GET['tab']) && $_GET['tab'] === 'past' ? 'past' : 'upcomi
             'posts_per_page' => 10,
             'meta_key' => '_nai_event_date',
             'orderby' => 'meta_value',
-            'order' => $current_tab === 'past' ? 'DESC' : 'ASC',
+            'order' => $tab === 'past' ? 'DESC' : 'ASC',
             'meta_query' => array($meta_query),
             'post_status' => 'publish'
         );
@@ -132,16 +114,19 @@ $current_tab = isset($_GET['tab']) && $_GET['tab'] === 'past' ? 'past' : 'upcomi
         else:
             echo '<div class="nai-no-events">' . esc_html__('No events found', 'salient-child') . '</div>';
         endif;
-        ?>
-    </div>
-    <?php if ($events->found_posts > 10) : ?>
-    <div class="nai-events-pagination">
-        <a href="#" class="active">1</a>
-        <a href="#">2</a>
-        <a href="#">3</a>
-        <span>...</span>
-        <a href="#">5</a>
-    </div>
-    <?php endif; ?>
-</div>
+    }
 
+    private function render_pagination($year, $tab) {
+        // Add your pagination logic here
+        // This is just a placeholder
+        echo '<div class="nai-events-pagination">';
+        echo '<a href="#" class="active">1</a>';
+        echo '<a href="#">2</a>';
+        echo '<a href="#">3</a>';
+        echo '<span>...</span>';
+        echo '<a href="#">5</a>';
+        echo '</div>';
+    }
+}
+
+new NAI_Ajax_Handlers(); 
