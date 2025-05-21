@@ -1121,16 +1121,17 @@ body .stm-white a {
 }
 
 .nai-events-year-options {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: white;
-    border: 1px solid #eee;
-    border-radius: 4px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    z-index: 1000;
-    min-width: 80px;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  min-width: 80px;
+  font-size: 36px;
 }
 
 .nai-events-year-select:hover .nai-events-year-options {

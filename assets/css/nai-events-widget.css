@@ -175,8 +175,10 @@
 .nai-events-list {
     margin-top: 24px;
 }
-.nai-event-row {
-    display: flex;
+.nai-event-row
+ {
+    display: flex
+;
     background: #f8faf8;
     border-radius: 18px;
     margin-bottom: 20px;
@@ -185,9 +187,10 @@
     border: none;
     box-shadow: none;
     min-height: 214px;
-    height: 214px;
+    /* height: 214px; */
     align-items: flex-start;
     position: relative;
+    padding-bottom: 10px;
 }
 .nai-event-row:hover {
     background: #7a8b7a;
