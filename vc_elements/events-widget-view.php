@@ -33,7 +33,7 @@ $events = new WP_Query($args);
 <div class="nai-events-widget">
     <div class="nai-events-header">
         <h2>
-            Мероприятия
+            <?php echo esc_html__( 'Мероприятия', 'salient-child' ); ?>
             <span class="nai-events-year"><?php echo esc_html($current_year); ?></span>
             <span class="nai-events-year-dropdown">&#9660;</span>
         </h2>
@@ -80,6 +80,7 @@ $events = new WP_Query($args);
         endif;
         ?>
     </div>
+    <?php if ($events->found_posts > 10) : ?>
     <div class="nai-events-pagination">
         <a href="#" class="active">1</a>
         <a href="#">2</a>
@@ -87,5 +88,6 @@ $events = new WP_Query($args);
         <span>...</span>
         <a href="#">5</a>
     </div>
+    <?php endif; ?>
 </div>
 <?php wp_reset_postdata(); ?>
