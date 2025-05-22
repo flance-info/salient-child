@@ -1,0 +1,408 @@
+# Copyright (C) 2025 ThemeNectar
+# This file is distributed under the same license as the Salient Child Theme theme.
+msgid ""
+msgstr ""
+"Project-Id-Version: Salient Child Theme 1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/salient-child\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-05-22T13:00:14+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: salient-child\n"
+
+#. Theme Name of the theme
+#: style.css
+msgid "Salient Child Theme"
+msgstr ""
+
+#. Theme URI of the theme
+#: style.css
+msgid "https://themeforest.net/item/salient-responsive-multipurpose-theme/4363266"
+msgstr ""
+
+#. Description of the theme
+#: style.css
+msgid "This is a custom child theme for Salient"
+msgstr ""
+
+#. Author of the theme
+#: style.css
+msgid "ThemeNectar"
+msgstr ""
+
+#. Author URI of the theme
+#: style.css
+msgid "https://themeforest.net/user/themenectar"
+msgstr ""
+
+#: includes/ajax-handlers.php:115
+#: vc_elements/events-widget-view.php:133
+msgid "No events found"
+msgstr ""
+
+#: includes/nai-events-post-type.php:22
+#: includes/nai-events-post-type.php:24
+#: vc_elements/events-widget-view.php:28
+msgid "Мероприятия"
+msgstr ""
+
+#: includes/nai-events-post-type.php:23
+#: includes/nai-events-post-type.php:25
+msgid "Мероприятие"
+msgstr ""
+
+#: includes/nai-events-post-type.php:26
+#: includes/nai-opinions-post-type.php:22
+msgid "Добавить"
+msgstr ""
+
+#: includes/nai-events-post-type.php:27
+msgid "Добавить мероприятие"
+msgstr ""
+
+#: includes/nai-events-post-type.php:28
+msgid "Новое мероприятие"
+msgstr ""
+
+#: includes/nai-events-post-type.php:29
+msgid "Редактировать мероприятие"
+msgstr ""
+
+#: includes/nai-events-post-type.php:30
+msgid "Просмотреть мероприятие"
+msgstr ""
+
+#: includes/nai-events-post-type.php:31
+msgid "Все мероприятия"
+msgstr ""
+
+#: includes/nai-events-post-type.php:32
+msgid "Поиск мероприятий"
+msgstr ""
+
+#: includes/nai-events-post-type.php:33
+msgid "Родительские мероприятия:"
+msgstr ""
+
+#: includes/nai-events-post-type.php:34
+msgid "Мероприятия не найдены."
+msgstr ""
+
+#: includes/nai-events-post-type.php:35
+msgid "В корзине мероприятий не найдено."
+msgstr ""
+
+#: includes/nai-events-post-type.php:60
+msgid "Детали мероприятия"
+msgstr ""
+
+#: includes/nai-events-post-type.php:82
+msgid "Дата проведения"
+msgstr ""
+
+#: includes/nai-events-post-type.php:86
+msgid "Время начала"
+msgstr ""
+
+#: includes/nai-events-post-type.php:90
+msgid "Время окончания"
+msgstr ""
+
+#: includes/nai-events-post-type.php:94
+msgid "Страна"
+msgstr ""
+
+#: includes/nai-events-post-type.php:98
+msgid "Место проведения"
+msgstr ""
+
+#: includes/nai-events-post-type.php:102
+msgid "Адрес"
+msgstr ""
+
+#: includes/nai-events-post-type.php:106
+msgid "Город"
+msgstr ""
+
+#: includes/nai-events-post-type.php:110
+msgid "Контактная информация"
+msgstr ""
+
+#: includes/nai-events-post-type.php:112
+msgid "Контактное лицо"
+msgstr ""
+
+#: includes/nai-events-post-type.php:116
+msgid "Телефон"
+msgstr ""
+
+#: includes/nai-events-post-type.php:120
+msgid "Email"
+msgstr ""
+
+#: includes/nai-opinions-post-type.php:19
+#: includes/nai-opinions-post-type.php:21
+msgid "Мнения и оценки"
+msgstr ""
+
+#: includes/nai-opinions-post-type.php:20
+msgid "Мнение"
+msgstr ""
+
+#: includes/nai-opinions-post-type.php:23
+msgid "Добавить мнение"
+msgstr ""
+
+#: includes/nai-opinions-post-type.php:24
+msgid "Редактировать мнение"
+msgstr ""
+
+#: includes/nai-opinions-post-type.php:25
+msgid "Новое мнение"
+msgstr ""
+
+#: includes/nai-opinions-post-type.php:26
+msgid "Просмотреть мнение"
+msgstr ""
+
+#: includes/nai-opinions-post-type.php:27
+msgid "Все мнения"
+msgstr ""
+
+#: includes/nai-opinions-post-type.php:28
+msgid "Поиск мнений"
+msgstr ""
+
+#: includes/nai-opinions-post-type.php:29
+msgid "Мнения не найдены."
+msgstr ""
+
+#: includes/nai-opinions-post-type.php:30
+msgid "В корзине мнений не найдено."
+msgstr ""
+
+#: includes/nai-opinions-post-type.php:56
+msgid "Детали автора"
+msgstr ""
+
+#: includes/nai-opinions-post-type.php:73
+msgid "Имя автора"
+msgstr ""
+
+#: includes/nai-opinions-post-type.php:77
+msgid "Должность автора"
+msgstr ""
+
+#: includes/nai-opinions-post-type.php:81
+msgid "Фото автора"
+msgstr ""
+
+#: includes/nai-opinions-post-type.php:85
+msgid "Выбрать фото"
+msgstr ""
+
+#: includes/vc_elements/nai-calendar-widget.php:12
+#: includes/vc_elements/nai-calendar-widget.php:25
+msgid "Calendar"
+msgstr ""
+
+#: includes/vc_elements/nai-calendar-widget.php:14
+#: includes/vc_elements/nai-events-widget.php:22
+#: includes/vc_elements/nai-media-file-link-widget.php:23
+#: includes/vc_elements/nai-opinions-widget.php:19
+#: includes/vc_elements/nai-rss-widget.php:27
+msgid "NAI Elements"
+msgstr ""
+
+#: includes/vc_elements/nai-events-widget.php:19
+msgid "NAI Events"
+msgstr ""
+
+#: includes/vc_elements/nai-events-widget.php:20
+msgid "Display events in a grid layout"
+msgstr ""
+
+#: includes/vc_elements/nai-events-widget.php:27
+msgid "Number of Events"
+msgstr ""
+
+#: includes/vc_elements/nai-events-widget.php:36
+msgid "Select number of events to display"
+msgstr ""
+
+#: includes/vc_elements/nai-events-widget.php:40
+msgid "Order By"
+msgstr ""
+
+#: includes/vc_elements/nai-events-widget.php:43
+msgid "Date"
+msgstr ""
+
+#: includes/vc_elements/nai-events-widget.php:44
+#: includes/vc_elements/nai-media-file-link-widget.php:40
+msgid "Title"
+msgstr ""
+
+#: includes/vc_elements/nai-events-widget.php:45
+msgid "Event Date"
+msgstr ""
+
+#: includes/vc_elements/nai-events-widget.php:51
+msgid "Order"
+msgstr ""
+
+#: includes/vc_elements/nai-events-widget.php:54
+msgid "Ascending"
+msgstr ""
+
+#: includes/vc_elements/nai-events-widget.php:55
+msgid "Descending"
+msgstr ""
+
+#: includes/vc_elements/nai-media-file-link-widget.php:20
+msgid "Media File Link Includer"
+msgstr ""
+
+#: includes/vc_elements/nai-media-file-link-widget.php:21
+msgid "Upload or select a file and display a download link with custom design."
+msgstr ""
+
+#: includes/vc_elements/nai-media-file-link-widget.php:28
+msgid "Select File"
+msgstr ""
+
+#: includes/vc_elements/nai-media-file-link-widget.php:30
+msgid "Upload or select a PDF or PPTX file from the media library."
+msgstr ""
+
+#: includes/vc_elements/nai-media-file-link-widget.php:34
+msgid "Icon/Image"
+msgstr ""
+
+#: includes/vc_elements/nai-media-file-link-widget.php:36
+msgid "Upload or select an image to use as the icon."
+msgstr ""
+
+#: includes/vc_elements/nai-media-file-link-widget.php:42
+msgid "Enter the file title to display."
+msgstr ""
+
+#: includes/vc_elements/nai-media-file-link-widget.php:46
+msgid "Title Tag"
+msgstr ""
+
+#: includes/vc_elements/nai-media-file-link-widget.php:59
+msgid "Select the HTML tag for the title."
+msgstr ""
+
+#: includes/vc_elements/nai-media-file-link-widget.php:63
+msgid "Background Color"
+msgstr ""
+
+#: includes/vc_elements/nai-media-file-link-widget.php:65
+msgid "Set the background color."
+msgstr ""
+
+#: includes/vc_elements/nai-media-file-link-widget.php:69
+msgid "Border Radius (px)"
+msgstr ""
+
+#: includes/vc_elements/nai-media-file-link-widget.php:71
+msgid "Set the border radius in px."
+msgstr ""
+
+#: includes/vc_elements/nai-media-file-link-widget.php:75
+msgid "Font Family"
+msgstr ""
+
+#: includes/vc_elements/nai-media-file-link-widget.php:77
+msgid "Set the font family."
+msgstr ""
+
+#: includes/vc_elements/nai-media-file-link-widget.php:81
+msgid "Font Size (px)"
+msgstr ""
+
+#: includes/vc_elements/nai-media-file-link-widget.php:83
+msgid "Set the font size in px."
+msgstr ""
+
+#: includes/vc_elements/nai-media-file-link-widget.php:87
+msgid "Padding (CSS)"
+msgstr ""
+
+#: includes/vc_elements/nai-media-file-link-widget.php:89
+msgid "Set the padding (e.g. 20px 30px)."
+msgstr ""
+
+#: includes/vc_elements/nai-media-file-link-widget.php:93
+msgid "Margin (CSS)"
+msgstr ""
+
+#: includes/vc_elements/nai-media-file-link-widget.php:95
+msgid "Set the margin (e.g. 10px 0 10px 0)."
+msgstr ""
+
+#: includes/vc_elements/nai-media-file-link-widget.php:107
+msgid "Select or Upload File"
+msgstr ""
+
+#: includes/vc_elements/nai-media-file-link-widget.php:108
+msgid "Remove"
+msgstr ""
+
+#: includes/vc_elements/nai-opinions-widget.php:16
+msgid "NAI Opinions"
+msgstr ""
+
+#: includes/vc_elements/nai-opinions-widget.php:17
+msgid "Display opinions in a list"
+msgstr ""
+
+#: includes/vc_elements/nai-opinions-widget.php:24
+msgid "Number of Opinions"
+msgstr ""
+
+#: includes/vc_elements/nai-opinions-widget.php:27
+msgid "Number of opinions to display"
+msgstr ""
+
+#: includes/vc_elements/nai-rss-widget.php:25
+msgid "RSS Aggregator"
+msgstr ""
+
+#: includes/vc_elements/nai-rss-widget.php:32
+msgid "RSS Feed URL 1"
+msgstr ""
+
+#: includes/vc_elements/nai-rss-widget.php:38
+msgid "RSS Feed URL 2"
+msgstr ""
+
+#: includes/vc_elements/nai-rss-widget.php:44
+msgid "RSS Feed URL 3"
+msgstr ""
+
+#: includes/vc_elements/nai-rss-widget.php:50
+msgid "Number of items to display"
+msgstr ""
+
+#: includes/vc_elements/nai-rss-widget.php:123
+msgid "RSS widget view not found."
+msgstr ""
+
+#. Template Name of the theme
+msgid "Portfolio"
+msgstr ""
+
+#: vc_elements/opinions-widget-view.php:27
+msgid "Нет мнений для отображения."
+msgstr ""
+
+#: vc_elements/rss-widget-view.php:4
+msgid "No news found."
+msgstr ""
