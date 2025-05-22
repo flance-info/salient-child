@@ -991,39 +991,37 @@ body.search.search-results #ajax-content-wrap {
 body.search.search-results #page-header-bg {
   background-color: #fff;
 }
-.search-bar-wrapper form
- {
-    max-width: 1440px;
-    margin: 0;
+
+.search-bar-wrapper form {
+  max-width: 1440px;
+  margin: 0;
 }
 
-.search-bar-wrapper
-{
-    margin-bottom: 8px;
-    max-width: 1440px;
-    margin-top: 40px;
+.search-bar-wrapper {
+  margin-bottom: 8px;
+  max-width: 1440px;
+  margin-top: 40px;
 }
 
-.custom-width-150px
- {
-    max-width: 150px;
+.custom-width-150px {
+  max-width: 150px;
 }
 
-body.search-results #search-results[data-layout*=list] article
- {
-    padding-left: 20px;
+body.search-results #search-results[data-layout*=list] article {
+  padding-left: 20px;
 }
-body.search.search-results #page-header-bg
- {
-    width: 100%;
-    height: 99%;
-    overflow: hidden;
-    color: black;
-    display: block !important;
-    -webkit-font-smoothing: antialiased;
-    position: relative;
-    z-index: 2;
+
+body.search.search-results #page-header-bg {
+  width: 100%;
+  height: 99%;
+  overflow: hidden;
+  color: black;
+  display: block !important;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  z-index: 2;
 }
+
 @media only screen and (min-width: 1000px) {
   body.admin-bar:not(.nectar-no-flex-height) {
     min-height: 400px;
@@ -1032,10 +1030,9 @@ body.search.search-results #page-header-bg
 
 
 @media only screen and (min-width: 1000px) {
-  body.search-results[data-ext-responsive=true] #search-results[data-layout*=list]
-{
-      max-width: 1440px;
-      margin: 0 auto;
+  body.search-results[data-ext-responsive=true] #search-results[data-layout*=list] {
+    max-width: 1440px;
+    margin: 0 auto;
   }
 }
 
@@ -1103,21 +1100,21 @@ body .stm-white a {
 
 /* Events Widget Year Selection */
 .nai-events-year-select {
-    position: relative;
-    display: inline-block;
-    margin-left: 10px;
-    cursor: pointer;
+  position: relative;
+  display: inline-block;
+  margin-left: 10px;
+  cursor: pointer;
 }
 
 .nai-events-year {
-    font-size: 16px;
-    color: #627A66;
+  font-size: 16px;
+  color: #627A66;
 }
 
 .nai-events-year-dropdown {
-    margin-left: 5px;
-    font-size: 12px;
-    color: #627A66;
+  margin-left: 5px;
+  font-size: 12px;
+  color: #627A66;
 }
 
 .nai-events-year-options {
@@ -1135,59 +1132,81 @@ body .stm-white a {
 }
 
 .nai-events-year-select:hover .nai-events-year-options {
-    display: block;
+  display: block;
 }
 
 .nai-events-year-options a {
-    display: block;
-    padding: 8px 12px;
-    color: #333;
-    text-decoration: none;
-    transition: background 0.2s;
+  display: block;
+  padding: 8px 12px;
+  color: #333;
+  text-decoration: none;
+  transition: background 0.2s;
 }
 
 .nai-events-year-options a:hover {
-    background: #f5f5f5;
+  background: #f5f5f5;
 }
 
 .nai-events-year-options a.active {
-    background: #627A66;
-    color: white;
+  background: #627A66;
+  color: white;
 }
 
 /* Events Widget Loading State */
 .nai-events-list.loading {
-    position: relative;
-    min-height: 200px;
+  position: relative;
+  min-height: 200px;
 }
 
 .nai-events-list.loading:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255, 255, 255, 0.8);
-    z-index: 1;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 1;
 }
 
 .nai-events-list.loading:before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 30px;
-    height: 30px;
-    margin: -15px 0 0 -15px;
-    border: 3px solid #f3f3f3;
-    border-top: 3px solid #627A66;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    z-index: 2;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  margin: -15px 0 0 -15px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #627A66;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  z-index: 2;
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+a.nectar-button.large.regular.accent-color.regular-button.stm-btn-contact {
+  background-color: #F9FAF9 !important;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 8px !important;
+  height: 98px;
+  text-align: center;
+  vertical-align: middle;
+  color: #10050D;
+  font-weight: 600;
+  font-size: 20px;
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  justify-content: center;
 }
