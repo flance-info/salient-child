@@ -22,6 +22,9 @@ add_action('wp_footer', function() {
 ?>
 
 <div class="pg-single-container" >
+    <div class="pg-gallery-loader" style="display:none;">
+        <div class="pg-loader-spinner"></div>
+    </div>
     <div class="pg-single-breadcrumbs" style="color:#888;font-size:0.95rem;margin-bottom:18px;">
         <?php if(function_exists('yoast_breadcrumb')) yoast_breadcrumb('<p id="breadcrumbs">','</p>'); ?>
     </div>
