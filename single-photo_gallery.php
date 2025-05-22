@@ -20,6 +20,7 @@ add_action('wp_footer', function() {
     echo "<script>if(window.Fancybox){Fancybox.bind('[data-fancybox=gallery]');}</script>";
 });
 ?>
+
 <div class="pg-single-container" style="max-width:1280px;margin:40px auto 0 auto;padding:0 20px;">
     <div class="pg-single-breadcrumbs" style="color:#888;font-size:0.95rem;margin-bottom:18px;">
         <?php if(function_exists('yoast_breadcrumb')) yoast_breadcrumb('<p id="breadcrumbs">','</p>'); ?>
@@ -39,13 +40,13 @@ add_action('wp_footer', function() {
             <?php echo esc_html($img_count); ?>
         </span>
     </div>
-    <div class="pg-single-gallery" style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;">
+    <div class="pg-single-gallery">
         <?php if ($images_to_show): foreach ($images_to_show as $img_id): 
             $img_url = wp_get_attachment_image_url($img_id, 'large');
             $thumb_url = wp_get_attachment_image_url($img_id, 'medium');
             ?>
             <a href="<?php echo esc_url($img_url); ?>" class="pg-gallery-img" data-fancybox="gallery">
-                <img src="<?php echo esc_url($thumb_url); ?>" alt="" style="width:100%;border-radius:10px;">
+                <img src="<?php echo esc_url($thumb_url); ?>" alt="">
             </a>
         <?php endforeach; endif; ?>
     </div>
