@@ -1,0 +1,60 @@
+/* NAI Photo Gallery Widget Styles */
+.nai-pg-vc-grid {
+    margin: 32px 0;
+}
+.pg-archive-card {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: box-shadow .2s;
+}
+.pg-archive-card:hover {
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+}
+.pg-archive-card-img {
+    position: relative;
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    border-radius: 12px;
+}
+.pg-archive-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,rgba(0,0,0,0.1) 40%,rgba(0,0,0,0.7) 100%);
+}
+.pg-archive-card-meta {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 2;
+    display: flex;
+    gap: 8px;
+}
+.pg-archive-card-date, .pg-archive-card-count {
+    background: rgba(255,255,255,0.85);
+    color: #222;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    padding: 2px 8px;
+}
+.pg-archive-card-title {
+    position: absolute;
+    left: 12px;
+    bottom: 16px;
+    z-index: 2;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+@media (max-width: 900px) {
+    .nai-pg-vc-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 600px) {
+    .nai-pg-vc-grid { grid-template-columns: 1fr !important; }
+} 
