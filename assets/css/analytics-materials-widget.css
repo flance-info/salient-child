@@ -1,5 +1,5 @@
 .analytics-materials-grid {
-   
+
     margin: 0 auto;
 }
 
@@ -40,9 +40,8 @@
     background: rgba(255, 255, 255, 0.18);
 }
 
-.analytics-material-category
- {
- 
+.analytics-material-category {
+
     padding: 4px 16px;
     transition: background 0.2s, color 0.2s;
     min-width: 150px;
@@ -142,6 +141,12 @@
     }
 }
 
+@media (max-width: 780px) {
+    .analytics-materials-list {
+        grid-template-columns: 1fr !important;
+    }
+}
+
 @media (max-width: 600px) {
     .analytics-materials-list {
         grid-template-columns: 1fr;
@@ -161,6 +166,7 @@
     width: 100%;
     max-width: 300px;
 }
+
 .analytics-materials-filter .select2-selection--single {
     height: 40px;
     line-height: 40px;

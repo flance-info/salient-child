@@ -1217,6 +1217,7 @@ a.nectar-button.large.regular.accent-color.regular-button.stm-btn-contact {
   max-width: 600px;
   margin: 0 auto;
 }
+
 .nai-rss-row {
   display: flex;
   align-items: flex-start;
@@ -1227,13 +1228,16 @@ a.nectar-button.large.regular.accent-color.regular-button.stm-btn-contact {
   padding: 18px 24px 18px 18px;
   transition: box-shadow 0.2s, background 0.2s;
 }
+
 .nai-rss-row:last-child {
   margin-bottom: 0;
 }
+
 .nai-rss-row:hover {
   background: #f5f7f5;
   box-shadow: 0 4px 16px rgba(98, 122, 102, 0.13);
 }
+
 .nai-rss-img {
   flex: none;
   width: 110px;
@@ -1246,18 +1250,21 @@ a.nectar-button.large.regular.accent-color.regular-button.stm-btn-contact {
   align-items: center;
   justify-content: center;
 }
+
 .nai-rss-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
+
 .nai-rss-content {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
 .nai-rss-title {
   font-size: 24px;
   font-weight: 600;
@@ -1271,16 +1278,19 @@ a.nectar-button.large.regular.accent-color.regular-button.stm-btn-contact {
   text-overflow: ellipsis;
   min-height: 2.6em;
 }
+
 .nai-rss-title a {
   color: inherit;
   text-decoration: none;
 }
+
 .nai-rss-date {
   font-size: 15px;
   color: #888;
   margin-top: 0;
   line-height: 1.2;
 }
+
 .nai-rss-widget-empty {
   text-align: center;
   color: #888;
@@ -1290,3 +1300,33 @@ a.nectar-button.large.regular.accent-color.regular-button.stm-btn-contact {
 
 /* NAI Calendar Widget Styles (custom styles can be added here) */
 .nai-calendar-widget {}
+
+@media (max-width: 900px) {
+
+  body #slide-out-widget-area .inner .off-canvas-menu-container li a,
+  body #slide-out-widget-area.fullscreen .inner .off-canvas-menu-container li a,
+  body #slide-out-widget-area.fullscreen-alt .inner .off-canvas-menu-container li a,
+  body #slide-out-widget-area.slide-out-from-right-hover .inner .off-canvas-menu-container li a,
+  body #nectar-ocm-ht-line-check {
+    font-family: Open Sans;
+    letter-spacing: -0.03em;
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 300;
+  }
+}
+
+
+@media (max-width: 550px) {
+  .nai-events-year-select {
+    position: relative;
+    display: inline-block;
+    margin-left: 0px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+
+  .nai-opinion-row {
+    flex-direction: column;
+  }
+}
