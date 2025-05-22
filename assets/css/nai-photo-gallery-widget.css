@@ -53,6 +53,14 @@
     text-shadow: 0 2px 8px rgba(0,0,0,0.4);
 }
 
+.pg-single-container {
+   
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+}
+
 .pg-single-gallery {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -87,6 +95,29 @@
     .nai-pg-vc-grid { grid-template-columns: 1fr !important; }
 }
 
+.pg-single-breadcrumbs {
+    color: #888;
+    font-size: 0.95rem;
+    margin-bottom: 18px;
+}
+.pg-single-title {
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    line-height: 1.1;
+}
+.pg-single-desc {
+    margin-bottom: 18px;
+    max-width: 800px;
+}
+.pg-single-meta {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    color: #888;
+    font-size: 1.05rem;
+    margin-bottom: 32px;
+}
 .pg-single-pagination {
     text-align: center;
     margin: 32px 0 0 0;

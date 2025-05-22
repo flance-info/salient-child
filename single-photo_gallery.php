@@ -21,7 +21,7 @@ add_action('wp_footer', function() {
 });
 ?>
 
-<div class="pg-single-container" style="max-width:1280px;margin:40px auto 0 auto;padding:0 20px;">
+<div class="pg-single-container" >
     <div class="pg-single-breadcrumbs" style="color:#888;font-size:0.95rem;margin-bottom:18px;">
         <?php if(function_exists('yoast_breadcrumb')) yoast_breadcrumb('<p id="breadcrumbs">','</p>'); ?>
     </div>
