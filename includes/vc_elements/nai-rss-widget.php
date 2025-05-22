@@ -18,19 +18,19 @@ class NAI_RSS_Widget {
                     'type' => 'textfield',
                     'heading' => esc_html__('RSS Feed URL 1', 'salient-child'),
                     'param_name' => 'url1',
-                    'value' => '',
+                    'value' => 'https://davaktiv.uz/rss',
                 ),
                 array(
                     'type' => 'textfield',
                     'heading' => esc_html__('RSS Feed URL 2', 'salient-child'),
                     'param_name' => 'url2',
-                    'value' => '',
+                    'value' => 'https://antimon.gov.uz/ru/feed/',
                 ),
                 array(
                     'type' => 'textfield',
                     'heading' => esc_html__('RSS Feed URL 3', 'salient-child'),
                     'param_name' => 'url3',
-                    'value' => '',
+                    'value' => 'https://cbu.uz/ru/press_center/news/rss',
                 ),
                 array(
                     'type' => 'textfield',
