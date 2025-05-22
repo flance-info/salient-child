@@ -5,6 +5,8 @@ class NAI_Ajax_Handlers {
     public function __construct() {
         add_action('wp_ajax_load_events', array($this, 'load_events'));
         add_action('wp_ajax_nopriv_load_events', array($this, 'load_events'));
+        add_action('wp_ajax_nai_gallery_pagination', array($this, 'nai_gallery_pagination_ajax'));
+        add_action('wp_ajax_nopriv_nai_gallery_pagination', array($this, 'nai_gallery_pagination_ajax'));
     }
 
     public function load_events() {
@@ -127,6 +129,56 @@ class NAI_Ajax_Handlers {
         echo '<a href="#">5</a>';
         echo '</div>';
     }
+
+    
+function nai_gallery_pagination_ajax() {
+    $post_id = intval($_POST['post_id']);
+    $paged = intval($_POST['paged']);
+    $images_per_page = 12;
+
+    $images = get_post_meta($post_id, '_pg_images', true);
+    $img_count = is_array($images) ? count($images) : 0;
+    $total_pages = $img_count > 0 ? ceil($img_count / $images_per_page) : 1;
+    $offset = ($paged - 1) * $images_per_page;
+    $images_to_show = $img_count > 0 ? array_slice($images, $offset, $images_per_page) : [];
+
+    ob_start();
+    ?>
+    <?php if ($images_to_show): foreach ($images_to_show as $img_id): 
+        $img_url = wp_get_attachment_image_url($img_id, 'large');
+        $thumb_url = wp_get_attachment_image_url($img_id, 'medium');
+        ?>
+        <a href="<?php echo esc_url($img_url); ?>" class="pg-gallery-img" data-fancybox="gallery">
+            <img src="<?php echo esc_url($thumb_url); ?>" alt="">
+        </a>
+    <?php endforeach; endif; ?>
+    <?php
+    $gallery_html = ob_get_clean();
+
+    // Pagination
+    $pagination = paginate_links([
+        'total' => $total_pages,
+        'current' => $paged,
+        'format' => '#',
+        'prev_text' => '&lt;',
+        'next_text' => '&gt;',
+        'type' => 'array'
+    ]);
+    ob_start();
+    if ($pagination) {
+        echo '<div class="pg-single-pagination" style="text-align:center;margin:32px 0 0 0;">';
+        foreach ($pagination as $link) {
+            echo str_replace('href="#"', '', $link); // Remove href, we'll handle click in JS
+        }
+        echo '</div>';
+    }
+    $pagination_html = ob_get_clean();
+
+    wp_send_json([
+        'gallery' => $gallery_html,
+        'pagination' => $pagination_html
+    ]);
+} 
 }
 
-new NAI_Ajax_Handlers(); 
+new NAI_Ajax_Handlers();

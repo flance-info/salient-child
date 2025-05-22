@@ -43,3 +43,10 @@ wp_localize_script('nai-events-widget', 'nai_events', array(
 wp_enqueue_script('nai-calendar-widget', get_stylesheet_directory_uri() . '/js/nai-calendar-widget.js', array('jquery'), null, true);
 
 }
+
+add_action('wp_enqueue_scripts', function() {
+    if (is_singular('photo_gallery')) {
+        wp_enqueue_script('nai-photo-gallery-ajax', get_stylesheet_directory_uri() . '/assets/js/nai-photo-gallery-ajax.js', [], null, true);
+        wp_localize_script('nai-photo-gallery-ajax', 'ajaxurl', admin_url('admin-ajax.php'));
+    }
+});

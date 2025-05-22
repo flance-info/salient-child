@@ -40,28 +40,30 @@ add_action('wp_footer', function() {
             <?php echo esc_html($img_count); ?>
         </span>
     </div>
-    <div class="pg-single-gallery">
-        <?php if ($images_to_show): foreach ($images_to_show as $img_id): 
-            $img_url = wp_get_attachment_image_url($img_id, 'large');
-            $thumb_url = wp_get_attachment_image_url($img_id, 'medium');
+    <div class="pg-single-gallery-wrap" data-post-id="<?php echo get_the_ID(); ?>">
+        <div class="pg-single-gallery">
+            <?php if ($images_to_show): foreach ($images_to_show as $img_id): 
+                $img_url = wp_get_attachment_image_url($img_id, 'large');
+                $thumb_url = wp_get_attachment_image_url($img_id, 'medium');
+                ?>
+                <a href="<?php echo esc_url($img_url); ?>" class="pg-gallery-img" data-fancybox="gallery">
+                    <img src="<?php echo esc_url($thumb_url); ?>" alt="">
+                </a>
+            <?php endforeach; endif; ?>
+        </div>
+        <?php if ($total_pages > 1): ?>
+        <div class="pg-single-pagination" style="text-align:center;margin:32px 0 0 0;">
+            <?php
+            echo paginate_links([
+                'total' => $total_pages,
+                'current' => $paged,
+                'format' => '#',
+                'prev_text' => '&lt;',
+                'next_text' => '&gt;',
+            ]);
             ?>
-            <a href="<?php echo esc_url($img_url); ?>" class="pg-gallery-img" data-fancybox="gallery">
-                <img src="<?php echo esc_url($thumb_url); ?>" alt="">
-            </a>
-        <?php endforeach; endif; ?>
+        </div>
+        <?php endif; ?>
     </div>
-    <?php if ($total_pages > 1): ?>
-    <div class="pg-single-pagination" style="text-align:center;margin:32px 0 0 0;">
-        <?php
-        echo paginate_links([
-            'total' => $total_pages,
-            'current' => $paged,
-            'format' => '?paged=%#%',
-            'prev_text' => '&lt;',
-            'next_text' => '&gt;',
-        ]);
-        ?>
-    </div>
-    <?php endif; ?>
 </div>
 <?php get_footer(); ?> 
