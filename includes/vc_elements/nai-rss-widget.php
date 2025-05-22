@@ -5,6 +5,7 @@ class NAI_RSS_Widget {
     public function __construct() {
         add_action('vc_before_init', array($this, 'register_vc_element'));
         add_shortcode('nai_rss_widget', array($this, 'shortcode'));
+
     }
 
     public function register_vc_element() {
@@ -45,21 +46,30 @@ class NAI_RSS_Widget {
     public function shortcode($atts = array()) {
         $atts = shortcode_atts(array(
             'url1' => 'https://davaktiv.uz/rss',
-            'url2' => 'https://antimon.gov.uz/ru/feed/',
-            'url3' => 'https://cbu.uz/ru/press_center/news/rss',
+            'url2' => 'https://raqobat.gov.uz/ru/feed/',
+            'url3' => 'https://cbu.uz/ru/press_center/news/rss/',
             'count' => 3,
         ), (array) $atts, 'nai_rss_widget');
 
         $feeds = array_filter([$atts['url1'], $atts['url2'], $atts['url3']]);
         $items = array();
 
-   
-
-        foreach ($feeds as $feed_url) {       
+        foreach ($feeds as $feed_url) {
+            add_filter('https_ssl_verify', '__return_false');
             $rss = fetch_feed($feed_url);
-          
+            remove_filter('https_ssl_verify', '__return_false');
+            if (is_wp_error($rss)) {
+                $error_messages = $rss->get_error_messages();
+                foreach ($error_messages as $error) {
+                    echo '<div style="color:red;">RSS Error for ' . esc_html($feed_url) . ': ' . esc_html($error) . '</div>';
+                }
+                continue;
+            }
             if (!is_wp_error($rss)) {
-                foreach ($rss->get_items(0, 5) as $item) {                   
+                
+                $item = $rss->get_item(0);
+           
+                if ($item) {
                     $items[] = array(
                         'title' => $item->get_title(),
                         'link' => $item->get_link(),
@@ -72,14 +82,9 @@ class NAI_RSS_Widget {
             }
         }
 
-   
-        usort($items, function($a, $b) {
-            return $b['date'] - $a['date'];
-        });
+      
 
-       
-        $items = array_slice($items, 0, intval($atts['count']));
-
+      
         ob_start();
         $view = locate_template('vc_elements/rss-widget-view.php');
         if ($view) {
@@ -91,18 +96,29 @@ class NAI_RSS_Widget {
     }
 
     private function get_image_from_item($item) {
+        // Try to get image from enclosure
         $enclosure = $item->get_enclosure();
         if ($enclosure && $enclosure->get_link()) {
             return esc_url($enclosure->get_link());
         }
+
+        // Try to get image from media:content
+        $media_content = $item->get_item_tags('http://search.yahoo.com/mrss/', 'content');
+        if (!empty($media_content) && !empty($media_content[0]['attribs']['']['url'])) {
+            return esc_url($media_content[0]['attribs']['']['url']);
+        }
+
+        // Try to get image from description or content
         $content = $item->get_content();
-        if (preg_match('/<img[^>]+src=["\']([^"\']+)["\']/i', $content, $matches)) {
+        if (preg_match('/<img[^>]+src=["\\\']([^"\\\']+)["\\\']/i', $content, $matches)) {
             return esc_url($matches[1]);
         }
         $desc = $item->get_description();
-        if (preg_match('/<img[^>]+src=["\']([^"\']+)["\']/i', $desc, $matches)) {
+        if (preg_match('/<img[^>]+src=["\\\']([^"\\\']+)["\\\']/i', $desc, $matches)) {
             return esc_url($matches[1]);
         }
+
+        // Fallback placeholder
         return get_stylesheet_directory_uri() . '/img/rss-placeholder.jpg';
     }
 }
