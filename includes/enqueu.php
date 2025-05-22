@@ -40,4 +40,6 @@ wp_localize_script('nai-events-widget', 'nai_events', array(
     'nonce' => wp_create_nonce('nai_events_nonce')
 ));
 
+wp_enqueue_script('nai-calendar-widget', get_stylesheet_directory_uri() . '/js/nai-calendar-widget.js', array('jquery'), null, true);
+
 }

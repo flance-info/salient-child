@@ -1287,3 +1287,6 @@ a.nectar-button.large.regular.accent-color.regular-button.stm-btn-contact {
   font-size: 18px;
   padding: 40px 0;
 }
+
+/* NAI Calendar Widget Styles (custom styles can be added here) */
+.nai-calendar-widget {}
