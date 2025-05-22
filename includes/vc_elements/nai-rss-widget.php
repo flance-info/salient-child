@@ -5,6 +5,18 @@ class NAI_RSS_Widget {
     public function __construct() {
         add_action('vc_before_init', array($this, 'register_vc_element'));
         add_shortcode('nai_rss_widget', array($this, 'shortcode'));
+        add_filter('wp_feed_options', function($feed) {
+            $feed->force_feed(true); // Force parsing even if WP thinks it's invalid
+            return $feed;
+        });
+        
+        add_filter('http_request_args', function($args, $url) {
+            if (strpos($url, 'cbu.uz') !== false) {
+                $args['timeout'] = 15;
+                $args['headers']['User-Agent'] = 'Mozilla/5.0 (RSS Reader)';
+            }
+            return $args;
+        }, 10, 2);
 
     }
 
@@ -59,6 +71,24 @@ class NAI_RSS_Widget {
             $rss = fetch_feed($feed_url);
             remove_filter('https_ssl_verify', '__return_false');
             if (is_wp_error($rss)) {
+                // Fallback: try manual fetch and parse
+                $response = wp_remote_get($feed_url);
+                if (!is_wp_error($response)) {
+                    $body = wp_remote_retrieve_body($response);
+                    $xml = simplexml_load_string($body);
+                    if ($xml && isset($xml->channel->item[0])) {
+                        $item = $xml->channel->item[0];
+                        $items[] = array(
+                            'title' => (string)$item->title,
+                            'link' => (string)$item->link,
+                            'date' => strtotime((string)$item->pubDate),
+                            'date_display' => date('d.m.Y', strtotime((string)$item->pubDate)),
+                            'desc' => (string)$item->description,
+                            'image' => isset($item->enclosure['url']) ? (string)$item->enclosure['url'] : get_stylesheet_directory_uri() . '/img/rss-placeholder.jpg',
+                        );
+                        continue;
+                    }
+                }
                 $error_messages = $rss->get_error_messages();
                 foreach ($error_messages as $error) {
                     echo '<div style="color:red;">RSS Error for ' . esc_html($feed_url) . ': ' . esc_html($error) . '</div>';
