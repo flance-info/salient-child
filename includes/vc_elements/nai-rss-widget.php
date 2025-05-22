@@ -42,21 +42,24 @@ class NAI_RSS_Widget {
         ));
     }
 
-    public function shortcode($atts) {
+    public function shortcode($atts = array()) {
         $atts = shortcode_atts(array(
-            'url1' => '',
-            'url2' => '',
-            'url3' => '',
+            'url1' => 'https://davaktiv.uz/rss',
+            'url2' => 'https://antimon.gov.uz/ru/feed/',
+            'url3' => 'https://cbu.uz/ru/press_center/news/rss',
             'count' => 3,
-        ), $atts, 'nai_rss_widget');
+        ), (array) $atts, 'nai_rss_widget');
 
         $feeds = array_filter([$atts['url1'], $atts['url2'], $atts['url3']]);
         $items = array();
 
-        foreach ($feeds as $feed_url) {
+   
+
+        foreach ($feeds as $feed_url) {       
             $rss = fetch_feed($feed_url);
+          
             if (!is_wp_error($rss)) {
-                foreach ($rss->get_items(0, 5) as $item) {
+                foreach ($rss->get_items(0, 5) as $item) {                   
                     $items[] = array(
                         'title' => $item->get_title(),
                         'link' => $item->get_link(),
@@ -69,14 +72,16 @@ class NAI_RSS_Widget {
             }
         }
 
-        // Sort by date desc
+   
         usort($items, function($a, $b) {
             return $b['date'] - $a['date'];
         });
+
+       
         $items = array_slice($items, 0, intval($atts['count']));
 
         ob_start();
-        $view = locate_template('vc_elements/views/rss-widget-view.php');
+        $view = locate_template('vc_elements/rss-widget-view.php');
         if ($view) {
             include $view;
         } else {
@@ -86,21 +91,20 @@ class NAI_RSS_Widget {
     }
 
     private function get_image_from_item($item) {
-        // Try to get image from enclosure or content
         $enclosure = $item->get_enclosure();
         if ($enclosure && $enclosure->get_link()) {
             return esc_url($enclosure->get_link());
         }
         $content = $item->get_content();
-        if (preg_match('/<img[^>]+src=["\\\']([^"\\\']+)["\\\']/i', $content, $matches)) {
+        if (preg_match('/<img[^>]+src=["\']([^"\']+)["\']/i', $content, $matches)) {
             return esc_url($matches[1]);
         }
         $desc = $item->get_description();
-        if (preg_match('/<img[^>]+src=["\\\']([^"\\\']+)["\\\']/i', $desc, $matches)) {
+        if (preg_match('/<img[^>]+src=["\']([^"\']+)["\']/i', $desc, $matches)) {
             return esc_url($matches[1]);
         }
-        return get_stylesheet_directory_uri() . '/img/rss-placeholder.jpg'; // fallback
+        return get_stylesheet_directory_uri() . '/img/rss-placeholder.jpg';
     }
 }
 
-new NAI_RSS_Widget(); 
+new NAI_RSS_Widget();
