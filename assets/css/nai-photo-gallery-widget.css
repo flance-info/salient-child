@@ -62,12 +62,13 @@
 }
 
 .pg-single-container {
-
+    max-width: 1440px;
     margin-top: 40px;
     margin-left: auto;
     margin-right: auto;
     padding: 0 20px;
     margin-bottom: 100px;
+    width: 100%;
 }
 
 .pg-single-gallery {
