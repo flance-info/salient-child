@@ -20,6 +20,7 @@ require_once get_stylesheet_directory() . '/includes/vc_elements/nai-media-file-
 require_once get_stylesheet_directory() . '/includes/analytics-materials-post-type.php';
 require_once get_stylesheet_directory() . '/includes/vc_elements/analytics-materials-widget.php';
 require_once get_stylesheet_directory() . '/includes/ajax-handlers.php';
+require_once get_stylesheet_directory() . '/includes/vc_elements/nai-rss-widget.php';
 
 
 
