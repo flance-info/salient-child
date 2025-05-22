@@ -29,8 +29,15 @@ add_action('wp_footer', function() {
         <?php the_content(); ?>
     </div>
     <div class="pg-single-meta" style="display:flex;align-items:center;gap:24px;color:#888;font-size:1.05rem;margin-bottom:32px;">
-        <span><svg width="18" height="18" style="vertical-align:middle;margin-right:4px;" fill="none" stroke="#888" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> <?php echo esc_html($date); ?></span>
-        <span><svg width="18" height="18" style="vertical-align:middle;margin-right:4px;" fill="none" stroke="#888" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg> <?php echo esc_html($img_count); ?></span>
+        <span><svg width="24" height="24" style="vertical-align:middle;margin-right:4px;" fill="none" stroke="#888" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> <?php echo esc_html($date); ?></span>
+        <span>
+            <svg width="24" height="24" style="vertical-align:middle;margin-right:4px;" fill="none" stroke="#888" stroke-width="1.5" viewBox="0 0 24 24">
+                <rect x="3" y="5" width="18" height="14" rx="2" stroke="#888" stroke-width="1.5" fill="none"/>
+                <circle cx="8.5" cy="10.5" r="1.5" stroke="#888" stroke-width="1.5" fill="none"/>
+                <path d="M21 19l-5.5-7-4.5 6-3-4-4 5" stroke="#888" stroke-width="1.5" fill="none"/>
+            </svg>
+            <?php echo esc_html($img_count); ?>
+        </span>
     </div>
     <div class="pg-single-gallery" style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;">
         <?php if ($images_to_show): foreach ($images_to_show as $img_id): 
