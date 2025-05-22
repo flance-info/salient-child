@@ -45,15 +45,16 @@
  
     padding: 4px 16px;
     transition: background 0.2s, color 0.2s;
-    width: 200px;
+    min-width: 150px;
     text-align: center;
     border-radius: 90px;
     height: 42px;
     vertical-align: middle;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 40px;
+    margin-right: 10px;
 }
 
 .analytics-material-title {

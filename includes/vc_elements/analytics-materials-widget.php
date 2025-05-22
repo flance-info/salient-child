@@ -108,11 +108,14 @@ class Analytics_Materials_Widget {
             'posts_per_page' => intval($atts['per_page']),
             'paged' => $paged,
         ];
-        if ($atts['category']) {
+        $selected_category = isset($_GET['analytics_category']) ? sanitize_text_field($_GET['analytics_category']) : $atts['category'];
+      
+      
+        if ($selected_category) {
             $args['tax_query'] = [[
                 'taxonomy' => 'analytics_category',
                 'field' => 'slug',
-                'terms' => $atts['category'],
+                'terms' => $selected_category ,
             ]];
         }
         $q = new WP_Query($args);
@@ -124,13 +127,16 @@ class Analytics_Materials_Widget {
         if ($atts['font_family']) $card_style .= 'font-family:' . esc_attr($atts['font_family']) . ';';
         if ($atts['font_size']) $card_style .= 'font-size:' . esc_attr($atts['font_size']) . 'px;';
         if ($atts['font_color']) $card_style .= 'color:' . esc_attr($atts['font_color']) . ';';
+ 
         ob_start();
         ?>
         <div class="analytics-materials-grid">
             <form class="analytics-materials-filter" method="get">
                 <select name="analytics_category" onchange="this.form.submit()">
                     <?php foreach ($this->get_categories() as $name => $slug): ?>
-                        <option value="<?php echo esc_attr($slug); ?>"<?php selected($atts['category'], $slug); ?>><?php echo esc_html($name); ?></option>
+                        <option value="<?php echo esc_attr($slug); ?>"<?php selected($selected_category, $slug); ?>>
+                            <?php echo esc_html($name); ?>
+                        </option>
                     <?php endforeach; ?>
                 </select>
             </form>
@@ -147,7 +153,13 @@ class Analytics_Materials_Widget {
                         echo '<div class="analytics-material-card" style="' . esc_attr($card_style) . '">';
                     }
                     if ($cats) {
-                        echo '<div class="analytics-material-category">' . esc_html($cats[0]->name) . '</div>';
+                        foreach ($cats as $cat) {
+                        echo '<div class="analytics-material-category">';
+                        
+                            echo '<span class="analytics-material-cat-item">' . esc_html($cat->name) . '</span>';
+                        
+                        echo '</div>';
+                    }
                     }
                     echo '<h2 class="analytics-material-title">' . get_the_title() . '</h2>';
                     echo '<div class="analytics-material-date">' . esc_html($custom_date ? $custom_date : get_the_date('Y')) . '</div>';
