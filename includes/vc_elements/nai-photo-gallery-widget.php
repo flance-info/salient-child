@@ -70,7 +70,7 @@ class NAI_Photo_Gallery_Widget {
         if (!empty($atts['year'])) {
             $args['meta_query'] = [[
                 'key' => '_pg_year',
-                'value' => $atts['year'],
+                'value' => $atts['year'] . '%',
                 'compare' => 'LIKE',
             ]];
         }
