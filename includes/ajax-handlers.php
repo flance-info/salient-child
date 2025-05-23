@@ -186,7 +186,7 @@ public function nai_gallery_archive_ajax() {
     $year = isset($_POST['year']) ? intval($_POST['year']) : '';
     $paged = isset($_POST['paged']) ? intval($_POST['paged']) : 1;
     $per_page = 6;
-    $columns = 3;
+    $columns = 2;
 
     // Get all years for selector
     $years = get_posts([
@@ -201,18 +201,19 @@ public function nai_gallery_archive_ajax() {
     }
     krsort($year_options);
 
+   
     $args = [
         'post_type' => 'photo_gallery',
-        'posts_per_page' => $per_page,
+        'posts_per_page' => intval($atts['per_page']),
         'orderby' => 'date',
         'order' => 'DESC',
-        'paged' => $paged,
+        'paged' => intval($atts['paged']),
     ];
-    if (!empty($year)) {
+    if (!empty($atts['year'])) {
         $args['meta_query'] = [[
             'key' => '_pg_year',
-            'value' => $year,
-            'compare' => '=',
+            'value' => $atts['year'],
+            'compare' => 'REGEXP',
         ]];
     }
     $q = new WP_Query($args);
@@ -220,17 +221,7 @@ public function nai_gallery_archive_ajax() {
     ob_start();
     ?>
     <div class="nai-pg-gallery-archive">
-        <div class="nai-pg-gallery-header">
-            <h2 class="nai-pg-gallery-title">Фотогалереи <span class="nai-pg-gallery-year-select-wrap">
-                <select class="nai-pg-gallery-year-select">
-                    <option value="">Все</option>
-                    <?php foreach($year_options as $y): ?>
-                        <option value="<?php echo esc_attr($y); ?>"<?php if($year==$y)echo ' selected';?>><?php echo esc_html($y); ?></option>
-                    <?php endforeach; ?>
-                </select>
-            </span>
-            </h2>
-        </div>
+       
         <div class="nai-pg-vc-grid nai-pg-gallery-list" style="display:grid;grid-template-columns:repeat(<?php echo intval($columns); ?>,1fr);gap:32px;">
             <?php
             if ($q->have_posts()):
@@ -243,7 +234,7 @@ public function nai_gallery_archive_ajax() {
                     $date = get_the_date('d.m.Y');
                     ?>
                     <a href="<?php the_permalink(); ?>" class="pg-archive-card">
-                        <div class="pg-archive-card-img" style="background-image:url('<?php echo esc_url($cover); ?>');height:270px;">
+                        <div class="pg-archive-card-img" style="background-image:url('<?php echo esc_url($cover); ?>');">
                             <div class="pg-archive-card-overlay"></div>
                             <div class="pg-archive-card-info">
                                 <div class="pg-archive-card-meta">

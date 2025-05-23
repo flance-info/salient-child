@@ -18,7 +18,7 @@
 
 .pg-archive-card-img {
     position: relative;
-    height: 270px;
+    height: 400px;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -353,4 +353,41 @@
 .nai-pg-gallery-pagination a:hover:not(.current):not(.active) {
     color: #222;
     background: #f3f3f3;
+}
+
+.pg-archive-card-info-v2 {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    z-index: 2;
+    padding: 18px 16px 14px 16px;
+    pointer-events: none;
+    gap: 10px;
+}
+.pg-archive-card-date-v2 {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+    opacity: 0.95;
+    pointer-events: auto;
+}
+.pg-archive-card-title-v2 {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    pointer-events: auto;
+}
+.pg-archive-card-count-v2 {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+    opacity: 0.95;
+    margin-bottom: 2px;
+    display: flex;
+    align-items: center;
+    pointer-events: auto;
 }

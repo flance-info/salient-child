@@ -79,8 +79,8 @@ class NAI_Photo_Gallery_Widget {
         $total_pages = $q->max_num_pages;
         ob_start();
         ?>
-        <div class="nai-pg-gallery-archive">
-            <div class="nai-pg-gallery-header">
+
+    <div class="nai-pg-gallery-header">
                 <h2>
                     <?php echo esc_html__('Фотогалереи', 'salient-child'); ?>
                     <div class="nai-pg-gallery-year-select">
@@ -96,6 +96,8 @@ class NAI_Photo_Gallery_Widget {
                     </div>
                 </h2>
             </div>
+        <div class="nai-pg-gallery-archive">
+            
             <div class="nai-pg-vc-grid nai-pg-gallery-list" style="display:grid;grid-template-columns:repeat(<?php echo intval($atts['columns']); ?>,1fr);gap:32px;">
                 <?php
                 if ($q->have_posts()):
@@ -116,14 +118,16 @@ class NAI_Photo_Gallery_Widget {
                         }
                         ?>
                         <a href="<?php the_permalink(); ?>" class="pg-archive-card">
-                            <div class="pg-archive-card-img" style="background-image:url('<?php echo esc_url($cover); ?>');height:270px;">
+                            <div class="pg-archive-card-img" style="background-image:url('<?php echo esc_url($cover); ?>');">
                                 <div class="pg-archive-card-overlay"></div>
-                                <div class="pg-archive-card-info">
-                                    <div class="pg-archive-card-meta">
-                                        <span class="pg-archive-card-date"><svg width="18" height="18" fill="none" stroke="#888" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> <?php echo $display_date; ?></span>
-                                        <span class="pg-archive-card-count"><svg width="18" height="18" fill="none" stroke="#888" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="M21 19l-5.5-7-4.5 6-3-4-4 5"/></svg> <?php echo esc_html($img_count); ?> <?php echo __('фото', 'salient-child'); ?></span>
+                                <div class="pg-archive-card-info-v2">
+                                    <div class="pg-archive-card-date-v2">
+                                        <svg width="18" height="18" fill="none" stroke="#fff" stroke-width="2" viewBox="0 0 24 24" style="vertical-align:middle;margin-right:4px;"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> <?php echo $display_date; ?>
                                     </div>
-                                    <div class="pg-archive-card-title"><?php the_title(); ?></div>
+                                    <div class="pg-archive-card-title-v2"><?php the_title(); ?></div>
+                                    <div class="pg-archive-card-count-v2">
+                                        <svg width="18" height="18" fill="none" stroke="#fff" stroke-width="1.5" viewBox="0 0 24 24" style="vertical-align:middle;margin-right:4px;"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="M21 19l-5.5-7-4.5 6-3-4-4 5"/></svg> <?php echo esc_html($img_count); ?> <?php echo __('фото', 'salient-child'); ?>
+                                    </div>
                                 </div>
                             </div>
                         </a>
