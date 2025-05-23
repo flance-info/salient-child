@@ -54,8 +54,8 @@ class NAI_Photo_Gallery_Widget {
         $year_options = [];
         foreach ($years as $pid) {
             $y = get_post_meta($pid, '_pg_year', true);
-            if ($y && preg_match('/^\d{4}/', $y, $m)) {
-                $year_options[$m[0]] = $m[0];
+            if ($y && preg_match('/(\\d{4})/', $y, $m)) {
+                $year_options[$m[1]] = $m[1];
             }
         }
         krsort($year_options);
@@ -111,6 +111,8 @@ class NAI_Photo_Gallery_Widget {
                             $display_date = date_i18n('d.m.Y', strtotime($date_val));
                         } elseif ($date_val && preg_match('/^\d{4}$/', $date_val)) {
                             $display_date = esc_html($date_val);
+                        } elseif ($date_val && preg_match('/(\d{4})/', $date_val, $m)) {
+                            $display_date = esc_html($m[1]);
                         }
                         ?>
                         <a href="<?php the_permalink(); ?>" class="pg-archive-card">
