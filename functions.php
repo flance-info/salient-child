@@ -40,4 +40,8 @@ add_action('wp_enqueue_scripts', function() {
     wp_enqueue_style('nai-photo-gallery-widget', get_stylesheet_directory_uri() . '/assets/css/nai-photo-gallery-widget.css');
 });
 
+add_action('after_setup_theme', function() {
+    load_child_theme_textdomain('salient-child', get_stylesheet_directory() . '/languages');
+});
+
 ?>

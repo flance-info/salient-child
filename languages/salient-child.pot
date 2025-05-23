@@ -1,7 +1,5 @@
 # Copyright (C) 2025 ThemeNectar
 # This file is distributed under the same license as the Salient Child Theme theme.
-msgid ""
-msgstr ""
 "Project-Id-Version: Salient Child Theme 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/salient-child\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -9,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-05-22T13:00:14+00:00\n"
+"POT-Creation-Date: 2025-05-23T09:52:13+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: salient-child\n"
@@ -39,9 +37,14 @@ msgstr ""
 msgid "https://themeforest.net/user/themenectar"
 msgstr ""
 
-#: includes/ajax-handlers.php:115
+#: includes/ajax-handlers.php:119
 #: vc_elements/events-widget-view.php:133
 msgid "No events found"
+msgstr ""
+
+#: includes/ajax-handlers.php:253
+#: includes/vc_elements/nai-photo-gallery-widget.php:129
+msgid "фото"
 msgstr ""
 
 #: includes/nai-events-post-type.php:22
@@ -371,6 +374,22 @@ msgstr ""
 msgid "Number of opinions to display"
 msgstr ""
 
+#: includes/vc_elements/nai-photo-gallery-widget.php:85
+msgid "Фотогалереи"
+msgstr ""
+
+#: includes/vc_elements/nai-photo-gallery-widget.php:136
+msgid "Галереи не найдены."
+msgstr ""
+
+#: includes/vc_elements/nai-photo-gallery-widget.php:145
+msgid "&lt;"
+msgstr ""
+
+#: includes/vc_elements/nai-photo-gallery-widget.php:146
+msgid "&gt;"
+msgstr ""
+
 #: includes/vc_elements/nai-rss-widget.php:25
 msgid "RSS Aggregator"
 msgstr ""
@@ -391,7 +410,7 @@ msgstr ""
 msgid "Number of items to display"
 msgstr ""
 
-#: includes/vc_elements/nai-rss-widget.php:123
+#: includes/vc_elements/nai-rss-widget.php:131
 msgid "RSS widget view not found."
 msgstr ""
 
