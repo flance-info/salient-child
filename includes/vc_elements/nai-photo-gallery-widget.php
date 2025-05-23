@@ -79,9 +79,9 @@ class NAI_Photo_Gallery_Widget {
         ?>
         <div class="nai-pg-gallery-archive">
             <div class="nai-pg-gallery-header">
-                <h2 class="nai-pg-gallery-title">Фотогалереи <span class="nai-pg-gallery-year-select-wrap">
+                <h2 class="nai-pg-gallery-title"><?php echo __('Фотогалереи', 'salient-child'); ?> <span class="nai-pg-gallery-year-select-wrap">
                     <select class="nai-pg-gallery-year-select">
-                        <option value="">Все</option>
+                        <option value=""><?php echo __('Все', 'salient-child'); ?></option>
                         <?php foreach($year_options as $y): ?>
                             <option value="<?php echo esc_attr($y); ?>"<?php if($atts['year']==$y)echo ' selected';?>><?php echo esc_html($y); ?></option>
                         <?php endforeach; ?>
@@ -106,7 +106,7 @@ class NAI_Photo_Gallery_Widget {
                                 <div class="pg-archive-card-info">
                                     <div class="pg-archive-card-meta">
                                         <span class="pg-archive-card-date"><svg width="18" height="18" fill="none" stroke="#888" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> <?php echo esc_html($year); ?></span>
-                                        <span class="pg-archive-card-count"><svg width="18" height="18" fill="none" stroke="#888" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="M21 19l-5.5-7-4.5 6-3-4-4 5"/></svg> <?php echo esc_html($img_count); ?> фото</span>
+                                        <span class="pg-archive-card-count"><svg width="18" height="18" fill="none" stroke="#888" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="M21 19l-5.5-7-4.5 6-3-4-4 5"/></svg> <?php echo esc_html($img_count); ?> <?php echo __('фото', 'salient-child'); ?></span>
                                     </div>
                                     <div class="pg-archive-card-title"><?php the_title(); ?></div>
                                 </div>
@@ -114,7 +114,7 @@ class NAI_Photo_Gallery_Widget {
                         </a>
                     <?php endwhile;
                 else: ?>
-                    <p>Галереи не найдены.</p>
+                    <p><?php _e('Галереи не найдены.', 'salient-child'); ?></p>
                 <?php endif; wp_reset_postdata(); ?>
             </div>
             <?php if($total_pages>1): ?>
@@ -123,8 +123,8 @@ class NAI_Photo_Gallery_Widget {
                     'total' => $total_pages,
                     'current' => intval($atts['paged']),
                     'format' => '#',
-                    'prev_text' => '&lt;',
-                    'next_text' => '&gt;',
+                    'prev_text' => __('&lt;', 'salient-child'),
+                    'next_text' => __('&gt;', 'salient-child'),
                 ]); ?>
             </div>
             <?php endif; ?>
