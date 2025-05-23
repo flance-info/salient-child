@@ -42,6 +42,33 @@ wp_localize_script('nai-events-widget', 'nai_events', array(
 
 wp_enqueue_script('nai-calendar-widget', get_stylesheet_directory_uri() . '/js/nai-calendar-widget.js', array('jquery'), null, true);
 
+// Localize months and days
+wp_localize_script('nai-calendar-widget', 'naiCalendarI18n', array(
+    'months' => array(
+        __('January', 'salient-child'),
+        __('February', 'salient-child'),
+        __('March', 'salient-child'),
+        __('April', 'salient-child'),
+        __('May', 'salient-child'),
+        __('June', 'salient-child'),
+        __('July', 'salient-child'),
+        __('August', 'salient-child'),
+        __('September', 'salient-child'),
+        __('October', 'salient-child'),
+        __('November', 'salient-child'),
+        __('December', 'salient-child'),
+    ),
+    'days' => array(
+        __('Mon', 'salient-child'),
+        __('Tue', 'salient-child'),
+        __('Wed', 'salient-child'),
+        __('Thu', 'salient-child'),
+        __('Fri', 'salient-child'),
+        __('Sat', 'salient-child'),
+        __('Sun', 'salient-child'),
+    ),
+));
+
 }
 
 add_action('wp_enqueue_scripts', function() {
