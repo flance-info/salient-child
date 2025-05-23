@@ -49,4 +49,12 @@ add_action('wp_enqueue_scripts', function() {
         wp_enqueue_script('nai-photo-gallery-ajax', get_stylesheet_directory_uri() . '/assets/js/nai-photo-gallery-ajax.js', [], null, true);
         wp_localize_script('nai-photo-gallery-ajax', 'ajaxurl', admin_url('admin-ajax.php'));
     }
+    // Enqueue for gallery archive (where [nai_photo_gallery] is used)
+    if (is_page() || is_home() || is_front_page() || is_archive()) {
+        global $post;
+        if (isset($post->post_content) && strpos($post->post_content, '[nai_photo_gallery') !== false) {
+            wp_enqueue_script('nai-photo-gallery-archive', get_stylesheet_directory_uri() . '/assets/js/nai-photo-gallery-archive.js', [], null, true);
+            wp_localize_script('nai-photo-gallery-archive', 'ajaxurl', admin_url('admin-ajax.php'));
+        }
+    }
 });

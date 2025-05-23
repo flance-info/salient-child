@@ -7,6 +7,8 @@ class NAI_Ajax_Handlers {
         add_action('wp_ajax_nopriv_load_events', array($this, 'load_events'));
         add_action('wp_ajax_nai_gallery_pagination', array($this, 'nai_gallery_pagination_ajax'));
         add_action('wp_ajax_nopriv_nai_gallery_pagination', array($this, 'nai_gallery_pagination_ajax'));
+        add_action('wp_ajax_nai_gallery_archive', array($this, 'nai_gallery_archive_ajax'));
+        add_action('wp_ajax_nopriv_nai_gallery_archive', array($this, 'nai_gallery_archive_ajax'));
     }
 
     public function load_events() {
@@ -179,6 +181,100 @@ function nai_gallery_pagination_ajax() {
         'pagination' => $pagination_html
     ]);
 } 
+
+public function nai_gallery_archive_ajax() {
+    $year = isset($_POST['year']) ? intval($_POST['year']) : '';
+    $paged = isset($_POST['paged']) ? intval($_POST['paged']) : 1;
+    $per_page = 6;
+    $columns = 3;
+
+    // Get all years for selector
+    $years = get_posts([
+        'post_type' => 'photo_gallery',
+        'posts_per_page' => -1,
+        'fields' => 'ids',
+    ]);
+    $year_options = [];
+    foreach ($years as $pid) {
+        $y = get_post_meta($pid, '_pg_year', true);
+        if ($y) $year_options[$y] = $y;
+    }
+    krsort($year_options);
+
+    $args = [
+        'post_type' => 'photo_gallery',
+        'posts_per_page' => $per_page,
+        'orderby' => 'date',
+        'order' => 'DESC',
+        'paged' => $paged,
+    ];
+    if (!empty($year)) {
+        $args['meta_query'] = [[
+            'key' => '_pg_year',
+            'value' => $year,
+            'compare' => '=',
+        ]];
+    }
+    $q = new WP_Query($args);
+    $total_pages = $q->max_num_pages;
+    ob_start();
+    ?>
+    <div class="nai-pg-gallery-archive">
+        <div class="nai-pg-gallery-header">
+            <h2 class="nai-pg-gallery-title">Фотогалереи <span class="nai-pg-gallery-year-select-wrap">
+                <select class="nai-pg-gallery-year-select">
+                    <option value="">Все</option>
+                    <?php foreach($year_options as $y): ?>
+                        <option value="<?php echo esc_attr($y); ?>"<?php if($year==$y)echo ' selected';?>><?php echo esc_html($y); ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </span>
+            </h2>
+        </div>
+        <div class="nai-pg-vc-grid nai-pg-gallery-list" style="display:grid;grid-template-columns:repeat(<?php echo intval($columns); ?>,1fr);gap:32px;">
+            <?php
+            if ($q->have_posts()):
+                while ($q->have_posts()): $q->the_post();
+                    $year_val = get_post_meta(get_the_ID(), '_pg_year', true);
+                    $images = get_post_meta(get_the_ID(), '_pg_images', true);
+                    $img_count = is_array($images) ? count($images) : 0;
+                    $cover = get_the_post_thumbnail_url(get_the_ID(), 'large');
+                    if (!$cover && $img_count) $cover = wp_get_attachment_image_url($images[0], 'large');
+                    $date = get_the_date('d.m.Y');
+                    ?>
+                    <a href="<?php the_permalink(); ?>" class="pg-archive-card">
+                        <div class="pg-archive-card-img" style="background-image:url('<?php echo esc_url($cover); ?>');height:270px;">
+                            <div class="pg-archive-card-overlay"></div>
+                            <div class="pg-archive-card-info">
+                                <div class="pg-archive-card-meta">
+                                    <span class="pg-archive-card-date"><svg width="18" height="18" fill="none" stroke="#888" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> <?php echo esc_html($year_val); ?></span>
+                                    <span class="pg-archive-card-count"><svg width="18" height="18" fill="none" stroke="#888" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="M21 19l-5.5-7-4.5 6-3-4-4 5"/></svg> <?php echo esc_html($img_count); ?> фото</span>
+                                </div>
+                                <div class="pg-archive-card-title"><?php the_title(); ?></div>
+                            </div>
+                        </div>
+                    </a>
+                <?php endwhile;
+            else: ?>
+                <p>Галереи не найдены.</p>
+            <?php endif; wp_reset_postdata(); ?>
+        </div>
+        <?php if($total_pages>1): ?>
+        <div class="nai-pg-gallery-pagination">
+            <?php echo paginate_links([
+                'total' => $total_pages,
+                'current' => $paged,
+                'format' => '#',
+                'prev_text' => '&lt;',
+                'next_text' => '&gt;',
+            ]); ?>
+        </div>
+        <?php endif; ?>
+    </div>
+    <?php
+    $html = ob_get_clean();
+    wp_send_json(['html' => $html]);
+}
 }
 
 new NAI_Ajax_Handlers();
