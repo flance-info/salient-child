@@ -76,15 +76,22 @@ class NAI_RSS_Widget {
                 if (!is_wp_error($response)) {
                     $body = wp_remote_retrieve_body($response);
                     $xml = simplexml_load_string($body);
+
+                    
                     if ($xml && isset($xml->channel->item[0])) {
                         $item = $xml->channel->item[0];
+                        $image = isset($item->enclosure['url']) ? (string)$item->enclosure['url'] : get_stylesheet_directory_uri() . '/assets/img/rssfeed.png';
+                        
+                        
+                        
+                        
                         $items[] = array(
                             'title' => (string)$item->title,
                             'link' => (string)$item->link,
                             'date' => strtotime((string)$item->pubDate),
                             'date_display' => date('d.m.Y', strtotime((string)$item->pubDate)),
                             'desc' => (string)$item->description,
-                            'image' => isset($item->enclosure['url']) ? (string)$item->enclosure['url'] : get_stylesheet_directory_uri() . '/img/rss-placeholder.jpg',
+                            'image' => $image,
                         );
                         continue;
                     }
@@ -98,6 +105,7 @@ class NAI_RSS_Widget {
             if (!is_wp_error($rss)) {
                 
                 $item = $rss->get_item(0);
+                
            
                 if ($item) {
                     $items[] = array(
@@ -149,7 +157,7 @@ class NAI_RSS_Widget {
         }
 
         // Fallback placeholder
-        return get_stylesheet_directory_uri() . '/img/rss-placeholder.jpg';
+        return get_stylesheet_directory_uri() . '/assets/img/rssfeed.png';
     }
 }
 
