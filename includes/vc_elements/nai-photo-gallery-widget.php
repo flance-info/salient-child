@@ -79,14 +79,19 @@ class NAI_Photo_Gallery_Widget {
         ?>
         <div class="nai-pg-gallery-archive">
             <div class="nai-pg-gallery-header">
-                <h2 class="nai-pg-gallery-title"><?php echo __('Фотогалереи', 'salient-child'); ?> <span class="nai-pg-gallery-year-select-wrap">
-                    <select class="nai-pg-gallery-year-select">
-                        <option value=""><?php echo __('Все', 'salient-child'); ?></option>
-                        <?php foreach($year_options as $y): ?>
-                            <option value="<?php echo esc_attr($y); ?>"<?php if($atts['year']==$y)echo ' selected';?>><?php echo esc_html($y); ?></option>
-                        <?php endforeach; ?>
-                    </select>
-                </span>
+                <h2>
+                    <?php echo esc_html__('Фотогалереи', 'salient-child'); ?>
+                    <div class="nai-pg-gallery-year-select">
+                        <span class="nai-pg-gallery-year"><?php echo esc_html($atts['year']); ?></span>
+                        <span class="nai-pg-gallery-year-dropdown">&#9660;</span>
+                        <div class="nai-pg-gallery-year-options">
+                            <?php foreach ($year_options as $year) : ?>
+                                <a href="#" data-year="<?php echo esc_attr($year); ?>" <?php echo $atts['year'] == $year ? 'class="active"' : ''; ?>>
+                                    <?php echo esc_html($year); ?>
+                                </a>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
                 </h2>
             </div>
             <div class="nai-pg-vc-grid nai-pg-gallery-list" style="display:grid;grid-template-columns:repeat(<?php echo intval($atts['columns']); ?>,1fr);gap:32px;">
