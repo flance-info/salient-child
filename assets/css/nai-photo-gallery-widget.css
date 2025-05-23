@@ -234,30 +234,78 @@
 
 .nai-pg-gallery-header {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
     margin-bottom: 24px;
+    padding: 24px 0 0 0;
+    font-size: 48px;
 }
 
 .nai-pg-gallery-title {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #222;
+    font-size: 48px;
+    font-weight: 400;
     margin: 0;
-}
-
-.nai-pg-gallery-year-select-wrap {
-    margin-left: 10px;
+    color: #222;
+    letter-spacing: -1px;
+    display: flex;
+    align-items: center;
 }
 
 .nai-pg-gallery-year-select {
-    font-size: 1.1rem;
-    padding: 2px 10px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    background: #fff;
-    color: #222;
+    display: inline-block;
+    position: relative;
+    margin-left: 12px;
+    cursor: pointer;
+}
+
+.nai-pg-gallery-year {
+    color: #7a8b7a;
+    font-weight: 400;
+    margin-left: 8px;
+    font-size: 38px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.nai-pg-gallery-year-dropdown {
+    font-size: 1rem;
+    color: #7a8b7a;
     margin-left: 4px;
+    cursor: pointer;
+}
+
+.nai-pg-gallery-year-options {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    min-width: 90px;
+    z-index: 10;
+    margin-top: 6px;
+    padding: 6px 0;
+}
+
+.nai-pg-gallery-year-select.open .nai-pg-gallery-year-options {
+    display: block;
+}
+
+.nai-pg-gallery-year-options a {
+    display: block;
+    padding: 8px 18px;
+    color: #222;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: background 0.2s, color 0.2s;
+}
+
+.nai-pg-gallery-year-options a.active,
+.nai-pg-gallery-year-options a:hover {
+    background: #e6ede6;
+    color: #000;
+    font-weight: 500;
 }
 
 .nai-pg-gallery-pagination {

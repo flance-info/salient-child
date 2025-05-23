@@ -33,8 +33,12 @@ add_action('add_meta_boxes', function() {
 
 // Year Field
 function nai_pg_year_box($post) {
-    $year = get_post_meta($post->ID, '_pg_year', true);
-    echo '<input type="number" name="pg_year" value="' . esc_attr($year ? $year : date('Y')) . '" min="2000" max="2100" style="width:100%">';
+    $date = get_post_meta($post->ID, '_pg_year', true);
+    // If only year is stored, default to Jan 1st of that year for display
+    if ($date && preg_match('/^\d{4}$/', $date)) {
+        $date = $date . '-01-01';
+    }
+    echo '<input type="date" name="pg_year" value="' . esc_attr($date ? $date : date('Y-m-d')) . '" min="2000-01-01" max="2100-12-31" style="width:150px">';
 }
 
 // Gallery Images Field
@@ -85,7 +89,8 @@ function nai_pg_images_box($post) {
 // Save Meta Fields
 add_action('save_post_photo_gallery', function($post_id){
     if (isset($_POST['pg_year'])) {
-        update_post_meta($post_id, '_pg_year', intval($_POST['pg_year']));
+        $date = sanitize_text_field($_POST['pg_year']);
+        update_post_meta($post_id, '_pg_year', $date);
     }
     if (isset($_POST['pg_images'])) {
         $imgs = array_map('intval', $_POST['pg_images']);
