@@ -81,7 +81,7 @@ class NAI_Photo_Gallery_Widget {
         ?>
 
     <div class="nai-pg-gallery-header">
-                <h2>
+                <h1>
                     <?php echo esc_html__('Фотогалереи', 'salient-child'); ?>
                     <div class="nai-pg-gallery-year-select">
                         <span class="nai-pg-gallery-year"><?php echo esc_html($atts['year']); ?></span>
@@ -94,7 +94,7 @@ class NAI_Photo_Gallery_Widget {
                             <?php endforeach; ?>
                         </div>
                     </div>
-                </h2>
+                </h1>
             </div>
         <div class="nai-pg-gallery-archive">
             
