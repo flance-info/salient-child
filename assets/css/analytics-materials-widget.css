@@ -32,7 +32,13 @@
 
 .analytics-material-card:hover .analytics-material-title,
 .analytics-material-card:hover .analytics-material-date,
-.analytics-material-card:hover .analytics-material-category {
+.analytics-material-card:hover .analytics-material-category,
+.analytics-material-card:focus .analytics-material-title,
+.analytics-material-card:focus .analytics-material-date,
+.analytics-material-card:focus .analytics-material-category,
+.analytics-material-card:active .analytics-material-title,
+.analytics-material-card:active .analytics-material-date,
+.analytics-material-card:active .analytics-material-category {
     color: #fff;
 }
 
@@ -84,8 +90,7 @@
     justify-content: center;
     align-items: center;
     gap: 8px;
-    background: #f8faf8;
-    border-radius: 12px;
+
     padding: 10px 0;
 }
 
@@ -153,7 +158,9 @@
     }
 }
 
-.analytics-material-card:hover .analytics-material-title {
+.analytics-material-card:hover .analytics-material-title,
+.analytics-material-card:focus .analytics-material-title,
+.analytics-material-card:active .analytics-material-title {
     color: #fff;
 }
 

@@ -148,7 +148,7 @@ class Analytics_Materials_Widget {
                     $custom_date = get_post_meta(get_the_ID(), '_analytics_material_date', true);
                     
                     if ($file_url) {
-                        echo '<a href="' . esc_url($file_url) . '" class="analytics-material-card" style="' . esc_attr($card_style) . '" download>';
+                        echo '<a href="' . esc_url($file_url) . '" class="analytics-material-card" style="' . esc_attr($card_style) . '" target="_blank" rel="noopener">';
                     } else {
                         echo '<div class="analytics-material-card" style="' . esc_attr($card_style) . '">';
                     }

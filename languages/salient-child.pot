@@ -1,5 +1,7 @@
 # Copyright (C) 2025 ThemeNectar
 # This file is distributed under the same license as the Salient Child Theme theme.
+msgid ""
+msgstr ""
 "Project-Id-Version: Salient Child Theme 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/salient-child\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -7,7 +9,7 @@
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-05-23T09:52:13+00:00\n"
+"POT-Creation-Date: 2025-05-23T10:21:33+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: salient-child\n"
@@ -45,6 +47,82 @@ msgstr ""
 #: includes/ajax-handlers.php:253
 #: includes/vc_elements/nai-photo-gallery-widget.php:129
 msgid "фото"
+msgstr ""
+
+#: includes/enqueu.php:48
+msgid "January"
+msgstr ""
+
+#: includes/enqueu.php:49
+msgid "February"
+msgstr ""
+
+#: includes/enqueu.php:50
+msgid "March"
+msgstr ""
+
+#: includes/enqueu.php:51
+msgid "April"
+msgstr ""
+
+#: includes/enqueu.php:52
+msgid "May"
+msgstr ""
+
+#: includes/enqueu.php:53
+msgid "June"
+msgstr ""
+
+#: includes/enqueu.php:54
+msgid "July"
+msgstr ""
+
+#: includes/enqueu.php:55
+msgid "August"
+msgstr ""
+
+#: includes/enqueu.php:56
+msgid "September"
+msgstr ""
+
+#: includes/enqueu.php:57
+msgid "October"
+msgstr ""
+
+#: includes/enqueu.php:58
+msgid "November"
+msgstr ""
+
+#: includes/enqueu.php:59
+msgid "December"
+msgstr ""
+
+#: includes/enqueu.php:62
+msgid "Mon"
+msgstr ""
+
+#: includes/enqueu.php:63
+msgid "Tue"
+msgstr ""
+
+#: includes/enqueu.php:64
+msgid "Wed"
+msgstr ""
+
+#: includes/enqueu.php:65
+msgid "Thu"
+msgstr ""
+
+#: includes/enqueu.php:66
+msgid "Fri"
+msgstr ""
+
+#: includes/enqueu.php:67
+msgid "Sat"
+msgstr ""
+
+#: includes/enqueu.php:68
+msgid "Sun"
 msgstr ""
 
 #: includes/nai-events-post-type.php:22

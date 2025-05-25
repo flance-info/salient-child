@@ -134,6 +134,16 @@ body .container {
   cursor: pointer;
   padding: 5px;
   font-size: 16px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.month-nav:hover {
+  color: #fff;
+  background: #4d853b;
+  border-radius: 50%;
+  transition: background 0.2s, color 0.2s;
+
 }
 
 .month-label {
@@ -162,6 +172,24 @@ body .container {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-left: 3px;
+}
+
+.currency-item:hover {
+
+  background: #f5f7f5;
+  box-shadow: 0 4px 16px rgba(98, 122, 102, 0.13);
+
+
+}
+
+.stm-number {
+  font-weight: 600;
+}
+
+.stm-rw .nectar-highlighted-text.font_size_24px.text_direction_ltr {
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 
 .day-cell.different-month {
@@ -452,11 +480,13 @@ body #header-outer .container {
   padding-left: 0px;
 }
 
-a.nectar-button.medium.regular.regular-button.stm-header-btn {
-  border-radius: 5px !important;
-  webkit-border-radius: 200px !important;
+body a.nectar-button.regular.regular-button.stm-header-btn {
+  border-radius: 8px !important;
+  webkit-border-radius: 8px !important;
   width: 100%;
   padding: 11px 18px !important;
+  border-radius: 8px !important;
+  max-width: 219px;
 }
 
 .material.woocommerce-page[data-form-style=default] input#coupon_code,
@@ -489,14 +519,51 @@ body[data-header-color="dark"] #header-outer {
 }
 
 .row.stm-header-two {
-  border-top: solid 1px #627A66;
-  border-bottom: solid 1px #627A66;
+  border-top: solid 1px #7CA46F;
+  border-bottom: solid 1px #7CA46F;
   padding-bottom: 0px;
+  height: 81px;
+  display: flex;
+  justify-content: center;
 }
 
 .material #header-space,
 #header-space {
   background: #fff;
+}
+
+body .stm-laws .nectar-fancy-box[data-style="color_box_hover"] .inner {
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.stm-laws .column_container img.fancy-box-custom-icon {
+  filter: invert(47%) sepia(16%) saturate(437%) hue-rotate(78deg) brightness(92%) contrast(94%);
+}
+
+body .stm-laws .column_container:hover img.fancy-box-custom-icon {
+  filter: unset;
+}
+body[data-hhun="1"] #header-outer.invisible:not(.side-widget-open),
+ body[data-hhun="1"] #header-outer.no-trans-hidden:not(.side-widget-open) {
+ transform: unset !important;
+}
+
+body[data-slide-out-widget-area-style=slide-out-from-right] .ocm-effect-wrap
+ {
+    transition: transform .8s cubic-bezier(.15,.2,.1,1);
+    transform-origin: center;
+    position: relative;
+    z-index: 222222222;
+}
+body .stm-laws .column_container h3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 #header-outer[data-format=centered-menu-under-logo] .span_9 {
@@ -511,7 +578,7 @@ body[data-header-color="dark"] #header-outer {
 }
 
 .row.stm-header-one {
-  background: rgba(98, 122, 102, 0.75);
+  background: #7CA46FCC;
   padding-bottom: 0px;
 }
 
@@ -1239,21 +1306,17 @@ a.nectar-button.large.regular.accent-color.regular-button.stm-btn-contact {
 }
 
 .nai-rss-img {
-  flex: none;
-  width: 110px;
-  height: 80px;
-  border-radius: 8px;
-  overflow: hidden;
   margin-right: 24px;
-  background: #eee;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.nai-rss-img img {
-  width: 100%;
-  height: 100%;
+
+.row .col .nai-rss-img img {
+  max-width: 100px;
+  height: 100px;
+  border-radius: 8px;
   object-fit: cover;
   display: block;
 }
@@ -1266,17 +1329,18 @@ a.nectar-button.large.regular.accent-color.regular-button.stm-btn-contact {
 }
 
 .nai-rss-title {
-  
+
   font-weight: 600;
   color: #181818;
   margin-bottom: 10px;
   line-height: 1.2;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
   min-height: 2.6em;
+  font-size: 16px;
 }
 
 .nai-rss-title a {
@@ -1298,6 +1362,142 @@ a.nectar-button.large.regular.accent-color.regular-button.stm-btn-contact {
   padding: 40px 0;
 }
 
+
+#header-outer[data-lhe="animated_underline"] #top nav>ul>li>a .menu-title-text:after,
+body.material #header-outer #search-outer #search input[type="text"],
+body[data-header-format="left-header"].material #search-outer #search input[type="text"] {
+  border-color: #7CA46F;
+}
+
+#header-outer[data-lhe="animated_underline"] #top nav>ul>li>a .menu-title-text {
+  font-weight: 600;
+}
+
+#header-outer[data-lhe="animated_underline"] #top nav>ul>li>a .menu-title-text:hover {
+  color: #4d853b;
+
+}
+
+#header-outer #top nav>ul>li.current-menu-item>a {
+  color: #4d853b !important;
+}
+
+#footer-outer .widget h4,
+#sidebar h4,
+#call-to-action .container a,
+.uppercase,
+.nectar-post-grid-wrap .load-more,
+.nectar-button,
+.nectar-button.medium,
+.nectar-button.small,
+.nectar-view-indicator span,
+.nectar-3d-transparent-button,
+.swiper-slide .button a,
+.play_button_with_text span[data-font*="btn"],
+body .widget_calendar table th,
+body #footer-outer #footer-widgets .col .widget_calendar table th,
+body:not([data-header-format="left-header"]) #header-outer nav>ul>.megamenu>ul>li>a,
+.carousel-heading h2,
+body .gform_wrapper .top_label .gfield_label,
+body .vc_pie_chart .wpb_pie_chart_heading,
+#infscr-loading div,
+#page-header-bg .author-section a,
+.ascend input[type="submit"],
+.ascend button[type="submit"],
+.material input[type="submit"],
+.material button[type="submit"],
+.original .checkout_coupon button[type="submit"],
+.original.woocommerce-cart .actions button[type="submit"],
+.ascend .checkout_coupon button[type="submit"],
+.ascend.woocommerce-cart .actions button[type="submit"],
+body.material #page-header-bg.fullscreen-header .inner-wrap>a,
+body #page-header-bg[data-post-hs="default_minimal"] .inner-wrap>a,
+.widget h4,
+.text-on-hover-wrap .categories a,
+.meta_overlaid article.post .post-header h3,
+.meta_overlaid article.post.quote .post-content h3,
+.meta_overlaid article.post.link .post-content h3,
+.meta_overlaid article .meta-author a,
+.pricing-column.highlight h3 .highlight-reason,
+.blog-recent[data-style="minimal"] .col>span,
+body .masonry.classic_enhanced .posts-container article .meta-category a,
+body .masonry.classic_enhanced .posts-container article.wide_tall .meta-category a,
+.blog-recent[data-style*="classic_enhanced"] .meta-category a,
+.nectar-recent-posts-slider .container .strong,
+.single .heading-title[data-header-style="default_minimal"] .meta-category a,
+.nectar-fancy-box .link-text,
+.post-area.standard-minimal article.post .post-meta .date a,
+.post-area.standard-minimal article.post .more-link span,
+body[data-button-style="rounded"] #pagination>a,
+html body #pagination>span,
+body[data-form-submit="see-through-2"] input[type=submit],
+body[data-form-submit="see-through-2"] button[type=submit],
+body[data-form-submit="see-through"] input[type=submit],
+body[data-form-submit="see-through"] button[type=submit],
+body[data-form-submit="regular"] input[type=submit],
+body[data-form-submit="regular"] button[type=submit],
+.nectar_team_member_overlay .team_member_details .title,
+body:not([data-header-format="left-header"]) #header-outer nav>ul>.megamenu>ul>li>ul>li.has-ul>a,
+.nectar_fullscreen_zoom_recent_projects .project-slide .project-info .normal-container>a,
+.nectar-hor-list-item .nectar-list-item-btn,
+.nectar-category-grid-item .content span.subtext,
+.yikes-easy-mc-form .yikes-easy-mc-submit-button,
+.nectar-cta .nectar-button-type,
+.nectar-post-grid-wrap .nectar-post-grid-filters h4,
+.nectar-inherit-btn-type {
+  font-family: 'Open Sans';
+}
+
+.nectar-button span {
+  left: 0;
+  display: inline-block;
+  transform: translateX(0);
+  transition: opacity .45s cubic-bezier(.25, 1, .33, 1), transform .45s cubic-bezier(.25, 1, .33, 1);
+  position: relative;
+  font-family: 'Open Sans';
+  font-size: 18px;
+}
+
+/* akti */
+
+
+.nai-akti .column_container {
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  padding-right: 30px;
+}
+
+.nai-akti .column_container .iwt-icon img {
+  filter: invert(47%) sepia(16%) saturate(437%) hue-rotate(78deg) brightness(92%) contrast(94%);
+}
+
+
+
+.nai-akti .row_col_wrap_12_inner.col.span_12.left {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+
+.nai-akti .column_container:hover .iwt-icon img {
+  filter: unset;
+}
+
+.nai-akti .column_container:hover {
+  color: #fff !important;
+  background: #7CA46F;
+
+}
+
+.nai-akti .column_container:hover h3 {
+  color: #fff !important;
+
+}
+/* analitika */
+
+
+
 /* NAI Calendar Widget Styles (custom styles can be added here) */
 .nai-calendar-widget {}
 
@@ -1313,6 +1513,10 @@ a.nectar-button.large.regular.accent-color.regular-button.stm-btn-contact {
     font-size: 24px;
     line-height: 30px;
     font-weight: 300;
+  }
+
+  div#header-outer.detached.scrolling {
+    display: none;
   }
 }
 

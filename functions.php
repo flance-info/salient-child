@@ -44,4 +44,22 @@ add_action('after_setup_theme', function() {
     load_child_theme_textdomain('salient-child', get_stylesheet_directory() . '/languages');
 });
 
+add_filter('tiny_mce_before_init', 'disable_nbsp_in_editor');
+function disable_nbsp_in_editor($init) {
+    $init['entity_encoding'] = 'raw';
+    $init['remove_linebreaks'] = false;
+    $init['forced_root_block'] = false;
+    $init['force_br_newlines'] = true;
+    $init['force_p_newlines'] = false;
+    return $init;
+}
+
+function salient_breadcrumb_shortcode() {
+    if (function_exists('nectar_breadcrumbs')) {
+        ob_start();
+        nectar_breadcrumbs();
+        return ob_get_clean();
+    }
+}
+add_shortcode('salient_breadcrumbs', 'salient_breadcrumb_shortcode');
 ?>
