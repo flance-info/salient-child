@@ -1500,7 +1500,19 @@ body:not([data-header-format="left-header"]) #header-outer nav>ul>.megamenu>ul>l
     padding-top: 40px;
 }
 
-
+.single-nai_event .iwt-text a {
+  color: #000;
+}
+.stm-icons-below
+.iwithtext .iwt-text
+ {
+    padding-left: 5px;
+    padding-top: 60px;
+}
+.stm-icons-below
+.iwithtext {
+  margin-left: 20px;
+}
 /* NAI Calendar Widget Styles (custom styles can be added here) */
 .nai-calendar-widget {}
 

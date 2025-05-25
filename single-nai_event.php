@@ -57,9 +57,9 @@ if ( true === $fullscreen_header ) {
 		<?php
         nectar_hook_before_content();
     if( 'image_under' === $blog_header_type ) {
-      get_template_part( 'includes/partials/single-post/post-header-featured-media-under' );
+      //get_template_part( 'includes/partials/single-post/post-header-featured-media-under' );
     } else {
-      get_template_part( 'includes/partials/single-post/post-header-no-img-regular' );
+     // get_template_part( 'includes/partials/single-post/post-header-no-img-regular' );
     }
 		?>
 
