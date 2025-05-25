@@ -26,7 +26,7 @@ add_action('wp_footer', function() {
         <div class="pg-loader-spinner"></div>
     </div>
     <div class="pg-single-breadcrumbs" style="color:#888;font-size:0.95rem;margin-bottom:18px;">
-        <?php if(function_exists('yoast_breadcrumb')) yoast_breadcrumb('<p id="breadcrumbs">','</p>'); ?>
+        <?php // if(function_exists('yoast_breadcrumb')) yoast_breadcrumb('<p id="breadcrumbs">','</p>'); ?>
     </div>
     <h1 class="pg-single-title" style="font-size:2.4rem;font-weight:600;margin-bottom:12px;line-height:1.1;"><?php the_title(); ?></h1>
     <div class="pg-single-desc" style="margin-bottom:18px;max-width:800px;">

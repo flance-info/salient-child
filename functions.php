@@ -62,4 +62,23 @@ function salient_breadcrumb_shortcode() {
     }
 }
 add_shortcode('salient_breadcrumbs', 'salient_breadcrumb_shortcode');
+
+// Remove the original breadcrumbs action
+function remove_parent_breadcrumbs() {
+    remove_action('nectar_hook_before_content', 'nectar_yoast_breadcrumbs');
+}
+add_action('init', 'remove_parent_breadcrumbs');
+
+// Add your custom breadcrumbs action
+function custom_yoast_breadcrumbs() {
+    global $post;
+
+    // Check if we're on a single post of specific types
+    if (function_exists('yoast_breadcrumb') && $post && 
+        ($post->post_type === 'nai_event' || 
+         $post->post_type === 'nai_opinion')) {
+        yoast_breadcrumb('<p id="breadcrumbs" class="yoast">', '</p>');
+    }
+}
+add_action('nectar_hook_before_content', 'custom_yoast_breadcrumbs');
 ?>

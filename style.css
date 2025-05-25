@@ -1495,7 +1495,10 @@ body:not([data-header-format="left-header"]) #header-outer nav>ul>.megamenu>ul>l
 
 }
 /* analitika */
-
+.main-content .featured-media-under-header
+ {
+    padding-top: 40px;
+}
 
 
 /* NAI Calendar Widget Styles (custom styles can be added here) */
