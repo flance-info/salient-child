@@ -1513,6 +1513,12 @@ body:not([data-header-format="left-header"]) #header-outer nav>ul>.megamenu>ul>l
 .iwithtext {
   margin-left: 20px;
 }
+
+.menu-footer-left-container ul li, .menu-footer-right-container ul li {
+  list-style: unset;
+  list-style-position: unset;
+  line-height: 1.5;
+}
 /* NAI Calendar Widget Styles (custom styles can be added here) */
 .nai-calendar-widget {}
 
