@@ -1540,7 +1540,15 @@ textarea.wpcf7-form-control.wpcf7-textarea {
 div#full_width_portfolio {
   padding-top: 20px;
 }
+#portfolio-extra .first-section
 
+ {
+    padding-top: 35px !important;
+}
+.single-portfolio
+p#breadcrumbs {
+  padding-left: 1%;
+}
 @media (max-width: 900px) {
 
   body #slide-out-widget-area .inner .off-canvas-menu-container li a,
