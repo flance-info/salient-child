@@ -76,7 +76,8 @@ function custom_yoast_breadcrumbs() {
     // Check if we're on a single post of specific types
     if (function_exists('yoast_breadcrumb') && $post && 
         ($post->post_type === 'nai_event' || 
-         $post->post_type === 'nai_opinion')) {
+         $post->post_type === 'nai_opinion' ||
+         $post->post_type === 'post')) {
         yoast_breadcrumb('<p id="breadcrumbs" class="yoast">', '</p>');
     }
 }

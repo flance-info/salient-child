@@ -546,18 +546,19 @@ body .stm-laws .nectar-fancy-box[data-style="color_box_hover"] .inner {
 body .stm-laws .column_container:hover img.fancy-box-custom-icon {
   filter: unset;
 }
+
 body[data-hhun="1"] #header-outer.invisible:not(.side-widget-open),
- body[data-hhun="1"] #header-outer.no-trans-hidden:not(.side-widget-open) {
- transform: unset !important;
+body[data-hhun="1"] #header-outer.no-trans-hidden:not(.side-widget-open) {
+  transform: unset !important;
 }
 
-body[data-slide-out-widget-area-style=slide-out-from-right] .ocm-effect-wrap
- {
-    transition: transform .8s cubic-bezier(.15,.2,.1,1);
-    transform-origin: center;
-    position: relative;
-    z-index: 222222222;
+body[data-slide-out-widget-area-style=slide-out-from-right] .ocm-effect-wrap {
+  transition: transform .8s cubic-bezier(.15, .2, .1, 1);
+  transform-origin: center;
+  position: relative;
+  z-index: 222222222;
 }
+
 body .stm-laws .column_container h3 {
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -1494,33 +1495,51 @@ body:not([data-header-format="left-header"]) #header-outer nav>ul>.megamenu>ul>l
   color: #fff !important;
 
 }
+
 /* analitika */
-.main-content .featured-media-under-header
- {
-    padding-top: 40px;
+.main-content .featured-media-under-header {
+  padding-top: 40px;
 }
 
 .single-nai_event .iwt-text a {
   color: #000;
 }
-.stm-icons-below
-.iwithtext .iwt-text
- {
-    padding-left: 5px;
-    padding-top: 60px;
+
+.stm-icons-below .iwithtext .iwt-text {
+  padding-left: 5px;
+  padding-top: 60px;
 }
-.stm-icons-below
-.iwithtext {
+
+.stm-icons-below .iwithtext {
   margin-left: 20px;
 }
 
-.menu-footer-left-container ul li, .menu-footer-right-container ul li {
+textarea.wpcf7-form-control.wpcf7-textarea {
+  max-height: 100px;
+}
+
+.menu-footer-left-container ul li,
+.menu-footer-right-container ul li {
   list-style: unset;
   list-style-position: unset;
   line-height: 1.5;
 }
+
 /* NAI Calendar Widget Styles (custom styles can be added here) */
 .nai-calendar-widget {}
+
+.stm-footer-mobile {
+  display: none;
+}
+
+.mfp-content>#mm_inline_2 {
+
+  margin-top: 100px;
+}
+
+div#full_width_portfolio {
+  padding-top: 20px;
+}
 
 @media (max-width: 900px) {
 
@@ -1554,4 +1573,24 @@ body:not([data-header-format="left-header"]) #header-outer nav>ul>.megamenu>ul>l
   .nai-opinion-row {
     flex-direction: column;
   }
+
+  .stm-footer-mobile {
+    display: block;
+    font-size: 90%;
+  }
+
+  .stm-footer {
+    display: none;
+
+  }
+
+  .stm-footer-menu-mobile .vc_col-sm-6.inherit_tablet.inherit_phone {
+    width: 50%;
+    text-align: left !important
+  }
+
+  .stm-footer-mobile .center.custom-size {
+    margin: auto;
+  }
+
 }
