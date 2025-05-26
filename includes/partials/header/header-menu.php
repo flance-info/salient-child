@@ -124,21 +124,30 @@ if( $nectar_header_format === 'centered-menu-bottom-bar' &&
 		</div>
 
 		<div class="row stm-header-two">
-			
+
 			<div class="container">
 				<div class="col span_9 col_last ">
 						<?php
 
-				if( has_action('nectar_hook_mobile_header_menu_items') ) { ?>
-							<div class="nectar-mobile-only mobile-header"><div class="inner"><?php nectar_hook_mobile_header_menu_items(); ?></div></div>
-						<?php } 
-
-						// Mobile icons.
-						if ( $nectar_header_options['header_search'] != 'false' ) {
+				
+						
 							?>
 							<a class="mobile-search" href="#searchbox"><span class="nectar-icon icon-salient-search" aria-hidden="true"></span><span class="screen-reader-text"><?php echo esc_html__('search','salient'); ?></span></a>
+							
+							
+							<?php 
+							
+							if( has_action('nectar_hook_mobile_header_menu_items') ) { ?>
+							<div class="nectar-mobile-only mobile-header">
+								<div class="inner"><?php nectar_hook_mobile_header_menu_items(); ?>
+								</div>
+							</div>
+						<?php } 
+							
+							
+							
 							<?php
-						}
+						
 
 						if ( $nectar_header_options['user_account_btn'] != 'false' ) {
 							?>
