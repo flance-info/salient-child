@@ -38,6 +38,7 @@ add_filter('wpcf7_autop_or_not', '__return_false');
 
 add_action('wp_enqueue_scripts', function() {
     wp_enqueue_style('nai-photo-gallery-widget', get_stylesheet_directory_uri() . '/assets/css/nai-photo-gallery-widget.css');
+    wp_enqueue_style('salient-child-mobile', get_stylesheet_directory_uri() . '/assets/css/mobile.css', array(), '1.0.0', 'screen and (max-width: 767px)');
 });
 
 add_action('after_setup_theme', function() {

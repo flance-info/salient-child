@@ -1,0 +1,51 @@
+/* Mobile-specific styles */
+
+@media screen and (max-width: 767px) {
+    /* General mobile styles */
+    body {
+        font-size: 14px;
+    }
+
+    /* Container adjustments */
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /* Header adjustments */
+    .header-outer {
+        padding: 10px 0;
+    }
+
+    /* Navigation adjustments */
+    .sf-menu {
+        display: none;
+    }
+
+    /* Content adjustments */
+    .post-content {
+        padding: 15px;
+    }
+
+    /* Grid adjustments */
+    .analytics-materials-list {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+
+    /* Card adjustments */
+    .analytics-material-card {
+        margin-bottom: 15px;
+    }
+
+    /* Typography adjustments */
+    h1 {
+        font-size: 24px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    h3 {
+        font-size: 18px;
+    }
+} 

@@ -124,6 +124,7 @@ if( $nectar_header_format === 'centered-menu-bottom-bar' &&
 		</div>
 
 		<div class="row stm-header-two">
+			
 			<div class="container">
 				<div class="col span_9 col_last ">
 						<?php
