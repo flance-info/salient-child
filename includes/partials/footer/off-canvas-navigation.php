@@ -90,16 +90,20 @@ if ( $side_widget_area === '1' && $side_widget_class !== 'simple' || true === $l
 
 			<div class="inner" data-prepend-menu-mobile="<?php echo esc_attr( $prepend_mobile_menu ); ?>">
 
-				<a class="slide_out_area_close" href="#"><span class="screen-reader-text"><?php echo esc_html__('Close Menu','salient'); ?></span>
-					<?php
-					if ( $theme_skin !== 'material' ) {
-						echo '<span class="icon-salient-x icon-default-style"></span>';
-					} else {
-						echo '<span class="close-wrap"> <span class="close-line close-line1"></span> <span class="close-line close-line2"></span> </span>';
-					}
-					?>
-				</a>
-
+				<div class="mobile-menu-header">
+					<a href="<?php echo esc_url(home_url()); ?>" class="mobile-menu-logo">
+						<?php
+						if (function_exists('the_custom_logo') && has_custom_logo()) {
+							the_custom_logo();
+						} else {
+							echo '<span class="site-title">' . get_bloginfo('name') . '</span>';
+						}
+						?>
+					</a>
+					<a href="#" class="mobile-menu-close" id="mobile-menu-close" aria-label="<?php esc_attr_e('Close Menu', 'salient-child'); ?>">
+						<span class="icon-salient-x" aria-hidden="true"></span>
+					</a>
+				</div>
 
 				<?php
 
