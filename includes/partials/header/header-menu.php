@@ -125,8 +125,7 @@ if( $nectar_header_format === 'centered-menu-bottom-bar' &&
 
 		<div class="row stm-header-two">
 
-			<div class="container">
-			
+			<div class="container">		
 						
 							
 						
@@ -310,10 +309,16 @@ if( $nectar_header_format === 'centered-menu-bottom-bar' &&
 						get_template_part( 'includes/partials/header/classic-mobile-nav' );
 					}
 					?>
+
+					
 				</div>
 			</div>
 		</div>
 	</div>
-		
+	<?php
+					// add mobile menu
+					do_action('header_menu');
+					
+					?>
 
 </header>

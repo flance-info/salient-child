@@ -99,7 +99,7 @@ function inject_mobile_header() {
 }
 
 // Hook the mobile header to wp_body_open with high priority
-add_action('wp_body_open', 'inject_mobile_header', 1);
+add_action('header_menu', 'inject_mobile_header', 1);
 
 // Alternative hook if wp_body_open doesn't work
 add_action('wp_head', function() {
