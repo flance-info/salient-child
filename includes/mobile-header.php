@@ -44,8 +44,37 @@ function inject_mobile_header() {
             </div>
         </div>
     </div>
+    <script>
+    // Ensure mobile header is at the very top
+    document.addEventListener('DOMContentLoaded', function() {
+        var mobileHeader = document.querySelector('.mobile-header-wrapper');
+        if (mobileHeader && window.innerWidth <= 767) {
+            document.body.insertBefore(mobileHeader, document.body.firstChild);
+        }
+    });
+    </script>
     <?php
 }
 
-// Hook the mobile header to wp_body_open
-add_action('wp_body_open', 'inject_mobile_header'); 
+// Hook the mobile header to wp_body_open with high priority
+add_action('wp_body_open', 'inject_mobile_header', 1);
+
+// Alternative hook if wp_body_open doesn't work
+add_action('wp_head', function() {
+    ?>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        if (window.innerWidth <= 767) {
+            // Force sticky behavior
+            var mobileHeader = document.querySelector('.mobile-header-wrapper');
+            if (mobileHeader) {
+                mobileHeader.style.position = 'fixed';
+                mobileHeader.style.top = '0';
+                mobileHeader.style.zIndex = '9999';
+                document.body.style.paddingTop = '100px';
+            }
+        }
+    });
+    </script>
+    <?php
+}); 
