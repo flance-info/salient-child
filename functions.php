@@ -101,5 +101,17 @@ add_action('customize_register', function($wp_customize) {
         'section'  => 'mobile_logo_section',
         'settings' => 'mobile_logo',
     )));
+
+    // Add second mobile logo
+    $wp_customize->add_setting('mobile_logo_menu', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'mobile_logo_menu', array(
+        'label'    => __('Mobile Menu Logo', 'salient-child'),
+        'section'  => 'mobile_logo_section', // Use the same section for grouping
+        'settings' => 'mobile_logo_menu',
+    )));
 });
 ?>

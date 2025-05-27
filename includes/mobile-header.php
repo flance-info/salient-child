@@ -16,8 +16,11 @@ function inject_mobile_header() {
         <!-- Logo container -->
         <div class="mobile-logo-container">
             <a href="<?php echo esc_url(home_url()); ?>">
-                <?php 
-                if (function_exists('the_custom_logo') && has_custom_logo()) {
+                <?php
+                $mobile_logo = get_theme_mod('mobile_logo');
+                if ($mobile_logo) {
+                    echo '<img src="' . esc_url($mobile_logo) . '" alt="' . esc_attr(get_bloginfo('name')) . '" class="mobile-logo-img" />';
+                } elseif (function_exists('the_custom_logo') && has_custom_logo()) {
                     the_custom_logo();
                 } else {
                     echo '<span class="site-title">' . get_bloginfo('name') . '</span>';
