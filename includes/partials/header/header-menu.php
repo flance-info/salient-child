@@ -126,31 +126,7 @@ if( $nectar_header_format === 'centered-menu-bottom-bar' &&
 		<div class="row stm-header-two">
 
 			<div class="container">
-				<div class="col span_9 col_last stm-header-two-container">
-	
-							<div class="nectar-mobile-only mobile-header">
-								<div class="inner"><?php nectar_hook_mobile_header_menu_items(); ?>
-								</div>
-							</div>
-
-						<div class="stm-header-two-search-container  ">
-							<a class="mobile-search" href="#searchbox"><span class="nectar-icon icon-salient-search" aria-hidden="true"></span>
-							<span class="screen-reader-text"><?php echo esc_html__('search','salient'); ?></span></a>
-							
-							<div class="slide-out-widget-area-toggle mobile-icon <?php echo esc_attr( $nectar_header_options['side_widget_class'] ); ?>" data-custom-color="<?php echo esc_attr($nectar_header_options['ocm_menu_btn_color']); ?>" data-icon-animation="simple-transform">
-									<div> 
-										<a href="#slide-out-widget-area" role="button" aria-label="<?php echo esc_attr__('Navigation Menu', 'salient'); ?>" aria-expanded="false" class="<?php echo 'closed' . esc_attr($menu_label_class); ?>">
-										<?php if( true === $menu_label ) {
-											echo '<i class="label">' . esc_html__('Menu','salient') .'</i>';
-										}
-										else {
-											echo '<span class="screen-reader-text">'.esc_html__('Menu','salient').'</span>';
-										} ?><span aria-hidden="true"> <i class="lines-button x2"> <i class="lines"></i> </i> </span>
-									</a>
-								</div>
-							</div>								
-						
-						</div>
+			
 						
 							
 						
@@ -341,28 +317,3 @@ if( $nectar_header_format === 'centered-menu-bottom-bar' &&
 		
 
 </header>
-
-<div class="container">
-    <div class="col span_9 col_last">
-        <!-- Logo container -->
-        <div class="mobile-logo-container"></div>
-        
-        <!-- Actions container for search and menu -->
-        <div class="mobile-actions-container">
-            <a class="mobile-search" href="#searchbox">
-                <span class="nectar-icon icon-salient-search" aria-hidden="true"></span>
-                <span class="screen-reader-text">search</span>
-            </a>
-            
-            <div class="slide-out-widget-area-toggle mobile-icon slide-out-from-right">
-                <div>
-                    <a href="#slide-out-widget-area" role="button" aria-label="Navigation Menu">
-                        <i class="lines-button x2">
-                            <i class="lines"></i>
-                        </i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>

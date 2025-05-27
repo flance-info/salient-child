@@ -11,6 +11,15 @@
         padding-top: 80px; /* Account for fixed header */
     }
 
+    body
+    div#header-outer {
+        display: none;
+    }
+    div#header-space
+
+ {
+    display: none !important;
+}
     /* Hide the original header structure on mobile */
     .stm-header {
         display: none !important;
