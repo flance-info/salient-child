@@ -3,6 +3,16 @@
     display: none;
 }
 
+.mobile-search-overlay {
+    display: none;
+}
+
+div#mobile-search-close {
+    font-size: 30px;
+    margin-left: 10px;
+    color: #495760;
+}
+
 /* Mobile-specific styles */
 @media screen and (max-width: 767px) {
 
@@ -76,9 +86,11 @@
         align-content: center;
         align-items: stretch;
     }
+
     .slide-out-widget-area-toggle.mobile-icon {
         padding-top: 5px;
     }
+
     /* Search icon styling - Using image */
     .mobile-search {
         color: white !important;
@@ -183,75 +195,101 @@
     .mobile-search-overlay {
         display: none;
         position: fixed;
-        top: 0; left: 0; right: 0; bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
         background: rgba(200, 200, 200, 0.95);
         z-index: 10000;
         justify-content: flex-start;
         align-items: flex-start;
         flex-direction: column;
-        padding-top: 40px;
+        padding-top: 0px;
     }
+
     .mobile-search-overlay.active {
         display: flex;
     }
+
     .mobile-search-box {
         display: flex;
         align-items: center;
         background: #fff;
-        border-radius: 4px;
-        margin: 20px auto 0 auto;
-        width: 90%;
-        max-width: 400px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        /* border-radius: 4px; */
+        margin: 0px;
+        width: 100%;
+        max-width: 100vw;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         position: relative;
         padding: 8px 12px;
+        flex-direction: row;
+        justify-content: space-between;
     }
-    .mobile-search-box input[type=\"text\"] {
-        flex: 1;
-        border: none;
-        outline: none;
-        font-size: 18px;
-        padding: 8px 10px;
-        background: transparent;
+
+    .mobile-search-box .search-bar-wrapper {
+        margin-bottom: 8px;
+        max-width: 100vw;
+        margin-top: 10px;
+        width: 100%;
     }
-    .mobile-search-submit {
-        background: none;
-        border: none;
-        padding: 0 8px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
+
+    .widget_search .search-form button[type=submit] .icon-salient-search:before,
+    body.search-no-results .search-form button[type=submit] .icon-salient-search:before {
+        content: "\e906";
+        color: #569560 !important;
+
+        .mobile-search-box input[type=\"text\"] {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 18px;
+            padding: 8px 10px;
+            background: transparent;
+        }
+
+        .mobile-search-submit {
+            background: none;
+            border: none;
+            padding: 0 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .mobile-search-submit img {
+            width: 22px;
+            height: 22px;
+        }
+
+        .mobile-search-close {
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: #888;
+            cursor: pointer;
+            margin-left: 8px;
+            line-height: 1;
+        }
+
+        .mobile-search-results {
+            background: #fff;
+            border-radius: 0 0 4px 4px;
+            margin: 0 auto;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            margin-top: 2px;
+            padding: 8px 0;
+        }
+
+        .mobile-search-result-item {
+            padding: 10px 16px;
+            font-size: 18px;
+            color: #222;
+            border-bottom: 1px solid #eee;
+        }
+
+        .mobile-search-result-item:last-child {
+            border-bottom: none;
+        }
     }
-    .mobile-search-submit img {
-        width: 22px;
-        height: 22px;
-    }
-    .mobile-search-close {
-        background: none;
-        border: none;
-        font-size: 28px;
-        color: #888;
-        cursor: pointer;
-        margin-left: 8px;
-        line-height: 1;
-    }
-    .mobile-search-results {
-        background: #fff;
-        border-radius: 0 0 4px 4px;
-        margin: 0 auto;
-        width: 90%;
-        max-width: 400px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        margin-top: 2px;
-        padding: 8px 0;
-    }
-    .mobile-search-result-item {
-        padding: 10px 16px;
-        font-size: 18px;
-        color: #222;
-        border-bottom: 1px solid #eee;
-    }
-    .mobile-search-result-item:last-child {
-        border-bottom: none;
-    }
-}
