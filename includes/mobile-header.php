@@ -17,8 +17,11 @@ function inject_mobile_header() {
         <div class="mobile-logo-container">
             <a href="<?php echo esc_url(home_url()); ?>">
                 <?php 
-                // You can replace this with actual logo
-                // For now, it's just a placeholder
+                if (function_exists('the_custom_logo') && has_custom_logo()) {
+                    the_custom_logo();
+                } else {
+                    echo '<span class="site-title">' . get_bloginfo('name') . '</span>';
+                }
                 ?>
             </a>
         </div>
