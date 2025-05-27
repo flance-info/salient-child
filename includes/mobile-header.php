@@ -14,20 +14,31 @@ function inject_mobile_header() {
     ?>
     <div class="mobile-header-wrapper">
         <!-- Logo container -->
+        <?php
+                $mobile_logo = get_theme_mod('mobile_logo');
+              
+            
+                if ($mobile_logo) {
+                    echo '<a href="' . esc_url(home_url()) . '">';
+                    echo '<img src="' . esc_url($mobile_logo) . '" alt="' . esc_attr(get_bloginfo('name')) . '" class="mobile-logo-img" />';
+                    echo '</a>';
+                } elseif (function_exists('the_custom_logo') && has_custom_logo()) {
+                    echo '<a href="' . esc_url(home_url()) . '">';
+                    the_custom_logo();
+                    echo '</a>';
+                }else{
+                ?>
         <div class="mobile-logo-container">
             <a href="<?php echo esc_url(home_url()); ?>">
-                <?php
-                $mobile_logo = get_theme_mod('mobile_logo');
-                if ($mobile_logo) {
-                    echo '<img src="' . esc_url($mobile_logo) . '" alt="' . esc_attr(get_bloginfo('name')) . '" class="mobile-logo-img" />';
-                } elseif (function_exists('the_custom_logo') && has_custom_logo()) {
-                    the_custom_logo();
-                } else {
+                    <span class="site-title"><?php echo get_bloginfo('name'); ?></span>
                     echo '<span class="site-title">' . get_bloginfo('name') . '</span>';
-                }
+              
                 ?>
             </a>
         </div>
+        <?php
+                }
+        ?>
         
         <!-- Actions container for search and menu -->
         <div class="mobile-actions-container">
