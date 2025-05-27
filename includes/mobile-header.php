@@ -44,12 +44,44 @@ function inject_mobile_header() {
             </div>
         </div>
     </div>
+    <div class="mobile-search-overlay" id="mobile-search-overlay">
+        <div class="mobile-search-box">
+            <input type="text" placeholder="Поиск..." id="mobile-search-input" />
+            <button type="button" class="mobile-search-submit">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/search.png" alt="search" />
+            </button>
+            <button type="button" class="mobile-search-close" id="mobile-search-close">&times;</button>
+        </div>
+        <div class="mobile-search-results" id="mobile-search-results">
+            <!-- Example results, replace with dynamic results as needed -->
+            <div class="mobile-search-result-item">Закон постановление №1235</div>
+            <div class="mobile-search-result-item">Закон постановление №1</div>
+        </div>
+    </div>
     <script>
     // Ensure mobile header is at the very top
     document.addEventListener('DOMContentLoaded', function() {
         var mobileHeader = document.querySelector('.mobile-header-wrapper');
         if (mobileHeader && window.innerWidth <= 767) {
             document.body.insertBefore(mobileHeader, document.body.firstChild);
+        }
+
+        // Mobile search overlay toggle
+        var searchBtn = document.querySelector('.mobile-search');
+        var overlay = document.getElementById('mobile-search-overlay');
+        var closeBtn = document.getElementById('mobile-search-close');
+        var input = document.getElementById('mobile-search-input');
+        if (searchBtn && overlay && closeBtn) {
+            searchBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                overlay.classList.add('active');
+                setTimeout(function() {
+                    input && input.focus();
+                }, 100);
+            });
+            closeBtn.addEventListener('click', function() {
+                overlay.classList.remove('active');
+            });
         }
     });
     </script>
