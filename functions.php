@@ -84,4 +84,22 @@ function custom_yoast_breadcrumbs() {
     }
 }
 add_action('nectar_hook_before_content', 'custom_yoast_breadcrumbs');
+
+add_action('customize_register', function($wp_customize) {
+    $wp_customize->add_section('mobile_logo_section', array(
+        'title'    => __('Mobile Logo', 'salient-child'),
+        'priority' => 30,
+    ));
+
+    $wp_customize->add_setting('mobile_logo', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'mobile_logo', array(
+        'label'    => __('Mobile Logo', 'salient-child'),
+        'section'  => 'mobile_logo_section',
+        'settings' => 'mobile_logo',
+    )));
+});
 ?>

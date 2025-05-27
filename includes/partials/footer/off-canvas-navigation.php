@@ -93,7 +93,10 @@ if ( $side_widget_area === '1' && $side_widget_class !== 'simple' || true === $l
 				<div class="mobile-menu-header">
 					<a href="<?php echo esc_url(home_url()); ?>" class="mobile-menu-logo">
 						<?php
-						if (function_exists('the_custom_logo') && has_custom_logo()) {
+						$mobile_logo = get_theme_mod('mobile_logo');
+						if ($mobile_logo) {
+							echo '<img src="' . esc_url($mobile_logo) . '" alt="' . esc_attr(get_bloginfo('name')) . '" class="mobile-logo-img" />';
+						} elseif (function_exists('the_custom_logo') && has_custom_logo()) {
 							the_custom_logo();
 						} else {
 							echo '<span class="site-title">' . get_bloginfo('name') . '</span>';
