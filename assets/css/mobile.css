@@ -5,17 +5,19 @@
 
 /* Mobile-specific styles */
 @media screen and (max-width: 767px) {
+
     /* General mobile styles */
     body {
         font-size: 16px;
-        padding-top: 100px; /* Account for fixed header */
+        padding-top: 100px;
+        /* Account for fixed header */
     }
 
     /* Hide original header elements */
     body div#header-outer {
         display: none !important;
     }
-    
+
     div#header-space {
         display: none !important;
     }
@@ -27,7 +29,8 @@
 
     /* Show and style mobile header */
     .mobile-header-wrapper {
-        background-color: #9bbd99 !important; /* Green background */
+        background-color: #9bbd99 !important;
+        /* Green background */
         padding: 15px 20px;
         position: fixed !important;
         top: 0 !important;
@@ -47,7 +50,8 @@
         flex: 0 0 auto;
         width: 240px;
         height: 50px;
-        background-color: #d0d0d0; /* Gray logo placeholder */
+        background-color: #d0d0d0;
+        /* Gray logo placeholder */
         border-radius: 4px;
         margin-right: auto;
         display: flex;
@@ -64,11 +68,17 @@
     /* Right side container for search and menu */
     .mobile-actions-container {
         display: flex;
-        align-items: center;
-        gap: 30px;
-        flex: 0 0 auto;
+        gap: 10px;
+        /* flex: 0 0 auto; */
+        flex-direction: row;
+        justify-content: center;
+        width: 150px;
+        align-content: center;
+        align-items: stretch;
     }
-
+    .slide-out-widget-area-toggle.mobile-icon {
+        padding-top: 5px;
+    }
     /* Search icon styling - Using image */
     .mobile-search {
         color: white !important;
@@ -88,7 +98,8 @@
     }
 
     .mobile-search .nectar-icon {
-        display: none; /* Hide the original icon */
+        display: none;
+        /* Hide the original icon */
     }
 
     /* Remove custom search icon CSS */
@@ -115,6 +126,7 @@
         position: absolute !important;
         display: block !important;
     }
+
     .mobile-header-wrapper .slide-out-widget-area-toggle.mobile-icon .lines-button.x2 .lines::before {
         top: -10px !important;
         left: 0 !important;
@@ -124,6 +136,7 @@
         position: absolute !important;
         display: block !important;
     }
+
     .mobile-header-wrapper .slide-out-widget-area-toggle.mobile-icon .lines-button.x2 .lines::after {
         top: 10px !important;
         left: 0 !important;
@@ -132,6 +145,10 @@
         border-radius: 2px !important;
         position: absolute !important;
         display: block !important;
+    }
+
+    body .slide-out-widget-area-toggle .lines-button:after {
+        display: none !important;
     }
 
     /* Hide desktop navigation */
@@ -158,7 +175,8 @@
 
     /* Ensure the mobile header stays on top */
     .mobile-header-wrapper {
-        transform: translateZ(0); /* Force hardware acceleration */
+        transform: translateZ(0);
+        /* Force hardware acceleration */
         will-change: transform;
     }
 }
