@@ -367,7 +367,13 @@ body
      {
         color: #569560 !important;
     }
+    body .material-ocm-open.slide_out_area_close:before {
+        display: none;
+    }
 
+    a#mobile-menu-close {
+        top: 25px;
+    }
     .mobile-menu-bottom-btn {
         display: block;
         width: 100%;

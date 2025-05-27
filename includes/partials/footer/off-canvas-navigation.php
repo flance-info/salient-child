@@ -102,8 +102,8 @@ if ( $side_widget_area === '1' && $side_widget_class !== 'simple' || true === $l
 							echo '<span class="site-title">' . get_bloginfo('name') . '</span>';
 						}
 						?>
-					</a>
-					<a href="#" class="mobile-menu-close" id="mobile-menu-close" aria-label="<?php esc_attr_e('Close Menu', 'salient-child'); ?>">
+					</a> 
+					<a href="#" class="mobile-menu-close slide_out_area_close" id="mobile-menu-close" aria-label="<?php esc_attr_e('Close Menu', 'salient-child'); ?>">
 						<span class="icon-salient-x" aria-hidden="true"></span>
 					</a>
 				</div>
