@@ -1,9 +1,146 @@
-/* Mobile-specific styles */
+/* Mobile Header - Hidden on desktop */
+.mobile-header-wrapper {
+    display: none;
+}
 
+/* Mobile-specific styles */
 @media screen and (max-width: 767px) {
     /* General mobile styles */
     body {
         font-size: 16px;
+        padding-top: 80px; /* Account for fixed header */
     }
 
-} 
+    /* Hide the original header structure on mobile */
+    .stm-header {
+        display: none !important;
+    }
+
+    /* Show and style mobile header */
+    .mobile-header-wrapper {
+        background-color: #9bbd99; /* Green background */
+        padding: 15px 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        box-sizing: border-box;
+        display: flex !important;
+        align-items: center;
+        justify-content: space-between;
+        height: 80px;
+    }
+
+    /* Logo container on the left */
+    .mobile-logo-container {
+        flex: 0 0 auto;
+        width: 240px;
+        height: 50px;
+        background-color: #d0d0d0; /* Gray logo placeholder */
+        border-radius: 4px;
+        margin-right: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mobile-logo-container a {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Right side container for search and menu */
+    .mobile-actions-container {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        flex: 0 0 auto;
+    }
+
+    /* Search icon styling */
+    .mobile-search {
+        color: white !important;
+        font-size: 32px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .mobile-search .nectar-icon {
+        color: white;
+        font-size: 32px;
+    }
+
+    /* Hamburger menu styling */
+    .mobile-header-wrapper .slide-out-widget-area-toggle.mobile-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        position: static;
+    }
+
+    .mobile-header-wrapper .slide-out-widget-area-toggle .lines-button {
+        width: 30px;
+        height: 24px;
+        position: relative;
+    }
+
+    .mobile-header-wrapper .slide-out-widget-area-toggle .lines-button .lines {
+        background-color: white;
+        height: 4px;
+        width: 100%;
+        position: relative;
+        display: block;
+        border-radius: 2px;
+    }
+
+    .mobile-header-wrapper .slide-out-widget-area-toggle .lines-button .lines::before,
+    .mobile-header-wrapper .slide-out-widget-area-toggle .lines-button .lines::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background-color: white;
+        border-radius: 2px;
+    }
+
+    .mobile-header-wrapper .slide-out-widget-area-toggle .lines-button .lines::before {
+        top: -10px;
+    }
+
+    .mobile-header-wrapper .slide-out-widget-area-toggle .lines-button .lines::after {
+        top: 10px;
+    }
+
+    /* Hide desktop navigation */
+    nav[aria-label="Main Menu"] {
+        display: none !important;
+    }
+
+    /* Override existing mobile header */
+    .nectar-mobile-only.mobile-header {
+        display: none !important;
+    }
+
+    /* Override container styles */
+    .container .col.span_9 {
+        background: none !important;
+        position: static !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+
+    .stm-header-two-search-container {
+        display: none !important;
+    }
+}

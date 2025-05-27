@@ -24,6 +24,7 @@ require_once get_stylesheet_directory() . '/includes/vc_elements/nai-rss-widget.
 require_once get_stylesheet_directory() . '/includes/vc_elements/nai-calendar-widget.php';
 require_once get_stylesheet_directory() . '/includes/vc_elements/nai-photo-gallery-widget.php';
 require_once get_stylesheet_directory() . '/includes/nai-photo-gallery-post-type.php';
+require_once get_stylesheet_directory() . '/includes/mobile-header.php';
 
 add_action('wp_footer', function () {
     ?>
