@@ -46,11 +46,19 @@ function inject_mobile_header() {
     </div>
     <div class="mobile-search-overlay" id="mobile-search-overlay">
         <div class="mobile-search-box">
-            <input type="text" placeholder="Поиск..." id="mobile-search-input" />
-            <button type="button" class="mobile-search-submit">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/search.png" alt="search" />
-            </button>
+        <form role="search" method="get" class="search-form" action="https://nai.test/">
+	<input type="text" class="search-field" placeholder="Search..." value="" name="s" title="Search for:">
+	<button type="submit" class="search-widget-btn"><span class="normal icon-salient-search" aria-hidden="true"></span><span class="text">Search</span></button>
+</form>
+
+
+          
+          
             <button type="button" class="mobile-search-close" id="mobile-search-close">&times;</button>
+       
+      
+       
+       
         </div>
         <div class="mobile-search-results" id="mobile-search-results">
             <!-- Example results, replace with dynamic results as needed -->
