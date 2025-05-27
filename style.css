@@ -1351,7 +1351,10 @@ a.nectar-button.large.regular.accent-color.regular-button.stm-btn-contact {
   padding: 40px 0;
 }
 
-
+body
+.mobile-header-wrapper, body .mobile-search-overlay {
+    display: none;
+}
 #header-outer[data-lhe="animated_underline"] #top nav>ul>li>a .menu-title-text:after,
 body.material #header-outer #search-outer #search input[type="text"],
 body[data-header-format="left-header"].material #search-outer #search input[type="text"] {

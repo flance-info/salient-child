@@ -16,7 +16,10 @@ div#mobile-search-close {
 .mobile-search-box {
     display: none;
 }
-
+body
+.mobile-header-wrapper, body .mobile-search-overlay {
+    display: none;
+}
 /* Mobile-specific styles */
 @media screen and (max-width: 767px) {
     .mobile-search-box {

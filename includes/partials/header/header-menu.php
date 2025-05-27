@@ -273,6 +273,8 @@ if( $nectar_header_format === 'centered-menu-bottom-bar' &&
 
 									</ul>
 
+								
+
 									<?php
 									if ( ! empty( $nectar_options['enable_social_in_header'] ) &&
 									$nectar_options['enable_social_in_header'] === '1' &&
