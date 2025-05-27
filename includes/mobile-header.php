@@ -31,9 +31,7 @@ function inject_mobile_header() {
         <div class="mobile-logo-container">
             <a href="<?php echo esc_url(home_url()); ?>">
                     <span class="site-title"><?php echo get_bloginfo('name'); ?></span>
-                    echo '<span class="site-title">' . get_bloginfo('name') . '</span>';
-              
-                ?>
+                
             </a>
         </div>
         <?php

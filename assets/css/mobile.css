@@ -219,6 +219,7 @@ body
 
     .mobile-search-overlay.active {
         display: flex;
+        z-index: 1111111111;
     }
 
     .mobile-search-box {

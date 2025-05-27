@@ -1350,7 +1350,16 @@ a.nectar-button.large.regular.accent-color.regular-button.stm-btn-contact {
   font-size: 18px;
   padding: 40px 0;
 }
-
+body.material-ocm-open #slide-out-widget-area.slide-out-from-right .inner-wrap
+ {
+    opacity: 1;
+    margin: 0px;
+    padding: 0px;
+    top: 0px ! IMPORTANT;
+}
+div#slide-out-widget-area {
+  padding-top: 20px !important;
+}
 body
 .mobile-header-wrapper, body .mobile-search-overlay {
     display: none;
