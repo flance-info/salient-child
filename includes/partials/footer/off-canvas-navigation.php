@@ -209,7 +209,9 @@ if ( $side_widget_area === '1' && $side_widget_class !== 'simple' || true === $l
 						</ul>
 
 
-                        <a href="/join" class="mobile-menu-bottom-btn">Вступить в Naii</a>
+                        <a href="/vstupit-v-assocziacziyu/" class="mobile-menu-bottom-btn">
+                            <?php echo esc_html__('Вступить в Naii', 'salient-child'); ?>
+                        </a>
                         
 					</div>
 					<?php
