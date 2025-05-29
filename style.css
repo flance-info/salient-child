@@ -1486,8 +1486,7 @@ body:not([data-header-format="left-header"]) #header-outer nav>ul>.megamenu>ul>l
 }
 
 .nai-akti .column_container:hover {
-  color: #fff !important;
-  background: #7CA46F;
+
 
 }
 
@@ -1495,7 +1494,14 @@ body:not([data-header-format="left-header"]) #header-outer nav>ul>.megamenu>ul>l
   color: #fff !important;
 
 }
+.pg-archive-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
 
+.pg-archive-card-img {
+    transition: transform 0.6s ease;
+}
 /* analitika */
 .main-content .featured-media-under-header {
   padding-top: 40px;
@@ -1509,7 +1515,12 @@ body:not([data-header-format="left-header"]) #header-outer nav>ul>.megamenu>ul>l
   padding-left: 5px;
   padding-top: 60px;
 }
-
+body.material .widget:not(.nectar_popular_posts_widget):not(.recent_posts_extra_widget) li a:hover{
+    color: #fff;
+    text-decoration:underline;
+    text-underline-offset: 5px; 
+  
+}
 .stm-icons-below .iwithtext {
   margin-left: 20px;
 }
@@ -1524,7 +1535,20 @@ textarea.wpcf7-form-control.wpcf7-textarea {
   list-style-position: unset;
   line-height: 1.5;
 }
+a.nectar-button.stm-header-btn:hover,
+a.nectar-button.stm-header-btn:focus {
+  background-color: #333 !important; /* slightly lighter on hover/focus */
+  color: #fff !important;
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
 
+a.nectar-button.stm-header-btn:active {
+  transform: scale(0.97);
+  background-color: #000 !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
 /* NAI Calendar Widget Styles (custom styles can be added here) */
 .nai-calendar-widget {}
 
