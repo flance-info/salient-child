@@ -1273,7 +1273,9 @@ a.nectar-button.large.regular.accent-color.regular-button.stm-btn-contact {
   max-width: 600px;
   margin: 0 auto;
 }
-
+.nai-nav-menu {
+  margin-left: -15px;
+}
 .nai-rss-row {
   display: flex;
   align-items: flex-start;
@@ -1283,6 +1285,7 @@ a.nectar-button.large.regular.accent-color.regular-button.stm-btn-contact {
   margin-bottom: 28px;
   padding: 18px 24px 18px 18px;
   transition: box-shadow 0.2s, background 0.2s;
+  padding-left: 0px;
 }
 
 .nai-rss-row:last-child {

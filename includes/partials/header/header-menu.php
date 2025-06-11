@@ -135,7 +135,7 @@ if( $nectar_header_format === 'centered-menu-bottom-bar' &&
 							echo '<div class="nav-outer">';
 						}
 						?>
-							<nav aria-label="<?php echo esc_html__('Main Menu', 'salient'); ?>">
+							<nav class="nai-nav-menu" aria-label="<?php echo esc_html__('Main Menu', 'salient'); ?>">
 								<?php 
 								// Centered Logo Between Menu Alt.
 								if( in_array($nectar_header_format, array('centered-logo-between-menu-alt') ) ) { 
