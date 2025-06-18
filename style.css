@@ -682,7 +682,7 @@ body[data-header-resize="0"] .container-wrap {
 
 .stm-last-new .blog-recent a.featured {
   max-height: 471px;
-  display: block;
+  display: none;
   margin-bottom: 40px;
 }
 
@@ -1576,6 +1576,13 @@ div#full_width_portfolio {
   padding-left: 1%;
 }
 
+
+.tab-nav-heading:hover {
+  background: #627a6621 !important;
+  color: #627A66 !important;
+  border-left: 2px solid #627A66 !important;
+
+}
 @media only screen and (min-width: 1000px) {
   body.admin-bar:not(.nectar-no-flex-height) {
     min-height: 400px;
@@ -1659,4 +1666,13 @@ div#full_width_portfolio {
     margin: auto;
   }
 
+}
+
+.nectar-recent-post-slide {
+  padding-left: 20px;
+}
+
+
+.normal-container.container {
+  padding-left: 20px;
 }
