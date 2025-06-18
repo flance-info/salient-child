@@ -75,24 +75,35 @@ function custom_wpml_language_switcher_shortcode($atts) {
         display: flex;
         align-items: center;
         padding: 8px 12px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        background: white;
+        background: #2d7d32;
+        color: white;
+        border: none;
+        border-radius: 0;
         cursor: pointer;
         user-select: none;
         transition: all 0.2s ease;
         min-width: 80px;
+        font-size: 14px;
+        font-weight: 500;
     }
     
     .wpml-language-switcher .current-language:hover {
-        border-color: #999;
-        background: #f9f9f9;
+        background: #1b5e20;
+    }
+    
+    .wpml-language-switcher .current-language img {
+        width: 20px !important;
+        height: 14px !important;
+        margin-right: 8px !important;
+        border-radius: 2px;
+        object-fit: cover;
     }
     
     .wpml-language-switcher .dropdown-arrow {
         margin-left: auto;
-        font-size: 10px;
+        font-size: 12px;
         transition: transform 0.2s ease;
+        color: white;
     }
     
     .wpml-language-switcher.open .dropdown-arrow {
@@ -105,10 +116,10 @@ function custom_wpml_language_switcher_shortcode($atts) {
         left: 0;
         right: 0;
         background: white;
-        border: 1px solid #ccc;
+        border: 1px solid #ddd;
         border-top: none;
-        border-radius: 0 0 4px 4px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 0;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         z-index: 1000;
         display: none;
     }
@@ -120,11 +131,12 @@ function custom_wpml_language_switcher_shortcode($atts) {
     .wpml-language-switcher .language-option {
         display: flex;
         align-items: center;
-        padding: 8px 12px;
+        padding: 10px 12px;
         text-decoration: none;
-        color: inherit;
+        color: #333;
         transition: background 0.2s ease;
         border-bottom: 1px solid #eee;
+        font-size: 14px;
     }
     
     .wpml-language-switcher .language-option:last-child {
@@ -132,11 +144,20 @@ function custom_wpml_language_switcher_shortcode($atts) {
     }
     
     .wpml-language-switcher .language-option:hover {
-        background: #f5f5f5;
+        background: #f8f9fa;
+    }
+    
+    .wpml-language-switcher .language-option img {
+        width: 20px !important;
+        height: 14px !important;
+        margin-right: 8px !important;
+        border-radius: 2px;
+        object-fit: cover;
     }
     
     .wpml-language-switcher .language-code {
         font-weight: 500;
+        color: inherit;
     }
     
     .wpml-language-switcher .language-name {
