@@ -1346,7 +1346,19 @@ a.nectar-button.large.regular.accent-color.regular-button.stm-btn-contact {
   margin-top: 0;
   line-height: 1.2;
 }
+.nai-akti h3
+ {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
+.nectar-fancy-box[data-style="color_box_hover"][data-hover-o="0.3"] .box-bg:after
+ {
+    opacity: 1 !important;
+ }
 .nai-rss-widget-empty {
   text-align: center;
   color: #888;
