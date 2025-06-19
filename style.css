@@ -1354,7 +1354,11 @@ a.nectar-button.large.regular.accent-color.regular-button.stm-btn-contact {
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
+.stm-br
+{
+    border-bottom: 1px solid #808080;
+    padding-bottom: 15px;
+}
 .nectar-fancy-box[data-style="color_box_hover"][data-hover-o="0.3"] .box-bg:after
  {
     opacity: 1 !important;
