@@ -1599,6 +1599,11 @@ div#full_width_portfolio {
   border-left: 2px solid #627A66 !important;
 
 }
+
+.nectar-fancy-box[data-style="color_box_hover"][data-color="accent-color"]:before
+ {
+    box-shadow: unset !important;
+}
 @media only screen and (min-width: 1000px) {
   body.admin-bar:not(.nectar-no-flex-height) {
     min-height: 400px;
