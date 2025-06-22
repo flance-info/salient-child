@@ -1604,6 +1604,12 @@ div#full_width_portfolio {
  {
     box-shadow: unset !important;
 }
+
+body .container-wrap .wpb_row[data-column-margin="40px"]:not(.full-width-section):not(.full-width-content)
+
+ {
+    margin-bottom: -60px !important;
+}
 @media only screen and (min-width: 1000px) {
   body.admin-bar:not(.nectar-no-flex-height) {
     min-height: 400px;
