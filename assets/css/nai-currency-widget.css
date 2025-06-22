@@ -1,0 +1,129 @@
+.nai-currency-widget {
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.nai-currency-widget h3 {
+    margin: 0 0 20px 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.currency-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.currency-item {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.currency-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.currency-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.flag {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-size: cover;
+    display: inline-block;
+    margin-right: 10px;
+    overflow: hidden;
+}
+
+.flag.us {
+    background-image: url('https://flagcdn.com/w80/us.png');
+    background-position: center;
+}
+
+.flag.eu {
+    background-image: url('https://flagcdn.com/w80/eu.png');
+    background-position: center;
+}
+
+.flag.ru {
+    background-image: url('https://flagcdn.com/w80/ru.png');
+    background-position: center;
+}
+
+.flag.uz {
+    background-image: url('https://flagcdn.com/w80/uz.png');
+    background-position: center;
+}
+
+.code {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+}
+
+.rate-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.rate {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.change {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.change.up {
+    color: #4CAF50;
+    background: rgba(76, 175, 80, 0.1);
+}
+
+.change.down {
+    color: #F44336;
+    background: rgba(244, 67, 54, 0.1);
+}
+
+.change.neutral {
+    color: #9E9E9E;
+    background: rgba(158, 158, 158, 0.1);
+}
+
+.currency-loading {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+    font-style: italic;
+}
+
+.currency-error {
+    text-align: center;
+    padding: 40px;
+    color: #F44336;
+    background: rgba(244, 67, 54, 0.1);
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .currency-list {
+        grid-template-columns: 1fr;
+    }
+} 
