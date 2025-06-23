@@ -537,6 +537,12 @@ body .stm-laws .nectar-fancy-box[data-style="color_box_hover"] .inner {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  min-height: 190px !important;
+}
+
+body .nai-akti .nectar-fancy-box[data-style="color_box_hover"] .inner {
+
+  min-height: 190px !important;
 }
 
 .stm-laws .column_container img.fancy-box-custom-icon {
@@ -1483,8 +1489,6 @@ body:not([data-header-format="left-header"]) #header-outer nav>ul>.megamenu>ul>l
 
 .nai-akti .column_container {
 
-  padding-top: 20px;
-  padding-bottom: 20px;
 
   padding-right: 30px;
 }
@@ -1591,7 +1595,19 @@ div#full_width_portfolio {
 .single-portfolio p#breadcrumbs {
   padding-left: 1%;
 }
+.nectar-fancy-box
+{
+    background: #F9FAF9;
+    border-radius: 5px;
+}
 
+body
+.nectar-fancy-box[data-style="color_box_hover"] .box-inner-wrap
+ {
+    padding: 5% 8%;
+    position: relative;
+    overflow: hidden;
+}
 
 .tab-nav-heading:hover {
   background: #627a6621 !important;
@@ -1608,7 +1624,7 @@ div#full_width_portfolio {
 body .container-wrap .wpb_row[data-column-margin="40px"]:not(.full-width-section):not(.full-width-content)
 
  {
-    margin-bottom: -60px !important;
+    margin-bottom: 40px !important; 
 }
 @media only screen and (min-width: 1000px) {
   body.admin-bar:not(.nectar-no-flex-height) {
@@ -1702,4 +1718,14 @@ body .container-wrap .wpb_row[data-column-margin="40px"]:not(.full-width-section
 
 .normal-container.container {
   padding-left: 20px;
+}
+
+.wpml-ls-statics-footer.wpml-ls.wpml-ls-legacy-list-horizontal
+ {
+    display: none;
+}
+
+.nectar_hook_global_section_footer 
+.normal-container.container {
+  padding-left: 0px;
 }

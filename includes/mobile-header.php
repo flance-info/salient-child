@@ -63,8 +63,8 @@ function inject_mobile_header() {
         <div class="mobile-search-box">
         <div class="search-bar-wrapper">
 						<div id="search-2" class="widget widget_search">
-							<form role="search" method="get" class="search-form" action="https://nai.test/">
-								<input type="text" class="search-field" placeholder="<?php echo esc_attr( 'Search...', 'salient-child' ); ?>" value="" name="s" title="Search for:">
+							<form role="search" method="get" class="search-form" action="<?php echo home_url(); ?>">
+								<input type="text" class="search-field" placeholder="<?php echo esc_attr( 'Search...', 'salient' ); ?>" value="" name="s" title="Search for:">
 								<button type="submit" class="search-widget-btn">
 									<span class="normal icon-salient-search" aria-hidden="true"></span>
 									<span class="text">Search</span>
