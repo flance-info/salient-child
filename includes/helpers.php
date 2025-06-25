@@ -132,7 +132,7 @@ function custom_wpml_language_switcher_shortcode($atts) {
     
     .wpml-language-switcher .language-option {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         padding: 10px 12px;
         text-decoration: none;
         color: #333;
