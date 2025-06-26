@@ -192,8 +192,9 @@
     position: relative;
     padding-bottom: 10px;
 }
-.nai-event-row:hover {
-    background: #7a8b7a;
+.nai-event-row:hover
+{
+    background: #7ca46f !important;
     color: #fff;
 }
 .nai-event-row:hover .nai-event-date,

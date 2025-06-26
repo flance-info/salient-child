@@ -56,3 +56,18 @@
     font-size: 16px;
     color: #444;
 }
+
+.nai-opinion-row:hover
+ {
+    background: #7ca46f;
+    color: #fff !important;
+}
+.nai-opinion-row:hover
+.nai-opinion-author-name, 
+.nai-opinion-row:hover .nai-opinion-author-position,
+
+.nai-opinion-row:hover .nai-opinion-date,
+.nai-opinion-row:hover .nai-opinion-title,
+.nai-opinion-row:hover .nai-opinion-excerpt {
+    color: #fff !important;
+}

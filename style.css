@@ -1172,6 +1172,18 @@ body .stm-white a {
   font-size: 16px;
   color: #627A66;
 }
+body
+.comments-section
+ {
+    display: none;
+}
+body
+.pg-archive-card-overlay {
+  position: unset;
+  inset: unset;
+  background:unset;
+  display: none;
+}
 .menu-item a.skip-hash {
   position: absolute;
   inset: 0px 0px 0 20px; /* top: 0; right: 0; bottom: 0; left: 0 */
@@ -1179,7 +1191,23 @@ body .stm-white a {
   display: flex !important;
     align-items: center;
 }
-
+article.nai-search-card:hover
+ {
+  background: #7ca46f !important;
+  color: #fff;
+}
+article.nai-search-card {
+  max-width: 800px;
+}
+body
+.fancybox-bg {
+  background-color: white;
+}
+article.nai-search-card:hover
+.nai-search-card-date , article.nai-search-card:hover .nai-search-card-title,
+article.nai-search-card:hover .nai-search-card-desc {
+  color: #fff;
+}
 div#fws_685d3d088cdc4
 
  {
