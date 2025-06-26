@@ -1174,8 +1174,16 @@ body .stm-white a {
 }
 .menu-item a.skip-hash {
   position: absolute;
-  
+  inset: 0px 0px 0 20px; /* top: 0; right: 0; bottom: 0; left: 0 */
   z-index: 1; 
+  display: flex !important;
+    align-items: center;
+}
+
+div#fws_685d3d088cdc4
+
+ {
+    margin-bottom: 18px;
 }
 a.nectar-button.large.regular.accent-color.regular-button.stm-btn-contact:hover
 
