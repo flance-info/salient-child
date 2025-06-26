@@ -1172,13 +1172,36 @@ body .stm-white a {
   font-size: 16px;
   color: #627A66;
 }
+.menu-item a.skip-hash {
+  position: absolute;
+  
+  z-index: 1; 
+}
+a.nectar-button.large.regular.accent-color.regular-button.stm-btn-contact:hover
 
+ {
+    color: white;
+    background-color: #7ca46f !important;
+}
 .nai-events-year-dropdown {
   margin-left: 5px;
   font-size: 12px;
   color: #627A66;
 }
+body .nectar_hook_global_section_footer .iwt-text a.stm-white {
+  color: #fff;
+}
+body
+.mfp-wrap {
 
+  z-index: 2222222222;
+
+}
+body
+.wpcf7 form.sent .wpcf7-response-output
+ {
+    border-color: white;
+}
 .nai-events-year-options {
   display: none;
   position: absolute;
