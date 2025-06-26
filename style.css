@@ -1191,6 +1191,13 @@ body
   display: flex !important;
     align-items: center;
 }
+.single.single-post .container-wrap {
+  padding: 30px !important;
+}
+.single.single-post #ajax-content-wrap .vc_row.bottom_margin_40px, 
+.single.single-post #ajax-content-wrap .vc_row.top_margin_60px {
+  margin-top: 0px !important;
+}
 article.nai-search-card:hover
  {
   background: #7ca46f !important;
