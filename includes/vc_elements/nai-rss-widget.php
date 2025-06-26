@@ -98,7 +98,7 @@ class NAI_RSS_Widget {
                 }
                 $error_messages = $rss->get_error_messages();
                 foreach ($error_messages as $error) {
-                    echo '<div style="color:red;">RSS Error for ' . esc_html($feed_url) . ': ' . esc_html($error) . '</div>';
+                   // echo '<div style="color:red;">RSS Error for ' . esc_html($feed_url) . ': ' . esc_html($error) . '</div>';
                 }
                 continue;
             }
