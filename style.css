@@ -1383,6 +1383,7 @@ a.nectar-button.large.regular.accent-color.regular-button.stm-btn-contact {
   border-radius: 8px;
   object-fit: cover;
   display: block;
+  margin-top: -10px;
 }
 
 .nai-rss-content {
